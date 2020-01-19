@@ -12,7 +12,7 @@ const ap = new APlayer({
       {
         name: '下山',
         artist: '要不要买菜',
-        url: 'hhttp://music.163.com/song/media/outer/url?id=1404885266.mp3',
+        url: 'http://music.163.com/song/media/outer/url?id=1404885266.mp3',
         cover: 'https://p1.music.126.net/Aj4X1kpV-C2LLi-e_Xhgvg==/109951164499744148.jpg?param=300x300" location=',
       },
       {
