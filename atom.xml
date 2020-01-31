@@ -287,9 +287,9 @@
     
     
     
-      <category term="softwares" scheme="http://yoursite.com/tags/softwares/"/>
-    
       <category term="cource" scheme="http://yoursite.com/tags/cource/"/>
+    
+      <category term="softwares" scheme="http://yoursite.com/tags/softwares/"/>
     
   </entry>
   
