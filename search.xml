@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C-S-List-One</title>
-    <url>/2020/01/31/C-S-List-One/</url>
-    <content><![CDATA[<h1 id="1-CSS样式规格"><a href="#1-CSS样式规格" class="headerlink" title="1.CSS样式规格"></a>1.CSS样式规格</h1><ul>
-<li>CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明:</li>
-</ul>
-<p><img src="https://www.runoob.com/wp-content/uploads/2013/07/632877C9-2462-41D6-BD0E-F7317E4C42AC.jpg" alt="选择器"></p>
-<ol>
-<li>选择器通常是您需要改变样式的 HTML 元素。</li>
-<li>每条声明由一个属性和一个值组成。</li>
-<li>属性是您希望设置的样式属性。每个属性有一个值。属性和值被冒号分开。</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>								//放到 head标签之间</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">base</span> <span class="attr">target</span>=<span class="string">"_blank"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span>							//style</span><br><span class="line">        h1 &#123;</span><br><span class="line">            color: blue;</span><br><span class="line">            font-size: 50px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>C-List-One</title>
     <url>/2020/01/29/C-List-One/</url>
     <content><![CDATA[<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//所有的符号都要英文符号</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> i;		<span class="comment">//变量 先定义再使用  </span></span><br><span class="line">	i = <span class="number">0</span>; 		<span class="comment">//并且要初始化</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"我爱你中国"</span> &lt;&lt; <span class="built_in">endl</span>;	 <span class="comment">//每条语句都要“;”</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//变量的设定与使用：前面使用完，后来还可以用</span></span><br><span class="line">	i = <span class="number">1</span>;					<span class="comment">//(减少变量的设定)</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; i++ &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//运算符的优先级！！！</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; (i++) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="number">0</span>为<span class="literal">false</span>，非<span class="number">0</span>为<span class="literal">true</span></span><br></pre></td></tr></table></figure>
