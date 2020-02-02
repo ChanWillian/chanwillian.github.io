@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-26T03:00:46.634Z</updated>
+  <updated>2020-01-29T02:01:17.297Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>notice-hexo</title>
+    <link href="http://yoursite.com/2020/01/26/notice-hexo/"/>
+    <id>http://yoursite.com/2020/01/26/notice-hexo/</id>
+    <published>2020-01-26T03:45:03.000Z</published>
+    <updated>2020-01-29T02:01:17.297Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-新文章名称"><a href="#1-新文章名称" class="headerlink" title="1.新文章名称"></a>1.新文章名称</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title: best student&#x2F;&#x2F;名称中有空格 ，错误</span><br><span class="line">title: best-student &#x2F;&#x2F;正确</span><br></pre></td></tr></table></figure><h1 id="2-使用FwoSome-图标"><a href="#2-使用FwoSome-图标" class="headerlink" title="2.使用FwoSome 图标"></a>2.使用FwoSome 图标</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">home: &#x2F;home&#x2F;|| home&#x2F;&#x2F;正确</span><br><span class="line">home: &#x2F;home&#x2F; || home&#x2F;&#x2F;多了个空格，错误</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-新文章名称&quot;&gt;&lt;a href=&quot;#1-新文章名称&quot; class=&quot;headerlink&quot; title=&quot;1.新文章名称&quot;&gt;&lt;/a&gt;1.新文章名称&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+      
+    
+    </summary>
+    
+    
+    
+      <category term="cource" scheme="http://yoursite.com/tags/cource/"/>
+    
+  </entry>
   
   <entry>
     <title>study</title>
