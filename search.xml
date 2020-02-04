@@ -1,6 +1,562 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>H-List-Two</title>
+    <url>/2020/01/29/H-List-Two/</url>
+    <content><![CDATA[<h1 id="1-相对路径"><a href="#1-相对路径" class="headerlink" title="1.相对路径"></a>1.相对路径</h1><ol>
+<li>资源和网页文件在同一文件夹中</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片名称"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>资源在网页文件的下一级文件夹中</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"文件夹名/图片名称"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>资源在网页文件的上一级文件夹中</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../图片名称"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>绝对路径一般不用</li>
+</ol>
+<h1 id="2-列表标签"><a href="#2-列表标签" class="headerlink" title="2.列表标签"></a>2.列表标签</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span>						//unordered list</span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>天下无敌<span class="tag">&lt;/<span class="name">li</span>&gt;</span>		//ul标签中只能放li标签</span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>唯我独尊<span class="tag">&lt;/<span class="name">li</span>&gt;</span>		//li标签中可以放入任意标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span>					//ordered list</span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>身体<span class="tag">&lt;/<span class="name">li</span>&gt;</span>		//1.身体</span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>soal<span class="tag">&lt;/<span class="name">li</span>&gt;</span>	//2.soal</span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span>						//definition list</span><br><span class="line">        <span class="tag">&lt;<span class="name">dt</span>&gt;</span>kings<span class="tag">&lt;/<span class="name">dt</span>&gt;</span>		//kings </span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>power<span class="tag">&lt;/<span class="name">dd</span>&gt;</span>		//		power</span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>money<span class="tag">&lt;/<span class="name">dd</span>&gt;</span>     	//		money</span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-表格结构"><a href="#2-表格结构" class="headerlink" title="2.表格结构"></a>2.表格结构</h1><h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span>							//表格标签	，table标签中只能放tr标签</span><br><span class="line">       <span class="tag">&lt;<span class="name">tr</span>&gt;</span>						//行标签		，tr标签中只能放td标签	table row</span><br><span class="line">           <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">td</span>&gt;</span>				//单元格标签		，td标签中可以放任意标签</span><br><span class="line">           <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">td</span>&gt;</span>								//table data</span><br><span class="line">           <span class="tag">&lt;<span class="name">td</span>&gt;</span>籍贯<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">td</span>&gt;</span>住址<span class="tag">&lt;/<span class="name">td</span>&gt;</span>				//</span><br><span class="line">       <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>含义</th>
+<th>常用属性值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>border</td>
+<td>边框</td>
+<td>默认为0</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>单元格之间的间隙</td>
+<td>默认为2</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>文字和边框之间的距离</td>
+<td>默认为1</td>
+</tr>
+<tr>
+<td>width</td>
+<td>宽度</td>
+<td></td>
+</tr>
+<tr>
+<td>height</td>
+<td>高度</td>
+<td></td>
+</tr>
+<tr>
+<td>align</td>
+<td>表格对齐方式</td>
+<td>left，center，right</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">cellpadding</span>=<span class="string">"5"</span> <span class="attr">width</span>=<span class="string">"666"</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">td</span>&gt;</span>籍贯<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">td</span>&gt;</span>住址<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="表头标签"><a href="#表头标签" class="headerlink" title="表头标签"></a>表头标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">cellpadding</span>=<span class="string">"5"</span> <span class="attr">width</span>=<span class="string">"666"</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span>			//表头标签	table header</span><br><span class="line">           <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">th</span>&gt;</span>籍贯<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">th</span>&gt;</span>住址<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="表格标题标签"><a href="#表格标题标签" class="headerlink" title="表格标题标签"></a>表格标题标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">caption</span>&gt;</span>王者荣耀英雄表<span class="tag">&lt;/<span class="name">caption</span>&gt;</span>		//表格标题标签</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="thead和tbody"><a href="#thead和tbody" class="headerlink" title="thead和tbody"></a>thead和tbody</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">cellpadding</span>=<span class="string">"5"</span> <span class="attr">width</span>=<span class="string">"666"</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">thead</span>&gt;</span>			//头部分</span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>籍贯<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>住址<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">tbody</span>&gt;</span>			//主体部分</span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>龙王<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>22 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>泰山<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>天下<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="合并单元格"><a href="#合并单元格" class="headerlink" title="合并单元格"></a>合并单元格</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">cellpadding</span>=<span class="string">"5"</span> <span class="attr">width</span>=<span class="string">"666"</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">thead</span>&gt;</span>			//头部分</span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">td</span>&gt;</span>			//跨行合并，两个合成一个</span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span>籍贯<span class="tag">&lt;/<span class="name">td</span>&gt;</span>			//跨列合并，两个合成一个</span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">       </span><br><span class="line">        <span class="tag">&lt;<span class="name">tbody</span>&gt;</span>			//主体部分</span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>龙王<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>泰山<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-浏览器审查html元素"><a href="#3-浏览器审查html元素" class="headerlink" title="3.浏览器审查html元素"></a>3.浏览器审查html元素</h1><p><strong>浏览器鼠标右键检查</strong></p>
+<h1 id="4-表单标签"><a href="#4-表单标签" class="headerlink" title="4.表单标签"></a>4.表单标签</h1><ol>
+<li><h2 id="表单控件"><a href="#表单控件" class="headerlink" title="表单控件"></a>表单控件</h2></li>
+</ol>
+<h3 id="input表单控件"><a href="#input表单控件" class="headerlink" title="input表单控件"></a>input表单控件</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> /&gt;</span>		//单标签</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>text</td>
+<td>单行文本输入框</td>
+</tr>
+<tr>
+<td></td>
+<td>password</td>
+<td>密码输入框</td>
+</tr>
+<tr>
+<td></td>
+<td>radio</td>
+<td>单选按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>checkbox</td>
+<td>复选框</td>
+</tr>
+<tr>
+<td></td>
+<td>button</td>
+<td>普通按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>submit</td>
+<td>提交按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>reset</td>
+<td>重置按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>image</td>
+<td>图像形式的提交按钮</td>
+</tr>
+<tr>
+<td></td>
+<td>file</td>
+<td>文件域</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>由用户自定义</td>
+<td>控件的名称</td>
+</tr>
+<tr>
+<td>value</td>
+<td>由用户自定义</td>
+<td>input控件中的默认文本值</td>
+</tr>
+<tr>
+<td>size</td>
+<td>正整数</td>
+<td>input控件在页面中的显示宽度</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>checked</td>
+<td>定义选择控件中默认被选中的项</td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td>正整数</td>
+<td>控件允许输入的最多字符数</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"用户名"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   密<span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span>码: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">maxlength</span>=<span class="string">"8"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   性<span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span>别: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span>&gt;</span>女 </span><br><span class="line">                   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>&gt;</span>男 </span><br><span class="line">                   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span>&gt;</span>未知<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   爱<span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span>好: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span>&gt;</span> 足球</span><br><span class="line">                   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span>&gt;</span> 篮球</span><br><span class="line">                   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>&gt;</span> 乒乓球</span><br><span class="line">                   <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">   搜<span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span>索: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"搜索啥"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">   </span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交表单"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span> <span class="attr">value</span>=<span class="string">"重置表单"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"1111.png"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> &gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> &gt;</span> 用户名 ：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"king"</span>&gt;</span> 用户老家： <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"king"</span>&gt;</span> <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">//定个位</span><br></pre></td></tr></table></figure>
+
+<h2 id="textarea-文本域"><a href="#textarea-文本域" class="headerlink" title="textarea(文本域)"></a>textarea(文本域)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"10"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">//cols和rows		一般不用</span><br></pre></td></tr></table></figure>
+
+<h2 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span> &gt;</span>请选择省份<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>陕西<span class="tag">&lt;/<span class="name">option</span>&gt;</span>		//默认选中项</span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>山西<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>河南<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>河北<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-表单域"><a href="#2-表单域" class="headerlink" title="2.表单域"></a>2.表单域</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"url地址"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">name</span>=<span class="string">"king"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>密码: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pwd"</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span> <span class="attr">value</span>=<span class="string">"重置"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>action</td>
+<td>由用户自定义</td>
+<td>URL地址</td>
+</tr>
+<tr>
+<td>method</td>
+<td>get，post</td>
+<td>提交方式</td>
+</tr>
+<tr>
+<td>name</td>
+<td>由用户自定义</td>
+<td>表单域名称</td>
+</tr>
+</tbody></table>
+<p><strong>get和post</strong></p>
+<p><strong>get</strong>速度快，不安全，不能用于提交密码</p>
+<p><strong>post</strong>安全，速度慢</p>
+<h1 id="5-HTML5新增标签"><a href="#5-HTML5新增标签" class="headerlink" title="5.HTML5新增标签"></a>5.HTML5新增标签</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>定义页眉<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span>定义页脚<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span>定义导航栏<span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span>定义文章<span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span>定义区域<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span>定义侧边栏<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="datalist标签"><a href="#datalist标签" class="headerlink" title="datalist标签"></a>datalist标签</h2><ul>
+<li>​    datalist标签和input标签搭配使用</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>  <span class="attr">list</span>=<span class="string">"star"</span>&gt;</span>		//list和id</span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"star"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"刘德华"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"刘若英"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"刘晓庆"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="fieldset标签"><a href="#fieldset标签" class="headerlink" title="fieldset标签"></a>fieldset标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">legend</span>&gt;</span>登陆界面<span class="tag">&lt;/<span class="name">legend</span>&gt;</span>						//legend</span><br><span class="line">        用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        密<span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span>码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-input标签新增type-属性值"><a href="#6-input标签新增type-属性值" class="headerlink" title="6.input标签新增type 属性值"></a>6.input标签新增type 属性值</h1><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>email</td>
+<td>输入邮箱格式</td>
+</tr>
+<tr>
+<td></td>
+<td>tel</td>
+<td>输入手机号码格式</td>
+</tr>
+<tr>
+<td></td>
+<td>url</td>
+<td>输入url格式</td>
+</tr>
+<tr>
+<td></td>
+<td>number</td>
+<td>输入数字格式</td>
+</tr>
+<tr>
+<td></td>
+<td>search</td>
+<td>搜索框</td>
+</tr>
+<tr>
+<td></td>
+<td>range</td>
+<td>滑块</td>
+</tr>
+<tr>
+<td></td>
+<td>time</td>
+<td>小时 和 分钟</td>
+</tr>
+<tr>
+<td></td>
+<td>date</td>
+<td>年月日</td>
+</tr>
+<tr>
+<td></td>
+<td>month</td>
+<td>月 和 年</td>
+</tr>
+<tr>
+<td></td>
+<td>week</td>
+<td>星期 和 年</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        邮箱：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        手机：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        数字：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        搜索：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        URL：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        滑块：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        时间：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"time"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="7-input标签新增属性"><a href="#7-input标签新增属性" class="headerlink" title="7.input标签新增属性"></a>7.input标签新增属性</h1><table>
+<thead>
+<tr>
+<th>属性</th>
+<th align="left">属性值</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>placeholder</td>
+<td align="left">由用户自定义</td>
+<td align="center">框中 浅淡 提示文字 输入后自动消失</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td align="left">autofocus 或 无</td>
+<td align="center">光标自动定位到输入框中  方便直接输入</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td align="left">无</td>
+<td align="center">多文件上传</td>
+</tr>
+<tr>
+<td>autocomplete</td>
+<td align="left">on  ，off  或    无</td>
+<td align="center">自动记录输入过的信息</td>
+</tr>
+<tr>
+<td>required</td>
+<td align="left">无</td>
+<td align="center">规定某框为  必填项</td>
+</tr>
+<tr>
+<td>accesskey</td>
+<td align="left">某个字母</td>
+<td align="center">ALT + 字母，快速定位到某框</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入用户名"</span> <span class="attr">autofocus</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">多文件上传：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">multiple</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">autocomplete</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">												//autocomplete标签必须有 name 和 提交按钮</span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">昵称： <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">required</span> <span class="attr">accesskey</span>=<span class="string">"s"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>例子——学生档案</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">legend</span>&gt;</span>学生档案<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">           <span class="tag">&lt;<span class="name">label</span>&gt;</span>姓名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入学生姓名"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span>性别： <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>&gt;</span>男 <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span>&gt;</span> 女<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">           <span class="tag">&lt;<span class="name">label</span>&gt;</span>手机号：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> &gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span>&gt;</span>所属学院：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">list</span>=<span class="string">"school"</span> <span class="attr">placeholder</span>=<span class="string">"请选择语言"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"school"</span>&gt;</span></span><br><span class="line">                </span><br><span class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"java"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"c++"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"php"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"python"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;/<span class="name">datalist</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span>出生日期：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span>成绩：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="8-emded标签"><a href="#8-emded标签" class="headerlink" title="8.emded标签"></a>8.emded标签</h1><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">height</td>
+<td align="left"></td>
+<td align="left">设置嵌入内容的高度。</td>
+</tr>
+<tr>
+<td align="left">width</td>
+<td align="left"></td>
+<td align="left">设置嵌入内容的宽度。</td>
+</tr>
+<tr>
+<td align="left">src</td>
+<td align="left">url</td>
+<td align="left">嵌入内容的 URL。</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">type</td>
+<td align="left">定义嵌入内容的类型。</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">src</span>=<span class="string">"helloworld.swf"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="9-audio标签"><a href="#9-audio标签" class="headerlink" title="9.audio标签"></a>9.audio标签</h1><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">autoplay</td>
+<td align="left">autoplay</td>
+<td align="center">自动播放</td>
+</tr>
+<tr>
+<td align="left">controls</td>
+<td align="left">controls</td>
+<td align="center">如果出现该属性，则向用户显示音频控件（比如播放/暂停按钮）。</td>
+</tr>
+<tr>
+<td align="left">loop</td>
+<td align="left">loop</td>
+<td align="center">重复播放</td>
+</tr>
+<tr>
+<td align="left">muted</td>
+<td align="left">muted</td>
+<td align="center">静音</td>
+</tr>
+<tr>
+<td align="left">preload</td>
+<td align="left">auto，metadata 或none</td>
+<td align="center">规定当网页加载时，音频是否默认被加载以及如何被加载。</td>
+</tr>
+<tr>
+<td align="left">src</td>
+<td align="left"><em>URL</em></td>
+<td align="center">规定音频文件的 URL。</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"下山.mp3"</span> <span class="attr">autoplay</span> <span class="attr">controls</span> <span class="attr">loop</span> &gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>若属性和其属性值相同，则可以直接写   属性名</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">autoplay</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"下山.mp3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"要不要买菜 - 火红的萨日朗.flac"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="10-video标签"><a href="#10-video标签" class="headerlink" title="10.video标签"></a>10.video标签</h1><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">autoplay</td>
+<td align="left">autoplay</td>
+<td align="center">自动播放</td>
+</tr>
+<tr>
+<td align="left">controls</td>
+<td align="left">controls</td>
+<td align="center">如果出现该属性，则向用户显示视频控件（比如播放/暂停按钮）。</td>
+</tr>
+<tr>
+<td align="left">loop</td>
+<td align="left">loop</td>
+<td align="center">重复播放</td>
+</tr>
+<tr>
+<td align="left">muted</td>
+<td align="left">muted</td>
+<td align="center">静音</td>
+</tr>
+<tr>
+<td align="left">preload</td>
+<td align="left">auto，metadata 或none</td>
+<td align="center">规定当网页加载时，视频是否默认被加载以及如何被加载。</td>
+</tr>
+<tr>
+<td align="left">src</td>
+<td align="left"><em>URL</em></td>
+<td align="center">规定视频文件的 URL。</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span> <span class="attr">autoplay</span> <span class="attr">controls</span> &gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">autoplay</span> <span class="attr">controls</span> &gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test1.mp4"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>J-List-Two</title>
+    <url>/2020/01/28/J-List-Two/</url>
+    <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span></span><br><span class="line"><span class="function">    	<span class="comment">//new后面必须跟构造函数</span></span></span><br><span class="line"><span class="function">        Car c1</span>=<span class="keyword">new</span> Car();</span><br><span class="line">    	c1.run();</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">    String color;</span><br><span class="line">    <span class="keyword">int</span> tires;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	<span class="comment">//Car c1=new Car();	无限递归    </span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">(String color)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.color= color;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Car <span class="title">Car</span><span class="params">(String color)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.color= color;</span><br><span class="line">        Car c= <span class="keyword">new</span> Car();</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"run...."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-内部类"><a href="#2-内部类" class="headerlink" title="2.内部类"></a>2.内部类</h1><ol>
+<li><p>定义在类内部的类, 称为内部类</p>
+</li>
+<li><p>内部类可以在类成员位置上</p>
+<p>​    编译时生成的类：外部类名$内部类名，例如 Benz$Engine.class</p>
+</li>
+<li><p>内部类可以在方法内定义(局部变量位置上)</p>
+<p>​    编译生成的类：外部类名1内部类名，例如 Benz$1Engine.class</p>
+</li>
+<li><p>内部类访问局部变量时，不能对局部变量进行赋值。局部变量</p>
+</li>
+</ol>
+<h2 id="1-1"><a href="#1-1" class="headerlink" title="1."></a>1.</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InnerClassDemo</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span> </span>&#123;</span><br><span class="line">    	Benz benz=<span class="keyword">new</span> Benz();</span><br><span class="line">        benz.run();</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Benz</span></span>&#123;</span><br><span class="line">    String color;</span><br><span class="line">    <span class="keyword">int</span> tires;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Engine e=<span class="keyword">new</span> Engine();</span><br><span class="line">        e.fire(<span class="string">"key9999"</span>);</span><br><span class="line">        System.out.println(<span class="string">"run...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//内部类</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Engine</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fire</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"key ready: "</span>+key);</span><br><span class="line">            System.out.println(<span class="string">"fire...."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InnerClassDemo</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span> </span>&#123;</span><br><span class="line">    	Benz benz=<span class="keyword">new</span> Benz();</span><br><span class="line">        benz.run(<span class="string">"key888"</span>);</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Benz</span></span>&#123;</span><br><span class="line">    String color;</span><br><span class="line">    <span class="keyword">int</span> tires;</span><br><span class="line">    <span class="comment">//int key=888；	隐藏了final</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">        <span class="comment">//内部类</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Engine</span></span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fire</span><span class="params">()</span></span>&#123;</span><br><span class="line">               <span class="comment">// key=999;	不可以</span></span><br><span class="line">                System.out.println(<span class="string">"key ready: "</span>+key);</span><br><span class="line">                System.out.println(<span class="string">"fire...."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Engine e =<span class="keyword">new</span> Engine;</span><br><span class="line">    	e.fire();</span><br><span class="line">        System.out.println(<span class="string">"run..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InnerDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">		Benz.Engine a=<span class="keyword">new</span> Benz.Engine;</span><br><span class="line">        a.fire();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Benz</span></span>&#123;</span><br><span class="line">    <span class="comment">//内部类</span></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Engine</span></span>&#123;		<span class="comment">//要为静态类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fire</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"fire..."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-抽象类"><a href="#3-抽象类" class="headerlink" title="3.抽象类"></a>3.抽象类</h1><ol>
+<li><p>抽象方法：没有函数体的方法，使用abstract修饰</p>
+</li>
+<li><p>抽象方法必须在抽象类中</p>
+</li>
+<li><p>抽象类不能实例化，但抽象类有构造函数</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AbstractClassDemo1</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//不能实例化Animal</span></span><br><span class="line">        Dog a=<span class="keyword">new</span> Dog();</span><br><span class="line">		a.cry();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> publci <span class="keyword">void</span> <span class="title">cry</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="comment">//实现抽象方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cry</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"汪汪汪。。。。"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-非法修饰组合"><a href="#4-非法修饰组合" class="headerlink" title="4.非法修饰组合"></a>4.非法修饰组合</h1><ol>
+<li><p>private+abstract</p>
+</li>
+<li><p>final+abstract</p>
+<p><strong>private+static 是合法的</strong></p>
+</li>
+</ol>
+<h1 id="5-面向接口编程"><a href="#5-面向接口编程" class="headerlink" title="5.面向接口编程"></a>5.面向接口编程</h1><ol>
+<li><p>能够降低耦合（交互）度</p>
+</li>
+<li><p>类和接口之间是实现关系</p>
+</li>
+<li><p>类可以实现多个接口</p>
+</li>
+<li><p>接口可以多重继承</p>
+<h2 id="例子一"><a href="#例子一" class="headerlink" title="例子一"></a>例子一</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo</span></span>&#123;</span><br><span class="line">    Star a=<span class="keyword">new</span> Star();</span><br><span class="line">    a.handsome();</span><br><span class="line">    a.rich();</span><br><span class="line">    </span><br><span class="line">    RichWomen c=<span class="keyword">new</span> RichWomen();</span><br><span class="line">    c.marry(a);</span><br><span class="line">    </span><br><span class="line">    Oboe d=<span class="keyword">new</span> Oboe();</span><br><span class="line">    c.marry(d);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Handsome</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handsome</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Rich</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rich</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">HR</span> <span class="keyword">extends</span> <span class="title">Handsome</span>,<span class="title">Rich</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> handsome&#123;</span><br><span class="line">        System.out.println(<span class="string">"帅气"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rich</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.prinln(<span class="string">"有钱"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Star</span> <span class="keyword">implements</span> <span class="title">Handsome</span>,<span class="title">Rich</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> handsome&#123;</span><br><span class="line">        System.out.println(<span class="string">"帅气"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rich</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.prinln(<span class="string">"有钱"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RichWomen</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">marry</span><span class="params">(Handsome b)</span></span>&#123;</span><br><span class="line">        b.handsome();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Oboe</span> <span class="keyword">implements</span> <span class="title">Handsome</span></span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">void</span> handsome&#123;</span><br><span class="line">        System.out.println(<span class="string">"白面小生"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例子二"><a href="#例子二" class="headerlink" title="例子二"></a>例子二</h2></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo2</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//创建usb设备</span></span><br><span class="line">        MP3 m=<span class="keyword">new</span> MP3();</span><br><span class="line">        Fan f=<span class="keyword">new</span> Fan();</span><br><span class="line">        <span class="comment">//创建电脑</span></span><br><span class="line">        Computer c=<span class="keyword">new</span> Computer();</span><br><span class="line">        c.insert(f);</span><br><span class="line">        c.insert(m);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">USB</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MP3</span> <span class="keyword">implements</span> <span class="title">USB</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"啦啦啦。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fan</span> <span class="keyword">implements</span> <span class="title">USB</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"凉快。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer</span>  </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(USB usb)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"USB接口就绪："</span>);</span><br><span class="line">        usb.play();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例子三"><a href="#例子三" class="headerlink" title="例子三"></a>例子三</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InterfaceDemo3</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span></span>&#123;</span><br><span class="line">        Eater e=<span class="keyword">new</span> Eater();</span><br><span class="line">        e.eat();</span><br><span class="line">        RichMan r=<span class="keyword">new</span> RichMen();</span><br><span class="line">        r.feed();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cry</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> <span class="keyword">implements</span> <span class="title">Eatable</span>,<span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cry</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"汪汪汪。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"好吃，肉真香"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">meng</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"萌萌哒"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Eatable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">meng</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Eater</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">(Eatable e)</span></span>&#123;</span><br><span class="line">        e.eat();</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RichMan</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">feed</span><span class="params">(Pet p)</span></span>&#123;</span><br><span class="line">        p.meng();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-抽象类-和接口的关系"><a href="#5-抽象类-和接口的关系" class="headerlink" title="5.抽象类 和接口的关系"></a>5.抽象类 和接口的关系</h1><table>
+<thead>
+<tr>
+<th>抽象类</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继承关系，单重</td>
+<td>实现关系，可多重</td>
+</tr>
+<tr>
+<td>is a</td>
+<td>like a</td>
+</tr>
+<tr>
+<td>可有非抽象方法</td>
+<td>全是抽象方法</td>
+</tr>
+</tbody></table>
+<h1 id="6-多态"><a href="#6-多态" class="headerlink" title="6.多态"></a>6.多态</h1><ol>
+<li>继承和实现是多态的前提</li>
+<li>多态即：从不同角度观察同一个对象</li>
+<li>类的继承可以有方法的重写，不可有成员变量的覆盖</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PolyDemo1</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">        Animal a1=<span class="keyword">new</span> Dog();</span><br><span class="line">        a1.cry();</span><br><span class="line">        <span class="comment">//a1.meng();	error</span></span><br><span class="line">        </span><br><span class="line">        Dog d1=<span class="keyword">new</span> Dog();</span><br><span class="line">        Animal a2=d1;</span><br><span class="line">        a2.cry();</span><br><span class="line">        <span class="comment">//a2.meng();	error</span></span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cry</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cry</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"汪汪汪。。。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">meng</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"萌萌哒"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">PolyDemo2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">		Jing8 jing8=<span class="keyword">new</span> Jing8();</span><br><span class="line">        Dog d1=jing8;</span><br><span class="line">		</span><br><span class="line">        d1.cry();</span><br><span class="line">        jing8.cry();</span><br><span class="line">        </span><br><span class="line">        System.out.println(d1.name);</span><br><span class="line">        System.out.println(jing8.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cry</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">	String name=<span class="string">"小白"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cry</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"wwww"</span>)；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Jing8</span> <span class="keyword">extends</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">	String name=<span class="string">"打黑"</span>;</span><br><span class="line">    System.out.println(<span class="string">"i.m jing8,wwww"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Car a =<span class="keyword">new</span> Benz();</span><br><span class="line">		System.out.println(a.getColor());<span class="comment">//输出nothing </span></span><br><span class="line">        								<span class="comment">//Benz中有getColor重写 ，则输出black</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String color=<span class="string">"nothing"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getColor</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Benz</span> <span class="keyword">extends</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String color=<span class="string">"black"</span>;</span><br><span class="line">    <span class="comment">//public String getColor()&#123;</span></span><br><span class="line">    <span class="comment">//   return this.color;</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-匿名内部类对象"><a href="#8-匿名内部类对象" class="headerlink" title="8,匿名内部类对象"></a>8,匿名内部类对象</h1><h2 id="例子一-1"><a href="#例子一-1" class="headerlink" title="例子一"></a>例子一</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoName1</span></span>&#123;</span><br><span class="line">    RichWomen c=<span class="keyword">new</span> RichWomen();</span><br><span class="line">    c.marry(<span class="keyword">new</span> Handsoe()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handsome</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"很帅！！！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//帅气</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Handsome</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handsome</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//富婆</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RichWomen</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">marry</span><span class="params">(Handsome b)</span></span>&#123;</span><br><span class="line">        b.handsome();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例子二-1"><a href="#例子二-1" class="headerlink" title="例子二"></a>例子二</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoName2</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">    	Pet a=<span class="keyword">new</span> Pet()&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">meng</span><span class="params">()</span></span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"萌萌哒"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"跑起来"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        a.meng();</span><br><span class="line">        <span class="comment">//a.run();	error</span></span><br><span class="line">        </span><br><span class="line">        Pet b=<span class="keyword">new</span> Dog()&#123;</span><br><span class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"跑起来"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        b.meng();</span><br><span class="line">        <span class="comment">//b.run();	error</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">meng</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">meng</span><span class="params">()</span></span>&#123;</span><br><span class="line">   		System.out.println(<span class="string">"萌萌小狗狗"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例子三——适配器模式"><a href="#例子三——适配器模式" class="headerlink" title="例子三——适配器模式"></a>例子三——适配器模式</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoName3</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">    	Button b1=<span class="keyword">new</span> Button();</span><br><span class="line">        b1.addListener(<span class="keyword">new</span> MouseAdapter()&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">()</span></span>&#123;</span><br><span class="line">        		System.out.println(<span class="string">"单击"</span>);</span><br><span class="line">   			 &#125;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDbClick</span><span class="params">()</span></span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"双击"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        b1.onClick();</span><br><span class="line">        b1.onDbClick();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//方法链编程</span></span><br><span class="line">        <span class="keyword">new</span> Button.addlistener(<span class="keyword">new</span> MouseAdapter()&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">()</span></span>&#123;</span><br><span class="line">        		System.out.println(<span class="string">"单击"</span>);</span><br><span class="line">   			 &#125;</span><br><span class="line">        &#125;).onClick;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Button</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Mouselistener listener;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addListener</span><span class="params">(Mouselistener listener)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.listener=listener;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//public Button addListener(Mouselistener listener)&#123;</span></span><br><span class="line">    <span class="comment">//   this.listener=listener;</span></span><br><span class="line">    <span class="comment">//		return this;</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">()</span></span>&#123;</span><br><span class="line">        listener.onClick();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDbClick</span><span class="params">()</span></span>&#123;</span><br><span class="line">        listener.onDbClick();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Mouselistener</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDbClick</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rightClick</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">MouseAdapter</span> <span class="keyword">implements</span> <span class="title">Mouselistener</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rightClick</span><span class="params">()</span></span>&#123;&#125;								<span class="comment">//不常用的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>notice-hexo</title>
     <url>/2020/01/26/notice-hexo/</url>
     <content><![CDATA[<h1 id="1-新文章名称"><a href="#1-新文章名称" class="headerlink" title="1.新文章名称"></a>1.新文章名称</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: best student			&#x2F;&#x2F;名称中有空格 ，错误</span><br><span class="line">title: best-student 		&#x2F;&#x2F;正确</span><br></pre></td></tr></table></figure>
