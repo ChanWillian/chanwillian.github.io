@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-circle.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Pt Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="01.字符串处理函数gets() 和  puts()函数12345char str[100];printf(&quot;请输入str: &quot;);gets(str);printf(&quot;str &#x3D; %s\n&quot;, str);puts(str);		&#x2F;&#x2F;在输出完成后自动输出一个&#39;\n&#39;。   gets(str)与scanf(“%s”,str)的区别： gets(str)允许输入的字符串含有空格 scanf(“%s”,s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C-List-3">
+<meta property="og:url" content="http://yoursite.com/2020/03/28/C/List-03_C%E8%AF%AD%E8%A8%80/">
+<meta property="og:site_name" content="The Very">
+<meta property="og:description" content="01.字符串处理函数gets() 和  puts()函数12345char str[100];printf(&quot;请输入str: &quot;);gets(str);printf(&quot;str &#x3D; %s\n&quot;, str);puts(str);		&#x2F;&#x2F;在输出完成后自动输出一个&#39;\n&#39;。   gets(str)与scanf(“%s”,str)的区别： gets(str)允许输入的字符串含有空格 scanf(“%s”,s">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0065EZzEly1gdmkbk3ubqj30lc0fzjsm.jpg">
+<meta property="article:published_time" content="2020-03-28T00:39:29.000Z">
+<meta property="article:modified_time" content="2020-09-17T08:21:55.981Z">
+<meta property="article:author" content="Chan Willian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0065EZzEly1gdmkbk3ubqj30lc0fzjsm.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/28/C/List-03_C语言/"/>
+
+
+
+
+
+  <title>C-List-3 | The Very</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="The Very" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+ 
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Very</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-随笔">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/C/List-03_C%E8%AF%AD%E8%A8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chan Willian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Very">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C-List-3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-28T08:39:29+08:00">
+                2020-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E7%B1%BB/" itemprop="url" rel="index">
+                    <span itemprop="name">分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  985
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="01-字符串处理函数"><a href="#01-字符串处理函数" class="headerlink" title="01.字符串处理函数"></a>01.字符串处理函数</h1><h3 id="gets-和-puts-函数"><a href="#gets-和-puts-函数" class="headerlink" title="gets() 和  puts()函数"></a>gets() 和  puts()函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"请输入str: "</span>);</span><br><span class="line">gets(str);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"str = %s\n"</span>, str);</span><br><span class="line"><span class="built_in">puts</span>(str);		<span class="comment">//在输出完成后自动输出一个'\n'。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>gets(str)与scanf(“%s”,str)的区别</strong>：<ul>
+<li>gets(str)允许输入的字符串含有空格</li>
+<li>scanf(“%s”,str)不允许含有空格</li>
+</ul>
+</li>
+</ul>
+<p>解决区别：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%[^\n]"</span>,str);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：由于scanf()和gets()无法知道字符串s大小，必须遇到<strong>换行符或读到文件结尾</strong>为止才接收输入，因此容易导致字符<strong>数组越界</strong>(缓冲区溢出)的情况。</li>
+</ul>
+<h3 id="fgets-和fputs-函数"><a href="#fgets-和fputs-函数" class="headerlink" title="fgets()和fputs()函数"></a>fgets()和fputs()函数</h3><ul>
+<li>用于文本编辑</li>
+</ul>
+<h4 id="fgets函数"><a href="#fgets函数" class="headerlink" title="fgets函数"></a>fgets函数</h4><ul>
+<li>性质：</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/0065EZzEly1gdmkbk3ubqj30lc0fzjsm.jpg" alt="01fgets.png"></p>
+<p><strong>fputs()函数，同样具有这个性质。</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">		fgets(str, <span class="keyword">sizeof</span>(str), <span class="built_in">stdin</span>);</span><br><span class="line"><span class="comment">//参数：	字符串指针，指针大小，输入流</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, str);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="fputs函数"><a href="#fputs函数" class="headerlink" title="fputs函数"></a>fputs函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> ch[<span class="number">100</span>];</span><br><span class="line">	fgets(ch, <span class="number">100</span>, <span class="built_in">stdin</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">puts</span>(ch, <span class="built_in">stdout</span>);</span><br><span class="line"><span class="comment">//参数：	字符串指针，输出流</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="printf-和scanf-函数"><a href="#printf-和scanf-函数" class="headerlink" title="printf()和scanf()函数"></a>printf()和scanf()函数</h3><h4 id="scanf-函数"><a href="#scanf-函数" class="headerlink" title="scanf()函数"></a>scanf()函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span></span><br><span class="line">    <span class="keyword">char</span> arr[<span class="number">100</span>];</span><br><span class="line">	<span class="comment">//接收换行结束，可以接受空格</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%[^\n]"</span>, arr);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, arr);</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">	<span class="comment">//在scanf 获取数据时，建议不要添加任何字符   空格除外</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</span><br><span class="line">	<span class="comment">//sacnf("a=%d",a);   在输入数据时，比较麻烦  需要这样 a=2</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span></span><br><span class="line">    <span class="comment">//限制字符的宽度</span></span><br><span class="line">	<span class="keyword">int</span> a, b, c;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%2d%3d%4d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,a,b,c);</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span></span><br><span class="line">    <span class="comment">//屏蔽某种数据类型</span></span><br><span class="line">	<span class="keyword">char</span> arr[<span class="number">99</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%*d%s"</span>, arr);		<span class="comment">//输入1122abc</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, arr);			<span class="comment">//输出abc</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="printf-函数"><a href="#printf-函数" class="headerlink" title="printf()函数"></a>printf()函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%4d\n"</span>, <span class="number">123</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%4d\n"</span>, <span class="number">123</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%04d\n"</span>, <span class="number">123</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, <span class="number">12.9</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%4s\n"</span>, <span class="string">"ab"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.4s"</span>, <span class="string">"abcdef"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4strlen-函数和-strcpy-函数"><a href="#1-4strlen-函数和-strcpy-函数" class="headerlink" title="1.4strlen()函数和 strcpy()函数"></a>1.4strlen()函数和 strcpy()函数</h3><h4 id="strlen-函数"><a href="#strlen-函数" class="headerlink" title="strlen()函数"></a>strlen()函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[] = <span class="string">"Hello World"</span>;</span><br><span class="line"><span class="keyword">int</span> n = <span class="built_in">strlen</span>(str);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"useful %d\n"</span>, n);</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>, <span class="keyword">sizeof</span>(str));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> str[] = <span class="string">"abcdefg"</span>;</span><br><span class="line"><span class="keyword">int</span> n = <span class="built_in">strlen</span>(str);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"n = %d\n"</span>, n);</span><br></pre></td></tr></table></figure>
+
+<h4 id="strcpy-函数"><a href="#strcpy-函数" class="headerlink" title="strcpy()函数"></a>strcpy()函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">char</span> arr[] = <span class="string">"hello world"</span>;</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">120</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(str, arr);</span><br><span class="line"><span class="comment">//参数： 目标字符数组	源字符数组</span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, str);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strncpy</span>()</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> arr[] = <span class="string">"hello world"</span>;</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">20</span>];</span><br><span class="line">	<span class="built_in">strncpy</span>(str, arr, <span class="number">5</span>);</span><br><span class="line"><span class="comment">//参数： 目标字符数组	源字符数组	字符长度</span></span><br><span class="line"><span class="comment">//notice：	复制的字符，不包括	“\0”  或者  0</span></span><br><span class="line"><span class="comment">//所以，需要</span></span><br><span class="line">	str[<span class="number">5</span>] = <span class="number">0</span>;</span><br><span class="line">	或者</span><br><span class="line">	str[<span class="number">5</span>] = <span class="string">"\0"</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-5strcat-函数和strmp-函数"><a href="#1-5strcat-函数和strmp-函数" class="headerlink" title="1.5strcat()函数和strmp()函数"></a>1.5strcat()函数和strmp()函数</h3><h4 id="strcat-函数"><a href="#strcat-函数" class="headerlink" title="strcat()函数"></a>strcat()函数</h4><ul>
+<li>将 arr2 字符串连接到 arr1 的尾部，<strong>“\0”也会追加过去</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> arr1[<span class="number">20</span>] = <span class="string">"hello"</span>;</span><br><span class="line">	<span class="keyword">char</span> arr2[] = <span class="string">"world"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">strcat</span>(arr1, <span class="string">" "</span>);</span><br><span class="line">	<span class="built_in">strcat</span>(arr1, arr2);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, arr1);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, arr2);</span><br><span class="line">    </span><br><span class="line"><span class="comment">//strncat()函数</span></span><br><span class="line">    </span><br><span class="line">	<span class="keyword">char</span> arr3[<span class="number">20</span>] = <span class="string">"hello"</span>;</span><br><span class="line">	<span class="keyword">char</span> arr4[] = <span class="string">"world"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">strcat</span>(arr3, <span class="string">" "</span>);</span><br><span class="line">	<span class="built_in">strncat</span>(arr4, arr2, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, arr3);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, arr4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="strcmp-函数"><a href="#strcmp-函数" class="headerlink" title="strcmp()函数"></a>strcmp()函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> arr1[<span class="number">20</span>] = <span class="string">"hello"</span>;</span><br><span class="line">	<span class="keyword">char</span> arr2[] = <span class="string">"hello"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> value = <span class="built_in">strcmp</span>(arr1, arr2);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,value);</span><br><span class="line"></span><br><span class="line"><span class="comment">//strncmp()函数</span></span><br><span class="line">    </span><br><span class="line">	<span class="keyword">char</span> arr3[] = <span class="string">"yes"</span>;</span><br><span class="line">	<span class="keyword">char</span> arr4[] = <span class="string">"yellow"</span>;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"sample"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"different"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-6-sprintf-函数和sscanf-函数"><a href="#1-6-sprintf-函数和sscanf-函数" class="headerlink" title="1.6 sprintf()函数和sscanf()函数"></a>1.6 sprintf()函数和sscanf()函数</h3><h4 id="sprintf-函数"><a href="#sprintf-函数" class="headerlink" title="sprintf()函数"></a>sprintf()函数</h4><h4 id="sscanf-函数"><a href="#sscanf-函数" class="headerlink" title="sscanf()函数"></a>sscanf()函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> arr1[] = <span class="string">"hello"</span>;</span><br><span class="line">	<span class="keyword">char</span> arr2[] = <span class="string">"521"</span>;</span><br><span class="line">	<span class="keyword">char</span> dest[<span class="number">100</span>];</span><br><span class="line">	<span class="built_in">sprintf</span>(dest, <span class="string">"%s %s"</span>, arr1, arr2);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, dest);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> b;</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">	<span class="keyword">char</span> dest2[] = <span class="string">"1+2="</span>;</span><br><span class="line">	<span class="keyword">char</span> dest3[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">sscanf</span>(dest2, <span class="string">"%d+%d="</span>, &amp;b,&amp;a);</span><br><span class="line">	<span class="built_in">sprintf</span>(dest3, <span class="string">"%d+%d=%d"</span>, b, a, a + b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, dest3);</span><br><span class="line">	<span class="comment">//printf("%d+%d=%d", b, a, b + a);</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-7strchr-函数和strstr-函数"><a href="#1-7strchr-函数和strstr-函数" class="headerlink" title="1.7strchr()函数和strstr()函数"></a>1.7strchr()函数和strstr()函数</h3><h4 id="strchr-函数"><a href="#strchr-函数" class="headerlink" title="strchr()函数"></a>strchr()函数</h4><h4 id="strstr-函数"><a href="#strstr-函数" class="headerlink" title="strstr()函数"></a>strstr()函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> arr1[] = <span class="string">"hello wrold"</span>;</span><br><span class="line">	<span class="keyword">char</span> *p = <span class="built_in">strchr</span>(arr1, <span class="string">'l'</span>);</span><br><span class="line">    <span class="keyword">if</span> (p1 != <span class="literal">NULL</span>)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"I Finded it "</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, p);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> arr2[] = <span class="string">"helloworld"</span>;</span><br><span class="line">	<span class="keyword">char</span>* p1 = <span class="built_in">strstr</span>(arr2, <span class="string">"lo"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, p1);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-8strtok-函数"><a href="#1-8strtok-函数" class="headerlink" title="1.8strtok()函数"></a>1.8strtok()函数</h3><h4 id="strtok-函数"><a href="#strtok-函数" class="headerlink" title="strtok()函数"></a>strtok()函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> arr[] = <span class="string">"averych@qq.com"</span>;</span><br><span class="line">	<span class="keyword">char</span>* p = strtok(arr, <span class="string">"@"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, p);</span><br><span class="line">	<span class="comment">//切割后原来的字符串会被破坏</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, arr);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> a[] = <span class="string">"www.baidu.com"</span>;</span><br><span class="line">    <span class="comment">//格式：先分割一次，接下来按照此规则，持续分割</span></span><br><span class="line">	<span class="keyword">char</span>* p1 = strtok(a, <span class="string">"."</span>);</span><br><span class="line">	<span class="keyword">while</span> (p1 != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, p1);</span><br><span class="line">		p1 = strtok(<span class="literal">NULL</span>, <span class="string">"."</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-9atoi-函数"><a href="#1-9atoi-函数" class="headerlink" title="1.9atoi()函数"></a>1.9atoi()函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="comment">//字符串中，数字前面不可以有非数字字符，例如hello 123456</span></span><br><span class="line">	<span class="keyword">char</span> arr[] = <span class="string">"3.141592653"</span>;</span><br><span class="line">	<span class="keyword">int</span> a = atoi(arr);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a);</span><br><span class="line">	<span class="comment">//atof似乎不起作用</span></span><br><span class="line">	<span class="keyword">double</span> b = atof(arr);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lf"</span>, b);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="02-函数"><a href="#02-函数" class="headerlink" title="02.函数"></a>02.函数</h1><h3 id="2-1函数的定义"><a href="#2-1函数的定义" class="headerlink" title="2.1函数的定义"></a>2.1函数的定义</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/27/C/List-02_C%E8%AF%AD%E8%A8%80/" rel="next" title="C-List-Two">
+                <i class="fa fa-chevron-left"></i> C-List-Two
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/14/JAVA/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="prev" title="JAVA/IDEA快捷键">
+                JAVA/IDEA快捷键 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80ODMxMC8yNDgwNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Chan Willian" />
+            
+              <p class="site-author-name" itemprop="name">Chan Willian</p>
+              <p class="site-description motion-element" itemprop="description">Less intersts, more interst</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ChanWillian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+  
+
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01-字符串处理函数"><span class="nav-number">1.</span> <span class="nav-text">01.字符串处理函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gets-和-puts-函数"><span class="nav-number">1.0.1.</span> <span class="nav-text">gets() 和  puts()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fgets-和fputs-函数"><span class="nav-number">1.0.2.</span> <span class="nav-text">fgets()和fputs()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fgets函数"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">fgets函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fputs函数"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">fputs函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#printf-和scanf-函数"><span class="nav-number">1.0.3.</span> <span class="nav-text">printf()和scanf()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scanf-函数"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">scanf()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#printf-函数"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">printf()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4strlen-函数和-strcpy-函数"><span class="nav-number">1.0.4.</span> <span class="nav-text">1.4strlen()函数和 strcpy()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#strlen-函数"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">strlen()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strcpy-函数"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">strcpy()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5strcat-函数和strmp-函数"><span class="nav-number">1.0.5.</span> <span class="nav-text">1.5strcat()函数和strmp()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#strcat-函数"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">strcat()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strcmp-函数"><span class="nav-number">1.0.5.2.</span> <span class="nav-text">strcmp()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-sprintf-函数和sscanf-函数"><span class="nav-number">1.0.6.</span> <span class="nav-text">1.6 sprintf()函数和sscanf()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sprintf-函数"><span class="nav-number">1.0.6.1.</span> <span class="nav-text">sprintf()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sscanf-函数"><span class="nav-number">1.0.6.2.</span> <span class="nav-text">sscanf()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7strchr-函数和strstr-函数"><span class="nav-number">1.0.7.</span> <span class="nav-text">1.7strchr()函数和strstr()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#strchr-函数"><span class="nav-number">1.0.7.1.</span> <span class="nav-text">strchr()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strstr-函数"><span class="nav-number">1.0.7.2.</span> <span class="nav-text">strstr()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8strtok-函数"><span class="nav-number">1.0.8.</span> <span class="nav-text">1.8strtok()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#strtok-函数"><span class="nav-number">1.0.8.1.</span> <span class="nav-text">strtok()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9atoi-函数"><span class="nav-number">1.0.9.</span> <span class="nav-text">1.9atoi()函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-函数"><span class="nav-number">2.</span> <span class="nav-text">02.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1函数的定义"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1函数的定义</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Willian</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">32.1k</span>
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
