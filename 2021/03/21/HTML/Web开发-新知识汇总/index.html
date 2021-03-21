@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-simple.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Pt Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, ChanWillian" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="标签属性tarnslatecnavas在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）： 12345var c&#x3D;document.getElementById(&quot;myCanvas&quot;);var ctx&#x3D;c.getContext(&quot;2d&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web开发-新知识汇总">
+<meta property="og:url" content="http://yoursite.com/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91-%E6%96%B0%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/">
+<meta property="og:site_name" content="The Very">
+<meta property="og:description" content="标签属性tarnslatecnavas在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）： 12345var c&#x3D;document.getElementById(&quot;myCanvas&quot;);var ctx&#x3D;c.getContext(&quot;2d&quot;">
+<meta property="article:published_time" content="2021-03-21T03:44:33.000Z">
+<meta property="article:modified_time" content="2021-03-21T03:51:24.337Z">
+<meta property="article:author" content="Chan Willian">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/03/21/HTML/Web开发-新知识汇总/"/>
+
+
+
+
+
+  <title>Web开发-新知识汇总 | The Very</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="The Very" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+ 
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Very</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">personal blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-开发学习">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            开发学习
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-广泛学习">
+          <a href="/learn/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-superpowers"></i> <br />
+            
+            广泛学习
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91-%E6%96%B0%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chan Willian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Very">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web开发-新知识汇总</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-21T11:44:33+08:00">
+                2021-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="标签属性"><a href="#标签属性" class="headerlink" title="标签属性"></a>标签属性</h2><h3 id="tarnslate"><a href="#tarnslate" class="headerlink" title="tarnslate"></a>tarnslate</h3><h4 id="cnavas"><a href="#cnavas" class="headerlink" title="cnavas"></a>cnavas</h4><p>在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var c&#x3D;document.getElementById(&quot;myCanvas&quot;);</span><br><span class="line">var ctx&#x3D;c.getContext(&quot;2d&quot;);</span><br><span class="line">ctx.fillRect(10,10,100,50);</span><br><span class="line">ctx.translate(70,70);</span><br><span class="line">ctx.fillRect(10,10,100,50);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="fillsytle"><a href="#fillsytle" class="headerlink" title="fillsytle"></a>fillsytle</h3><h4 id="定义和用法"><a href="#定义和用法" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>fillStyle 属性设置或返回用于填充绘画的颜色、渐变或模式。</p>
+<h3 id="fillText"><a href="#fillText" class="headerlink" title="fillText"></a>fillText</h3><h4 id="定义和用法-1"><a href="#定义和用法-1" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>fillText() 方法在画布上绘制填色的文本。文本的默认颜色是黑色。</p>
+<p><strong>提示：</strong>请使用 <a href="https://www.w3school.com.cn/html5/canvas_font.asp" target="_blank" rel="noopener">font</a> 属性来定义字体和字号，并使用 <a href="https://www.w3school.com.cn/html5/canvas_fillstyle.asp" target="_blank" rel="noopener">fillStyle</a> 属性以另一种颜色/渐变来渲染文本。</p>
+<h3 id="Style-transition-属性"><a href="#Style-transition-属性" class="headerlink" title="Style transition 属性"></a>Style transition 属性</h3><h4 id="定义和用法-2"><a href="#定义和用法-2" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>transition 属性是一个速记属性，用于设置四个过渡属性：</p>
+<p>transitionProperty、 transitionDuration、 transitionTimingFunction 和 transitionDelay.</p>
+<p><strong>注意：请始终设置 transitionDuration 属性，否则持续时间为 0，就不会产生过渡效果。</strong></p>
+<p><strong>把鼠标指针悬停在 div 元素上，它的外观会逐渐改变：</strong></p>
+<p><strong>可以搭配hover 使用</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#myDIV:hover&#123;</span><br><span class="line">	background-color:coral;</span><br><span class="line">	width:<span class="number">570</span>px;</span><br><span class="line">	height:<span class="number">500</span>px;</span><br><span class="line">	padding:<span class="number">100</span>px;</span><br><span class="line">	border-radius:<span class="number">50</span>px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDIV"</span>).style.transition=<span class="string">"all 2s"</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h3 id="Style-transform-属性"><a href="#Style-transform-属性" class="headerlink" title="Style transform 属性"></a>Style transform 属性</h3><p>transform 属性向元素应用 2D 或 3D 转换。<strong>该属性允许您对元素进行旋转、缩放、移动或倾斜。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;myDIV&quot;).style.transform&#x3D;&quot;rotate(7deg)&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Style-left-属性"><a href="#Style-left-属性" class="headerlink" title="Style left 属性"></a>Style left 属性</h3><h4 id="定义和用法-3"><a href="#定义和用法-3" class="headerlink" title="定义和用法"></a>定义和用法</h4><p><strong>left 属性设置或返回定位元素的左部位置。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function displayResult()</span><br><span class="line">&#123;</span><br><span class="line">document.getElementById(&quot;b1&quot;).style.left&#x3D;&quot;100px&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="float：Flex"><a href="#float：Flex" class="headerlink" title="float：Flex"></a>float：Flex</h3><p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<p>任何一个容器都可以指定为Flex布局。</p>
+<p><strong>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</strong></p>
+<h3 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h3><p>一行有多高</p>
+<h3 id="text-decoration"><a href="#text-decoration" class="headerlink" title="text-decoration"></a>text-decoration</h3><h4 id="定义和用法-4"><a href="#定义和用法-4" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>text-decoration 属性规定添加到文本的修饰。</p>
+<p><strong>注释：</strong>修饰的颜色由 “color” 属性设置。</p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>这个属性允许对文本设置某种效果，如加下划线。如果后代元素没有自己的装饰，祖先元素上设置的装饰会“延伸”到后代元素中。不要求用户代理支持 blink。</p>
+<h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><h4 id="定义和用法-5"><a href="#定义和用法-5" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>display 属性规定元素应该生成的框的类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p.inline</span><br><span class="line">  &#123;</span><br><span class="line">  display:inline;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">none</td>
+<td align="left">此元素不会被显示。</td>
+</tr>
+<tr>
+<td align="left">block</td>
+<td align="left">此元素将显示为块级元素，此元素前后会带有换行符。</td>
+</tr>
+<tr>
+<td align="left">inline</td>
+<td align="left">默认。此元素会被显示为内联元素，元素前后没有换行符。</td>
+</tr>
+</tbody></table>
+<h3 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h3><h4 id="定义和用法-6"><a href="#定义和用法-6" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>vertical-align 属性设置元素的垂直对齐方式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img</span><br><span class="line">  &#123;	vertical-align:text-top;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="box-sizing-属性"><a href="#box-sizing-属性" class="headerlink" title="box-sizing 属性"></a>box-sizing 属性</h3><h4 id="属性定义及使用说明"><a href="#属性定义及使用说明" class="headerlink" title="属性定义及使用说明"></a><strong>属性定义及使用说明</strong></h4><p><strong>box-sizing 属性允许你以某种方式定义某些元素，以适应指定区域。</strong></p>
+<p>例如，假如您需要并排放置两个带边框的框，可通过将 box-sizing 设置为 “border-box”。这可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。</p>
+<table>
+<thead>
+<tr>
+<th>border-box</th>
+<th>为元素设定的宽度和高度决定了元素的边框盒。就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h3><h4 id="定义和用法-7"><a href="#定义和用法-7" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>overflow 属性规定当内容<strong>溢出元素框时发生的事情。</strong></p>
+<h3 id="cursor"><a href="#cursor" class="headerlink" title="cursor"></a>cursor</h3><p>cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style&#x3D;&quot;cursor:text&quot;&gt;text&lt;&#x2F;span&gt;&lt;br&gt;</span><br><span class="line">&lt;span style&#x3D;&quot;cursor:w-resize&quot;&gt;w-resize&lt;&#x2F;span&gt;&lt;br&gt;</span><br><span class="line">&lt;span style&#x3D;&quot;cursor:wait&quot;&gt;wait&lt;&#x2F;span&gt;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><h4 id="定义和用法-8"><a href="#定义和用法-8" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>join() 方法用于把数组中的所有元素放入一个字符串。</p>
+<h3 id="DOM-querySelector-方法"><a href="#DOM-querySelector-方法" class="headerlink" title="DOM querySelector() 方法"></a>DOM querySelector() 方法</h3><p><strong>获取文档中 id=”demo” 或者 class = “demo”的元素：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#demo"</span>);</span><br><span class="line"></span><br><span class="line">documnet.querySelector(<span class="string">".demo"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="DOM-InsertBefore"><a href="#DOM-InsertBefore" class="headerlink" title="DOM InsertBefore()"></a>DOM InsertBefore()</h3><p>首先请创建一个 LI 节点，<br>然后创建一个文本节点，<br>然后向这个 LI 节点追加文本节点。<br>最后在列表中的首个子节点之前插入此 LI 节点。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> newItem=<span class="built_in">document</span>.createElement(<span class="string">"LI"</span>)</span><br><span class="line">    <span class="keyword">var</span> textnode=<span class="built_in">document</span>.createTextNode(<span class="string">"Water"</span>)</span><br><span class="line">    newItem.appendChild(textnode)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> list=<span class="built_in">document</span>.getElementById(<span class="string">"myList"</span>)</span><br><span class="line">    list.insertBefore(newItem,list.childNodes[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="translater"><a href="#translater" class="headerlink" title="translater()"></a>translater()</h3><p>在CSS3中，我们可以使用translate()方法将元素沿着水平方向（X轴）和垂直方向（Y轴）移动。</p>
+<p>（1）translateX(x)：元素仅在水平方向移动（X轴移动）；</p>
+<p>（2）translateY(y)：元素仅在垂直方向移动（Y轴移动）；</p>
+<p>（3）transklate(x,y)：元素在水平方向和垂直方向同时移动（X轴和Y轴同时移动）；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loop.style.transform &#x3D; &#39;translateX(-400px)&#39;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="cloneNode"><a href="#cloneNode" class="headerlink" title="cloneNode()"></a>cloneNode()</h3><h4 id="定义和用法-9"><a href="#定义和用法-9" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>cloneNode() 方法可创建指定的节点的精确拷贝。</p>
+<p>cloneNode() 方法 拷贝所有属性和值。</p>
+<p><strong>该方法将复制并返回调用它的节点的副本</strong>。<strong>如果传递给它的参数是 true</strong>，它还将递归复制当前节点的所有子孙节点。否则，它只复制当前节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">	var itm&#x3D;document.getElementById(&quot;myList2&quot;).lastChild;</span><br><span class="line">	var cln&#x3D;itm.cloneNode(true);</span><br><span class="line">	document.getElementById(&quot;myList1&quot;).appendChild(cln);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="DOM-addEventListener-方法"><a href="#DOM-addEventListener-方法" class="headerlink" title="DOM addEventListener() 方法"></a>DOM addEventListener() 方法</h3><h4 id="定义与用法"><a href="#定义与用法" class="headerlink" title="定义与用法"></a>定义与用法</h4><p>addEventListener() 方法用于向<strong>指定元素添加事件句柄。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&quot;click&quot;, function()&#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML &#x3D; &quot;Hello World&quot;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h2><h3 id="setTimeout-方法"><a href="#setTimeout-方法" class="headerlink" title="setTimeout() 方法"></a>setTimeout() 方法</h3><p>setTimeout() 方法<strong>用于在指定的毫秒数后调用函数或计算表达式。</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/03/21/Github/Githubub-%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AE/" rel="next" title="Github_无法访问">
+                <i class="fa fa-chevron-left"></i> Github_无法访问
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" rel="prev" title="Web开发问题汇总">
+                Web开发问题汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80ODMxMC8yNDgwNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Chan Willian" />
+            
+              <p class="site-author-name" itemprop="name">Chan Willian</p>
+              <p class="site-description motion-element" itemprop="description">blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ChanWillian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+  
+
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签属性"><span class="nav-number">1.</span> <span class="nav-text">标签属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tarnslate"><span class="nav-number">1.1.</span> <span class="nav-text">tarnslate</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cnavas"><span class="nav-number">1.1.1.</span> <span class="nav-text">cnavas</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fillsytle"><span class="nav-number">1.2.</span> <span class="nav-text">fillsytle</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fillText"><span class="nav-number">1.3.</span> <span class="nav-text">fillText</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Style-transition-属性"><span class="nav-number">1.4.</span> <span class="nav-text">Style transition 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Style-transform-属性"><span class="nav-number">1.5.</span> <span class="nav-text">Style transform 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Style-left-属性"><span class="nav-number">1.6.</span> <span class="nav-text">Style left 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-3"><span class="nav-number">1.6.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#float：Flex"><span class="nav-number">2.1.</span> <span class="nav-text">float：Flex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line-height"><span class="nav-number">2.2.</span> <span class="nav-text">line-height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text-decoration"><span class="nav-number">2.3.</span> <span class="nav-text">text-decoration</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-4"><span class="nav-number">2.3.1.</span> <span class="nav-text">定义和用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说明"><span class="nav-number">2.3.2.</span> <span class="nav-text">说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display"><span class="nav-number">2.4.</span> <span class="nav-text">display</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-5"><span class="nav-number">2.4.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vertical-align"><span class="nav-number">2.5.</span> <span class="nav-text">vertical-align</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-6"><span class="nav-number">2.5.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-sizing-属性"><span class="nav-number">2.6.</span> <span class="nav-text">box-sizing 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性定义及使用说明"><span class="nav-number">2.6.1.</span> <span class="nav-text">属性定义及使用说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow"><span class="nav-number">2.7.</span> <span class="nav-text">overflow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-7"><span class="nav-number">2.7.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cursor"><span class="nav-number">2.8.</span> <span class="nav-text">cursor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM"><span class="nav-number">3.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#join"><span class="nav-number">3.1.</span> <span class="nav-text">join</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-8"><span class="nav-number">3.1.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-querySelector-方法"><span class="nav-number">3.2.</span> <span class="nav-text">DOM querySelector() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-InsertBefore"><span class="nav-number">3.3.</span> <span class="nav-text">DOM InsertBefore()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#translater"><span class="nav-number">3.4.</span> <span class="nav-text">translater()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cloneNode"><span class="nav-number">3.5.</span> <span class="nav-text">cloneNode()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义和用法-9"><span class="nav-number">3.5.1.</span> <span class="nav-text">定义和用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-addEventListener-方法"><span class="nav-number">3.6.</span> <span class="nav-text">DOM addEventListener() 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义与用法"><span class="nav-number">3.6.1.</span> <span class="nav-text">定义与用法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Window"><span class="nav-number">4.</span> <span class="nav-text">Window</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setTimeout-方法"><span class="nav-number">4.1.</span> <span class="nav-text">setTimeout() 方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Willian</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">47.4k</span>
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

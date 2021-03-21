@@ -274,7 +274,7 @@ h6 {
   }
 }
 p {
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
 }
 a {
   color: #555;
@@ -1428,7 +1428,7 @@ pre .javascript .function {
   position: absolute;
   font-size: 12px;
   left: 20px;
-  top: 5px;
+  top: 2px;
 }
 .posts-collapse .post-comments-count {
   display: none;
@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff24;
+  background: #30ff4d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2999,4 +2999,10 @@ pre .javascript .function {
   .post-body {
     text-align: justify;
   }
+}
+* {
+  cursor: url("images/sword.ico");
+}
+:active {
+  cursor: url("images/sword2.ico");
 }

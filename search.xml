@@ -1,6 +1,422 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Pycharm快捷键</title>
+    <url>/2021/03/21/Pycharm%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1</strong></td>
+<td><strong>CTRL + ALT + SPACE</strong></td>
+<td><strong>快速导入任意类</strong></td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>CTRL + SHIFT + ENTER</strong></td>
+<td><strong>代码补全</strong></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>SHIFT + F1</strong></td>
+<td><strong>查看外部文档</strong></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>CTRL + Q</strong></td>
+<td><strong>快速查找文档</strong></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>CTRL + P</strong></td>
+<td><strong>参数信息（在方法中调用的参数）</strong></td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>CTRL + MOUSE OVER CODE</strong></td>
+<td><strong>基本信息</strong></td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>CTRL + F1</strong></td>
+<td><strong>显示错误或警告的描述</strong></td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>CTRL + INSERT</strong></td>
+<td><strong>生成代码</strong></td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>CTRL + O</strong></td>
+<td><strong>重载方法</strong></td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>CTRL + ALT + T</strong></td>
+<td><strong>包裹代码</strong></td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td><strong>CTRL + /</strong></td>
+<td><strong>单行注释</strong></td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td><strong>CTRL + SHIFT + /</strong></td>
+<td><strong>块注释</strong></td>
+</tr>
+<tr>
+<td><strong>13</strong></td>
+<td><strong>CTRL + W</strong></td>
+<td><strong>逐步选择代码（块）</strong></td>
+</tr>
+<tr>
+<td><strong>14</strong></td>
+<td><strong>CTRL + SHIFT + W</strong></td>
+<td><strong>逐步取消选择代码（块）</strong></td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td><strong>CTRL + SHIFT + [</strong></td>
+<td><strong>从当前位置选择到代码块的开始</strong></td>
+</tr>
+<tr>
+<td><strong>16</strong></td>
+<td><strong>CTRL + SHIFT + ]</strong></td>
+<td><strong>从当前位置选择到代码块的结束</strong></td>
+</tr>
+<tr>
+<td><strong>17</strong></td>
+<td><strong>ALT + ENTER</strong></td>
+<td><strong>代码快速修正</strong></td>
+</tr>
+<tr>
+<td><strong>18</strong></td>
+<td><strong>CTRL + ALT + L</strong></td>
+<td><strong>代码格式标准化</strong></td>
+</tr>
+<tr>
+<td><strong>19</strong></td>
+<td><strong>CTRL + ALT + O</strong></td>
+<td><strong>最佳化导入</strong></td>
+</tr>
+<tr>
+<td><strong>20</strong></td>
+<td><strong>CTRL + ALT + I</strong></td>
+<td><strong>自动缩进</strong></td>
+</tr>
+<tr>
+<td><strong>21</strong></td>
+<td><strong>TAB</strong></td>
+<td><strong>代码向后缩进</strong></td>
+</tr>
+<tr>
+<td><strong>23</strong></td>
+<td><strong>SHIFT + TAB</strong></td>
+<td><strong>代码向前取消缩进</strong></td>
+</tr>
+<tr>
+<td><strong>24</strong></td>
+<td><strong>CTRL + SHIFT + V</strong></td>
+<td><strong>历史复制粘贴表</strong></td>
+</tr>
+<tr>
+<td><strong>25</strong></td>
+<td><strong>CTRL + D</strong></td>
+<td><strong>复制当前代码行/块</strong></td>
+</tr>
+<tr>
+<td><strong>26</strong></td>
+<td><strong>CTRL + Y</strong></td>
+<td><strong>删除当前代码行/块</strong></td>
+</tr>
+<tr>
+<td><strong>27</strong></td>
+<td><strong>CTRL + SHIFT + J</strong></td>
+<td><strong>代码连接为一行</strong></td>
+</tr>
+<tr>
+<td><strong>28</strong></td>
+<td><strong>SHIFT + ENTER</strong></td>
+<td><strong>开启新一行</strong></td>
+</tr>
+<tr>
+<td><strong>28</strong></td>
+<td><strong>CTRL + SHIFT + U</strong></td>
+<td><strong>字母大写</strong></td>
+</tr>
+<tr>
+<td><strong>29</strong></td>
+<td><strong>CTRL +DELETE</strong></td>
+<td><strong>向后逐渐删除</strong></td>
+</tr>
+<tr>
+<td><strong>30</strong></td>
+<td><strong>CTRL + BACKSPACE</strong></td>
+<td><strong>向前逐渐删除</strong></td>
+</tr>
+<tr>
+<td><strong>31</strong></td>
+<td><strong>CTRL + NUMPAD+/-</strong></td>
+<td><strong>代码块展开/折叠</strong></td>
+</tr>
+<tr>
+<td><strong>32</strong></td>
+<td><strong>CTRL + SHIFT + NUMPAD+</strong></td>
+<td><strong>所有代码块展开叠</strong></td>
+</tr>
+<tr>
+<td><strong>33</strong></td>
+<td><strong>CTRL + SHIFT + NUMPAD-</strong></td>
+<td><strong>所有代码块折叠</strong></td>
+</tr>
+<tr>
+<td><strong>34</strong></td>
+<td><strong>CTRL + F4</strong></td>
+<td><strong>关闭活动编辑窗口</strong></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何获取电子书</title>
+    <url>/2021/03/21/Others/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%94%B5%E5%AD%90%E4%B9%A6/</url>
+    <content><![CDATA[<h3 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h3><ul>
+<li>使用  <strong>电子书搜索</strong></li>
+<li>访问  <strong>书享家</strong>  网站</li>
+<li>使用 <strong>GitHub</strong></li>
+<li>使用 Linux<strong>公社</strong></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>IBook</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo——-疑难问题</title>
+    <url>/2021/03/21/Others/hexo-%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="无法显示-对应页面内的文章"><a href="#无法显示-对应页面内的文章" class="headerlink" title="无法显示 对应页面内的文章"></a>无法显示 对应页面内的文章</h3><ul>
+<li>hexo 不能自己创建新的文件类型，只能二选一</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type: &quot;tags&quot;</span><br><span class="line">type: &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="鼠标样式修改失败"><a href="#鼠标样式修改失败" class="headerlink" title="鼠标样式修改失败"></a>鼠标样式修改失败</h3><ul>
+<li><h3 id="彩色标签实现失败"><a href="#彩色标签实现失败" class="headerlink" title="彩色标签实现失败"></a>彩色标签实现失败</h3></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web开发问题汇总</title>
+    <url>/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<h3 id="1-网页元素无法顶格"><a href="#1-网页元素无法顶格" class="headerlink" title="1.网页元素无法顶格"></a>1.网页元素无法顶格</h3><p>将body边框设置为0</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="xml">  body&#123; margin:0;&#125;  <span class="comment">&lt;!--body顶格，body最顶部不留空白--&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-如何搭建搜索框"><a href="#2-如何搭建搜索框" class="headerlink" title="2.如何搭建搜索框"></a>2.如何搭建搜索框</h3><p>html搜索框怎么做</p>
+<p>使用HTML做搜索框的方法：</p>
+<p>1、首先新建一个div，class= fir_srh ，用来包裹搜索框；</p>
+<p>2、然后在内部添加一个input标签和一个div标签，一个用来输入文字，一个充当按钮；</p>
+<p>3、最后使用css为它们设计样式即可。</p>
+<h3 id="3-搜索框中如何添加其他元素"><a href="#3-搜索框中如何添加其他元素" class="headerlink" title="3.搜索框中如何添加其他元素"></a>3.搜索框中如何添加其他元素</h3><p>1.绝对位置放入图片按钮</p>
+<p>2.使用JS绑定跳转事件</p>
+<h3 id="4-样式小细节"><a href="#4-样式小细节" class="headerlink" title="4.样式小细节"></a>4.样式小细节</h3><ul>
+<li>搜索小图标  静态淡化，hover 恢复原状。   使用属性：<strong>opacity</strong></li>
+<li>搜索框 hover 边框颜色变化。<ul>
+<li>搜索框 onfocus事件，边框颜色变化。</li>
+<li>使用JS事件，动态改变标签css 样式。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-如何实现轮播图"><a href="#5-如何实现轮播图" class="headerlink" title="5.如何实现轮播图"></a>5.如何实现轮播图</h3><p>let 声明的变量只在 let 命令所在的代码块内有效。</p>
+<p>let 声明的变量只在 let 命令所在的代码块 <strong>{}</strong> 内有效，在 <strong>{}</strong> 之外不能访问。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123; </span><br><span class="line">    let x &#x3D; 2;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 这里不能使用 x 变量</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-JS外部文件无法引用"><a href="#6-JS外部文件无法引用" class="headerlink" title="6.JS外部文件无法引用"></a>6.JS外部文件无法引用</h3><p><strong>需要在body里面应用JS文件，才能起作用。</strong></p>
+<h3 id="7-如何实现验证码功能"><a href="#7-如何实现验证码功能" class="headerlink" title="7.如何实现验证码功能"></a>7.如何实现验证码功能</h3><h3 id="8-如何使用JS更改文本输入框中的预选文字"><a href="#8-如何使用JS更改文本输入框中的预选文字" class="headerlink" title="8.如何使用JS更改文本输入框中的预选文字"></a>8.如何使用JS更改文本输入框中的预选文字</h3><p><strong>使用 JS 改变标签的属性。</strong></p>
+<p><strong>setAttribute(“placeholder”,”请输入密码“)</strong></p>
+<h3 id="9-如何隐藏按钮点击时的外边框"><a href="#9-如何隐藏按钮点击时的外边框" class="headerlink" title="9.如何隐藏按钮点击时的外边框"></a>9.如何隐藏按钮点击时的外边框</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input&#123;</span><br><span class="line"></span><br><span class="line">	outline: none;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="10-生成验证码"><a href="#10-生成验证码" class="headerlink" title="10.生成验证码"></a>10.生成验证码</h3><p><strong>使用BufferedImage类,自动绘制验证码</strong></p>
+<p>Image 是一个抽象类，<strong>BufferedImage 是其实现类</strong>，是一个带缓冲区图像类，</p>
+<p>主要作用<strong>是将一幅图片加载到内存中</strong>（BufferedImage 生成的图片在内存里有一个图像缓冲区，<strong>利用这个缓冲区我们可以很方便地操作这个图片），</strong></p>
+<p>提供获得绘图对象、图像缩放、选择图像平滑度等功能，通常用来做图片大小变换、图片变灰、设置透明不透明等。</p>
+<h3 id="12-不知道为什么相同的语句功能-JQuery-无法实现那个功能"><a href="#12-不知道为什么相同的语句功能-JQuery-无法实现那个功能" class="headerlink" title="12.不知道为什么相同的语句功能  JQuery 无法实现那个功能"></a>12.不知道为什么相同的语句功能  JQuery 无法实现那个功能</h3><h3 id="13-无法验证验证码的正确性"><a href="#13-无法验证验证码的正确性" class="headerlink" title="13.无法验证验证码的正确性"></a>13.无法验证验证码的正确性</h3><h3 id="14-jQuery语句没有作用"><a href="#14-jQuery语句没有作用" class="headerlink" title="14.jQuery语句没有作用"></a>14.jQuery语句没有作用</h3><p>旧版JQuery不支持</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script &gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>仅支持</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="15-如何获得标签的id值"><a href="#15-如何获得标签的id值" class="headerlink" title="15.如何获得标签的id值"></a>15.如何获得标签的id值</h3><p>获得某个标签的ID值之后，则可以遍历所有相似标签，但是对这个标签设置特定的方法。</p>
+<h3 id="17-如何在一行div中，排版所有标签内容"><a href="#17-如何在一行div中，排版所有标签内容" class="headerlink" title="17.如何在一行div中，排版所有标签内容"></a>17.如何在一行div中，排版所有标签内容</h3><p>先把所有的内容简单的建加入到该div中，附加简单的css样式。</p>
+<p>然后再一点点调试，他们的分布和布局。</p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Web开发-新知识汇总</title>
+    <url>/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91-%E6%96%B0%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<h2 id="标签属性"><a href="#标签属性" class="headerlink" title="标签属性"></a>标签属性</h2><h3 id="tarnslate"><a href="#tarnslate" class="headerlink" title="tarnslate"></a>tarnslate</h3><h4 id="cnavas"><a href="#cnavas" class="headerlink" title="cnavas"></a>cnavas</h4><p>在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var c&#x3D;document.getElementById(&quot;myCanvas&quot;);</span><br><span class="line">var ctx&#x3D;c.getContext(&quot;2d&quot;);</span><br><span class="line">ctx.fillRect(10,10,100,50);</span><br><span class="line">ctx.translate(70,70);</span><br><span class="line">ctx.fillRect(10,10,100,50);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="fillsytle"><a href="#fillsytle" class="headerlink" title="fillsytle"></a>fillsytle</h3><h4 id="定义和用法"><a href="#定义和用法" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>fillStyle 属性设置或返回用于填充绘画的颜色、渐变或模式。</p>
+<h3 id="fillText"><a href="#fillText" class="headerlink" title="fillText"></a>fillText</h3><h4 id="定义和用法-1"><a href="#定义和用法-1" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>fillText() 方法在画布上绘制填色的文本。文本的默认颜色是黑色。</p>
+<p><strong>提示：</strong>请使用 <a href="https://www.w3school.com.cn/html5/canvas_font.asp" target="_blank" rel="noopener">font</a> 属性来定义字体和字号，并使用 <a href="https://www.w3school.com.cn/html5/canvas_fillstyle.asp" target="_blank" rel="noopener">fillStyle</a> 属性以另一种颜色/渐变来渲染文本。</p>
+<h3 id="Style-transition-属性"><a href="#Style-transition-属性" class="headerlink" title="Style transition 属性"></a>Style transition 属性</h3><h4 id="定义和用法-2"><a href="#定义和用法-2" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>transition 属性是一个速记属性，用于设置四个过渡属性：</p>
+<p>transitionProperty、 transitionDuration、 transitionTimingFunction 和 transitionDelay.</p>
+<p><strong>注意：请始终设置 transitionDuration 属性，否则持续时间为 0，就不会产生过渡效果。</strong></p>
+<p><strong>把鼠标指针悬停在 div 元素上，它的外观会逐渐改变：</strong></p>
+<p><strong>可以搭配hover 使用</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">#myDIV:hover&#123;</span><br><span class="line">	background-color:coral;</span><br><span class="line">	width:<span class="number">570</span>px;</span><br><span class="line">	height:<span class="number">500</span>px;</span><br><span class="line">	padding:<span class="number">100</span>px;</span><br><span class="line">	border-radius:<span class="number">50</span>px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDIV"</span>).style.transition=<span class="string">"all 2s"</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h3 id="Style-transform-属性"><a href="#Style-transform-属性" class="headerlink" title="Style transform 属性"></a>Style transform 属性</h3><p>transform 属性向元素应用 2D 或 3D 转换。<strong>该属性允许您对元素进行旋转、缩放、移动或倾斜。</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.getElementById(&quot;myDIV&quot;).style.transform&#x3D;&quot;rotate(7deg)&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Style-left-属性"><a href="#Style-left-属性" class="headerlink" title="Style left 属性"></a>Style left 属性</h3><h4 id="定义和用法-3"><a href="#定义和用法-3" class="headerlink" title="定义和用法"></a>定义和用法</h4><p><strong>left 属性设置或返回定位元素的左部位置。</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function displayResult()</span><br><span class="line">&#123;</span><br><span class="line">document.getElementById(&quot;b1&quot;).style.left&#x3D;&quot;100px&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="float：Flex"><a href="#float：Flex" class="headerlink" title="float：Flex"></a>float：Flex</h3><p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<p>任何一个容器都可以指定为Flex布局。</p>
+<p><strong>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</strong></p>
+<h3 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h3><p>一行有多高</p>
+<h3 id="text-decoration"><a href="#text-decoration" class="headerlink" title="text-decoration"></a>text-decoration</h3><h4 id="定义和用法-4"><a href="#定义和用法-4" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>text-decoration 属性规定添加到文本的修饰。</p>
+<p><strong>注释：</strong>修饰的颜色由 “color” 属性设置。</p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>这个属性允许对文本设置某种效果，如加下划线。如果后代元素没有自己的装饰，祖先元素上设置的装饰会“延伸”到后代元素中。不要求用户代理支持 blink。</p>
+<h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><h4 id="定义和用法-5"><a href="#定义和用法-5" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>display 属性规定元素应该生成的框的类型。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p.inline</span><br><span class="line">  &#123;</span><br><span class="line">  display:inline;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">none</td>
+<td align="left">此元素不会被显示。</td>
+</tr>
+<tr>
+<td align="left">block</td>
+<td align="left">此元素将显示为块级元素，此元素前后会带有换行符。</td>
+</tr>
+<tr>
+<td align="left">inline</td>
+<td align="left">默认。此元素会被显示为内联元素，元素前后没有换行符。</td>
+</tr>
+</tbody></table>
+<h3 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h3><h4 id="定义和用法-6"><a href="#定义和用法-6" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>vertical-align 属性设置元素的垂直对齐方式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img</span><br><span class="line">  &#123;	vertical-align:text-top;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="box-sizing-属性"><a href="#box-sizing-属性" class="headerlink" title="box-sizing 属性"></a>box-sizing 属性</h3><h4 id="属性定义及使用说明"><a href="#属性定义及使用说明" class="headerlink" title="属性定义及使用说明"></a><strong>属性定义及使用说明</strong></h4><p><strong>box-sizing 属性允许你以某种方式定义某些元素，以适应指定区域。</strong></p>
+<p>例如，假如您需要并排放置两个带边框的框，可通过将 box-sizing 设置为 “border-box”。这可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。</p>
+<table>
+<thead>
+<tr>
+<th>border-box</th>
+<th>为元素设定的宽度和高度决定了元素的边框盒。就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h3><h4 id="定义和用法-7"><a href="#定义和用法-7" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>overflow 属性规定当内容<strong>溢出元素框时发生的事情。</strong></p>
+<h3 id="cursor"><a href="#cursor" class="headerlink" title="cursor"></a>cursor</h3><p>cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span style&#x3D;&quot;cursor:text&quot;&gt;text&lt;&#x2F;span&gt;&lt;br&gt;</span><br><span class="line">&lt;span style&#x3D;&quot;cursor:w-resize&quot;&gt;w-resize&lt;&#x2F;span&gt;&lt;br&gt;</span><br><span class="line">&lt;span style&#x3D;&quot;cursor:wait&quot;&gt;wait&lt;&#x2F;span&gt;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><h4 id="定义和用法-8"><a href="#定义和用法-8" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>join() 方法用于把数组中的所有元素放入一个字符串。</p>
+<h3 id="DOM-querySelector-方法"><a href="#DOM-querySelector-方法" class="headerlink" title="DOM querySelector() 方法"></a>DOM querySelector() 方法</h3><p><strong>获取文档中 id=”demo” 或者 class = “demo”的元素：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#demo"</span>);</span><br><span class="line"></span><br><span class="line">documnet.querySelector(<span class="string">".demo"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="DOM-InsertBefore"><a href="#DOM-InsertBefore" class="headerlink" title="DOM InsertBefore()"></a>DOM InsertBefore()</h3><p>首先请创建一个 LI 节点，<br>然后创建一个文本节点，<br>然后向这个 LI 节点追加文本节点。<br>最后在列表中的首个子节点之前插入此 LI 节点。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> newItem=<span class="built_in">document</span>.createElement(<span class="string">"LI"</span>)</span><br><span class="line">    <span class="keyword">var</span> textnode=<span class="built_in">document</span>.createTextNode(<span class="string">"Water"</span>)</span><br><span class="line">    newItem.appendChild(textnode)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> list=<span class="built_in">document</span>.getElementById(<span class="string">"myList"</span>)</span><br><span class="line">    list.insertBefore(newItem,list.childNodes[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="translater"><a href="#translater" class="headerlink" title="translater()"></a>translater()</h3><p>在CSS3中，我们可以使用translate()方法将元素沿着水平方向（X轴）和垂直方向（Y轴）移动。</p>
+<p>（1）translateX(x)：元素仅在水平方向移动（X轴移动）；</p>
+<p>（2）translateY(y)：元素仅在垂直方向移动（Y轴移动）；</p>
+<p>（3）transklate(x,y)：元素在水平方向和垂直方向同时移动（X轴和Y轴同时移动）；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">loop.style.transform &#x3D; &#39;translateX(-400px)&#39;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="cloneNode"><a href="#cloneNode" class="headerlink" title="cloneNode()"></a>cloneNode()</h3><h4 id="定义和用法-9"><a href="#定义和用法-9" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>cloneNode() 方法可创建指定的节点的精确拷贝。</p>
+<p>cloneNode() 方法 拷贝所有属性和值。</p>
+<p><strong>该方法将复制并返回调用它的节点的副本</strong>。<strong>如果传递给它的参数是 true</strong>，它还将递归复制当前节点的所有子孙节点。否则，它只复制当前节点。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">	var itm&#x3D;document.getElementById(&quot;myList2&quot;).lastChild;</span><br><span class="line">	var cln&#x3D;itm.cloneNode(true);</span><br><span class="line">	document.getElementById(&quot;myList1&quot;).appendChild(cln);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="DOM-addEventListener-方法"><a href="#DOM-addEventListener-方法" class="headerlink" title="DOM addEventListener() 方法"></a>DOM addEventListener() 方法</h3><h4 id="定义与用法"><a href="#定义与用法" class="headerlink" title="定义与用法"></a>定义与用法</h4><p>addEventListener() 方法用于向<strong>指定元素添加事件句柄。</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.addEventListener(&quot;click&quot;, function()&#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML &#x3D; &quot;Hello World&quot;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h2><h3 id="setTimeout-方法"><a href="#setTimeout-方法" class="headerlink" title="setTimeout() 方法"></a>setTimeout() 方法</h3><p>setTimeout() 方法<strong>用于在指定的毫秒数后调用函数或计算表达式。</strong></p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Github_无法访问</title>
+    <url>/2021/03/21/Github/Githubub-%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AE/</url>
+    <content><![CDATA[<h2 id="1-安装插件，加速访问"><a href="#1-安装插件，加速访问" class="headerlink" title="1.安装插件，加速访问"></a>1.安装插件，加速访问</h2><p><a href="https://www.extfans.com/web-development/pbggmlghklngacbdkdjcebaaglkcokhp/" target="_blank" rel="noopener">Github 加速器</a></p>
+]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python/List-08函数进阶</title>
     <url>/2021/03/20/Python/List-08%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/</url>
     <content><![CDATA[<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
@@ -2050,16 +2466,6 @@
 </tr>
 </tbody></table>
 <h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
-  </entry>
-  <entry>
-    <title>hexo疑难问题</title>
-    <url>/2021/03/20/hexo%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h3 id="无法显示-对应页面内的文章"><a href="#无法显示-对应页面内的文章" class="headerlink" title="无法显示 对应页面内的文章"></a>无法显示 对应页面内的文章</h3><ul>
-<li>hexo 不能自己创建新的文件类型，只能二选一</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">type: &quot;tags&quot;</span><br><span class="line">type: &quot;categories&quot;</span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
   <entry>
     <title>Linux快捷键</title>
@@ -4427,24 +4833,20 @@ gcc -o test.cgi test.c
   <entry>
     <title>网易云音乐mp3外链方法</title>
     <url>/2020/02/05/Others/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90mp3%E5%A4%96%E9%93%BE%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<ol>
-<li>第一步打开网易云音乐，随便找到一首歌，播放，复制网址的ID</li>
-</ol>
+    <content><![CDATA[<p><strong>1.第一步打开网易云音乐，随便找到一首歌，播放，复制网址的ID</strong></p>
 <p>例如：李荣浩的麻雀，网址是：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;1407551413.mp3</span><br></pre></td></tr></table></figure>
 
 <p>显然，ID为1407551413</p>
-<ol start="2">
-<li>那么，这首歌的真实地址就是： </li>
-</ol>
+<h2 id="————————————"><a href="#————————————" class="headerlink" title="————————————"></a>————————————</h2><p><strong>2.那么，这首歌的真实地址就是：</strong> </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;317151.mp3</span><br></pre></td></tr></table></figure>
 
 <p>这个地址不会失效的；</p>
 <p>这就得到一个下载公式：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;ID数字.mp3</span><br></pre></td></tr></table></figure>
 
-<p> 把上面红色部分ID数字换成网易云播放页面的id即可。</p>
-<p>参考于：</p>
+<p> <strong>把上面红色部分ID数字换成网易云播放页面的id即可。</strong></p>
+<h2 id="————————————-1"><a href="#————————————-1" class="headerlink" title="————————————-"></a>————————————-</h2><p>参考于：</p>
 <p><a href="https://cloud.tencent.com/developer/article/1550144" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1550144</a></p>
 ]]></content>
       <tags>
@@ -6290,7 +6692,7 @@ nslookup www.baidu.com
 <h4 id="3，-layout-swig"><a href="#3，-layout-swig" class="headerlink" title="3，_layout.swig"></a>3，_layout.swig</h4><p>打开<code>themes\next\layout\_layout.swig</code>文件，将</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;&#x2F;dist&#x2F;APlayer.min.css&quot;&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;aplayer&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;dist&#x2F;APlayer.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;dist&#x2F;music.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>添加到     &lt;body itemscope …&gt;   后面就行，即再 <body></body> 里面</p>
+<p>添加到     &lt;body itemscope …&gt;   后面就行，即再 <body><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body> 里面</p>
 <p>然后，  重新生成，访问页面</p>
 <h2 id="1-8-添加公益404-页面"><a href="#1-8-添加公益404-页面" class="headerlink" title="1.8    添加公益404 页面"></a>1.8    添加公益404 页面</h2><p>打开网站文件夹，右键打开 git bash</p>
 <p>输入</p>
