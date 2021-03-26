@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-simple.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Pt Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, ChanWillian" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今日内容 数据库的基本概念   MySQL数据库软件 安装 卸载 配置   SQL  01.数据库的基本概念 数据库的英文单词： DataBase 简称 ： DB 什么数据库？   用于存储和管理数据的仓库。   数据库的特点：  持久化存储数据的。其实数据库就是一个文件系统 方便存储和管理数据 使用了统一的方式操作数据库 – SQL    02.MySQL配置MySQL启动 cmd–&gt; s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="List-01_DDL&amp;DML&amp;DQL">
+<meta property="og:url" content="http://yoursite.com/2021/03/26/MySQL/List-01_DDL&DML&DQL/">
+<meta property="og:site_name" content="The Very">
+<meta property="og:description" content="今日内容 数据库的基本概念   MySQL数据库软件 安装 卸载 配置   SQL  01.数据库的基本概念 数据库的英文单词： DataBase 简称 ： DB 什么数据库？   用于存储和管理数据的仓库。   数据库的特点：  持久化存储数据的。其实数据库就是一个文件系统 方便存储和管理数据 使用了统一的方式操作数据库 – SQL    02.MySQL配置MySQL启动 cmd–&gt; s">
+<meta property="article:published_time" content="2021-03-26T08:29:52.000Z">
+<meta property="article:modified_time" content="2021-03-26T08:31:31.079Z">
+<meta property="article:author" content="Chan Willian">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/03/26/MySQL/List-01_DDL&DML&DQL/"/>
+
+
+
+
+
+  <title>List-01_DDL&DML&DQL | The Very</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="The Very" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+ 
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Very</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">personal blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-开发学习">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            开发学习
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-广泛学习">
+          <a href="/learn/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-superpowers"></i> <br />
+            
+            广泛学习
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/26/MySQL/List-01_DDL&DML&DQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chan Willian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Very">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">List-01_DDL&DML&DQL</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-26T16:29:52+08:00">
+                2021-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ol>
+<li>数据库的基本概念</li>
+</ol>
+<ol start="2">
+<li>MySQL数据库软件<ol>
+<li>安装</li>
+<li>卸载</li>
+<li>配置</li>
+</ol>
+</li>
+<li>SQL</li>
+</ol>
+<h2 id="01-数据库的基本概念"><a href="#01-数据库的基本概念" class="headerlink" title="01.数据库的基本概念"></a>01.数据库的基本概念</h2><ol>
+<li>数据库的英文单词： DataBase 简称 ： DB</li>
+<li>什么数据库？</li>
+</ol>
+<ul>
+<li>用于存储和管理数据的仓库。</li>
+</ul>
+<ol start="3">
+<li><p>数据库的特点：</p>
+<ol>
+<li>持久化存储数据的。其实数据库就是一个文件系统</li>
+<li>方便存储和管理数据</li>
+<li>使用了统一的方式操作数据库 – SQL</li>
+</ol>
+</li>
+</ol>
+<h2 id="02-MySQL配置"><a href="#02-MySQL配置" class="headerlink" title="02.MySQL配置"></a>02.MySQL配置</h2><h5 id="MySQL启动"><a href="#MySQL启动" class="headerlink" title="MySQL启动"></a>MySQL启动</h5><ol>
+<li>cmd–&gt; services.msc 打开服务的窗口</li>
+<li>需要使用管理员权限打开cmd命令行窗口</li>
+</ol>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> mysql		启动mysql的服务</span><br><span class="line"><span class="built_in">net</span> stop mysql		关闭mysql服务</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="MySQL登录"><a href="#MySQL登录" class="headerlink" title="MySQL登录"></a>MySQL登录</h5><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p密码</span><br><span class="line"></span><br><span class="line">mysql -hip -uroot -p连接目标的密码</span><br><span class="line"></span><br><span class="line">mysql --host=ip --user=root --password=连接目标的密码</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="MySQL退出"><a href="#MySQL退出" class="headerlink" title="MySQL退出"></a>MySQL退出</h5><ol>
+<li>exit</li>
+<li>quit</li>
+</ol>
+<h5 id="MySQL目录结构"><a href="#MySQL目录结构" class="headerlink" title="MySQL目录结构"></a>MySQL目录结构</h5><ol>
+<li>MySQL<strong>安装目录</strong>：basedir=”D:/develop/MySQL/“ <ul>
+<li>配置文件 my.ini</li>
+</ul>
+</li>
+<li>MySQL<strong>数据目录</strong>：datadir=”C:/ProgramData/MySQL/MySQL Server 5.5/Data/“<ul>
+<li>几个概念<ul>
+<li>数据库：文件夹</li>
+<li>表：文件</li>
+<li>数据：数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="03-SQL"><a href="#03-SQL" class="headerlink" title="03.SQL"></a>03.SQL</h2><h5 id="什么是SQL？"><a href="#什么是SQL？" class="headerlink" title="什么是SQL？"></a>什么是SQL？</h5><p>​    Structured Query Language：结构化查询语言，其实就是定义了操作所有关系型数据库的规则。</p>
+<p>每一种数据库操作的方式存在不一样的地方，称为“方言”。</p>
+<h4 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h4><ul>
+<li>SQL 语句可以<strong>单行或多行书写，以分号结尾。</strong></li>
+</ul>
+<ul>
+<li><p><strong>可使用空格和缩进来增强语句的可读性</strong>。</p>
+</li>
+<li><p>MySQL 数据库的 SQL 语句<strong>不区分大小写，关键字建议使用大写。</strong></p>
+</li>
+</ul>
+<ul>
+<li><p>3 种注释</p>
+<ul>
+<li>单行注释: –  注释内容 或 #  注释内容(mysql 特有) </li>
+<li>多行注释: /* 注释 */</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES</span><br><span class="line">SHOW DATABASES; -- 查询所有数据库的名称</span><br><span class="line">SHOW DATABASES;#HELLOWORLD</span><br></pre></td></tr></table></figure>
+
+<h4 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类"></a>SQL分类</h4><p>1) DDL        (Data Definition Language)</p>
+<p>​        <strong>数据定义语言</strong></p>
+<p>​    <strong>操作数据库，表</strong></p>
+<p>​    关键字：create, drop,alter 等</p>
+<p>2) DML        (Data Manipulation Language)</p>
+<p>​        <strong>数据操作语言</strong></p>
+<p>​    <strong>增删改表中的数据</strong></p>
+<p>​    关键字：insert, delete, update 等</p>
+<p>3) DQL        (Data Query Language)</p>
+<p>​        <strong>数据查询语言</strong></p>
+<p>​    <strong>查询表中的数据</strong></p>
+<p>​    关键字：select, where 等</p>
+<p>4) DCL        (Data Control Language)</p>
+<p>​    <strong>数据控制语言(了解)</strong></p>
+<p>​    <strong>授权</strong></p>
+<p>关键字：GRANT， REVOKE 等</p>
+<h2 id="04-DDL-操作数据库、表"><a href="#04-DDL-操作数据库、表" class="headerlink" title="04.DDL:操作数据库、表"></a>04.DDL:操作数据库、表</h2><h4 id="操作数据库：CRUD"><a href="#操作数据库：CRUD" class="headerlink" title="操作数据库：CRUD"></a>操作数据库：CRUD</h4><p><strong>C(Create)：创建</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE 数据库名称;						//创建数据库</span><br><span class="line">CREATE DATABASE <span class="keyword">IF</span> <span class="keyword">NOT</span> EXISTS 数据库名称;		//先判断是否存在，再创建</span><br><span class="line">CREATE DATABASE 数据库名称 CHARACTER <span class="built_in">SET</span> GBK;				//创建数据库，并指定字符集</span><br><span class="line"></span><br><span class="line">CREATE DATABASE <span class="keyword">IF</span> <span class="keyword">NOT</span> EXISTS DB4 CHARACTER <span class="built_in">SET</span> GBK;	//综合</span><br></pre></td></tr></table></figure>
+
+<p><strong>R(Retrieve)：查询</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES;						查询所有数据库的名称</span><br><span class="line">SHOW CREATE DATABASE 数据库名称;		 查询某个数据库的字符集</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>U(Update):修改</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE 数据库名称 CHARACTER <span class="built_in">SET</span> UTF8;</span><br></pre></td></tr></table></figure>
+
+<p><strong>D(Delete):删除</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE DA2;</span><br><span class="line">DROP DATABASE <span class="keyword">IF</span> EXISTS DA2;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">USE 数据库名称;						//使用数据库</span><br><span class="line">SELECT DATABASE();					//查询当前正在使用的数据库名称</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：最后一列，不需要加逗号（,）</strong></p>
+<h4 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h4><p><strong>C(Create):创建</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">	列名1 数据类型1,</span><br><span class="line">	列名2 数据类型2,</span><br><span class="line">	....</span><br><span class="line">	列名n 数据类型n</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	CREATE TABLE STUDENT(				&#x2F;&#x2F;创建表</span><br><span class="line">			ID INT,</span><br><span class="line">			NAME VARCHAR(32),</span><br><span class="line">			AGE INT,</span><br><span class="line">			SCORE DOUBLE(4,1),</span><br><span class="line">			BIRTHDAY DATE,</span><br><span class="line">			INSERT_TIME TIMESTAMP</span><br><span class="line">	);</span><br><span class="line">	</span><br><span class="line">	CREATE TABLE 表名 LIKE 被复制的表名		&#x2F;&#x2F;复制表</span><br></pre></td></tr></table></figure>
+
+<p><strong>R(Retrieve)：查询</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SHOW TABLES;				  &#x2F;&#x2F;查询某个数据库中所有的表名称</span><br><span class="line">DESC 表名;			   		&#x2F;&#x2F;查询表结构</span><br><span class="line">SHOW CREATE TABLES 表名;		&#x2F;&#x2F;查询某个表的字符集</span><br></pre></td></tr></table></figure>
+
+<p><strong>U(Update):修改</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 表名 RENAME TO 新的表名;</span><br><span class="line">ALTER TABLE 表名 CHARACTER SET 字符集名称;</span><br><span class="line"></span><br><span class="line">ALTER TABLE 表名 ADD 列名 数据类型;</span><br><span class="line"></span><br><span class="line">ALTER TABLE 表名 CHANGE 列名 新列名 新数据类型;</span><br><span class="line">ALTER TABLE 表名 MODIFY 列名 新数据类型;</span><br><span class="line"></span><br><span class="line">ALTER TABLE 表名 DROP 列名;</span><br></pre></td></tr></table></figure>
+
+<p><strong>D(Delete):删除</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE 表名;</span><br><span class="line">DROP TABLE <span class="keyword">IF</span> EXISTS 表名;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="数据库数据类型："><a href="#数据库数据类型：" class="headerlink" title="数据库数据类型："></a>数据库数据类型：</h4><p><strong>int</strong>：整数类型</p>
+<ul>
+<li>age int,</li>
+</ul>
+<p><strong>double</strong>:小数类型</p>
+<ul>
+<li>score double(5,2)</li>
+</ul>
+<p><strong>date</strong>:日期，只包含年月日，yyyy-MM-dd</p>
+<p><strong>datetime</strong>:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss</p>
+<p><strong>timestamp</strong>:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss    </p>
+<ol>
+<li>如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值</li>
+</ol>
+<p><strong>varchar</strong>：字符串</p>
+<ol>
+<li>name varchar(20):姓名最大20个字符</li>
+<li>zhangsan 8个字符  张三 2个字符</li>
+</ol>
+<h2 id="05-DML：增删改表中数据"><a href="#05-DML：增删改表中数据" class="headerlink" title="05.DML：增删改表中数据"></a>05.DML：增删改表中数据</h2><h4 id="添加数据："><a href="#添加数据：" class="headerlink" title="添加数据："></a>添加数据：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO 表名(列名1,列名2,...列名n) VALUES(值1,值2,...值n);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：<ol>
+<li>列名和值要一一对应。</li>
+<li>如果表名后，不定义列名，则默认给所有列添加值<br>insert into 表名 values(值1,值2,…值n);</li>
+<li>除了数字类型，其他类型需要使用引号(单双都可以)引起来</li>
+</ol>
+</li>
+</ul>
+<h4 id="删除数据："><a href="#删除数据：" class="headerlink" title="删除数据："></a>删除数据：</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM 表名 WHERE 条件;</span><br><span class="line"></span><br><span class="line">DELETE FROM 表名 ;				//删除所有记录,不推荐使用</span><br><span class="line">TRUNCATE TABLE 表名;					//删除所有记录,然后再创建一张新表</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改数据："><a href="#修改数据：" class="headerlink" title="修改数据："></a>修改数据：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE 表名 SET 列名1&#x3D;值1,列名2&#x3D;值2,...[WHERE 条件]</span><br><span class="line">UPDATE 表名 SET 列名1&#x3D;值1,列名2&#x3D;值2,...</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：<ol>
+<li>如果不加任何条件，则会将表中所有记录全部修改。</li>
+</ol>
+</li>
+</ul>
+<h2 id="06-DQL：查询表中的记录"><a href="#06-DQL：查询表中的记录" class="headerlink" title="06.DQL：查询表中的记录"></a>06.DQL：查询表中的记录</h2><h4 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">	字段列表</span><br><span class="line">from</span><br><span class="line">	表名列表</span><br><span class="line">where</span><br><span class="line">	条件列表</span><br><span class="line">group by</span><br><span class="line">	分组字段</span><br><span class="line">having</span><br><span class="line">	分组之后的条件</span><br><span class="line">order by</span><br><span class="line">	排序</span><br><span class="line">limit</span><br><span class="line">	分页限定</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h4><ol>
+<li>多个字段的查询</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select 字段名1，字段名2... from 表名;</span><br><span class="line">SELECT * FROM 表名;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>去除重复：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT 字段名 FROM 表名;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>计算列</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT AGE,MONEY,AGE+MONEY FROM STU;</span><br><span class="line"></span><br><span class="line">SELECT AGE,MONEY,AGE+IFNULL(MONEY,0) FROM STU;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null<ul>
+<li>表达式1：哪个字段需要判断是否为null</li>
+<li>如果该字段为null后的替换值。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>起别名</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT AGE 年龄,MONEY 价钱,AGE+MONEY 综合 FROM STU;</span><br><span class="line"></span><br><span class="line">SELECT AGE AS 年龄,MONEY 价钱,AGE+MONEY AS 综合 FROM STU;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h4><ol>
+<li><p>where子句后跟条件</p>
+</li>
+<li><p>运算符：&gt;，&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;</p>
+<ol start="3">
+<li>null值不能使用 = （!=） 判断</li>
+</ol>
+</li>
+<li><p>条件界定词汇：</p>
+<ul>
+<li>BETWEEN…AND  </li>
+<li>IN( 集合) </li>
+<li>LIKE：模糊查询</li>
+<li>占位符：<pre><code>* _:单个任意字符
+           * %：多个任意字符</code></pre></li>
+<li>IS NULL  </li>
+<li>and  或 &amp;&amp;<ul>
+<li>or  或 || </li>
+<li>not  或 !</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">	-- 查询年龄大于20岁</span><br><span class="line"></span><br><span class="line">    SELECT * FROM student WHERE age &gt; 20;</span><br><span class="line"></span><br><span class="line">    SELECT * FROM student WHERE age &gt;&#x3D; 20;</span><br><span class="line"></span><br><span class="line">    -- 查询年龄等于20岁</span><br><span class="line">    SELECT * FROM student WHERE age &#x3D; 20;</span><br><span class="line"></span><br><span class="line">    -- 查询年龄不等于20岁</span><br><span class="line">    SELECT * FROM student WHERE age !&#x3D; 20;</span><br><span class="line">    SELECT * FROM student WHERE age &lt;&gt; 20;</span><br><span class="line"></span><br><span class="line">    -- 查询年龄大于等于20 小于等于30</span><br><span class="line"></span><br><span class="line">    SELECT * FROM student WHERE age &gt;&#x3D; 20 &amp;&amp;  age &lt;&#x3D;30;</span><br><span class="line">    SELECT * FROM student WHERE age &gt;&#x3D; 20 AND  age &lt;&#x3D;30;</span><br><span class="line">    SELECT * FROM student WHERE age BETWEEN 20 AND 30;</span><br><span class="line"></span><br><span class="line">    -- 查询年龄22岁，18岁，25岁的信息</span><br><span class="line">    SELECT * FROM student WHERE age &#x3D; 22 OR age &#x3D; 18 OR age &#x3D; 25</span><br><span class="line">    SELECT * FROM student WHERE age IN (22,18,25);</span><br><span class="line"></span><br><span class="line">    -- 查询英语成绩为null</span><br><span class="line">    SELECT * FROM student WHERE english &#x3D; NULL; -- 不对的。null值不能使用 &#x3D; （!&#x3D;） 判断</span><br><span class="line"></span><br><span class="line">    SELECT * FROM student WHERE english IS NULL;</span><br><span class="line"></span><br><span class="line">    -- 查询英语成绩不为null</span><br><span class="line">    SELECT * FROM student WHERE english  IS NOT NULL;</span><br><span class="line"></span><br><span class="line">    -- 查询姓马的有哪些？ like</span><br><span class="line">    SELECT * FROM student WHERE NAME LIKE &#39;马%&#39;;</span><br><span class="line">    -- 查询姓名第二个字是化的人</span><br><span class="line">    SELECT * FROM student WHERE NAME LIKE &quot;_化%&quot;;		</span><br><span class="line"></span><br><span class="line">    -- 查询姓名是3个字的人</span><br><span class="line">    SELECT * FROM student WHERE NAME LIKE &#39;___&#39;;</span><br><span class="line"></span><br><span class="line">-- 查询姓名中包含德的人</span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &#39;%德%&#39;;</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/03/26/SSMS%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" rel="next" title="SSMS使用教程">
+                <i class="fa fa-chevron-left"></i> SSMS使用教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/03/26/MySQL/List-02_DQL&%E7%BA%A6%E6%9D%9F/" rel="prev" title="List-02_DQL&约束">
+                List-02_DQL&约束 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80ODMxMC8yNDgwNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Chan Willian" />
+            
+              <p class="site-author-name" itemprop="name">Chan Willian</p>
+              <p class="site-description motion-element" itemprop="description">blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/learn/">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ChanWillian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+  
+
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#01-数据库的基本概念"><span class="nav-number"></span> <span class="nav-text">01.数据库的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-MySQL配置"><span class="nav-number"></span> <span class="nav-text">02.MySQL配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL启动"><span class="nav-number">0.0.1.</span> <span class="nav-text">MySQL启动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL登录"><span class="nav-number">0.0.2.</span> <span class="nav-text">MySQL登录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL退出"><span class="nav-number">0.0.3.</span> <span class="nav-text">MySQL退出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL目录结构"><span class="nav-number">0.0.4.</span> <span class="nav-text">MySQL目录结构</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#03-SQL"><span class="nav-number"></span> <span class="nav-text">03.SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是SQL？"><span class="nav-number">0.0.1.</span> <span class="nav-text">什么是SQL？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL通用语法"><span class="nav-number">0.1.</span> <span class="nav-text">SQL通用语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL分类"><span class="nav-number">0.2.</span> <span class="nav-text">SQL分类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-DDL-操作数据库、表"><span class="nav-number"></span> <span class="nav-text">04.DDL:操作数据库、表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作数据库：CRUD"><span class="nav-number">0.1.</span> <span class="nav-text">操作数据库：CRUD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用数据库"><span class="nav-number">0.2.</span> <span class="nav-text">使用数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作表"><span class="nav-number">0.3.</span> <span class="nav-text">操作表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库数据类型："><span class="nav-number">0.4.</span> <span class="nav-text">数据库数据类型：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-DML：增删改表中数据"><span class="nav-number"></span> <span class="nav-text">05.DML：增删改表中数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加数据："><span class="nav-number">0.1.</span> <span class="nav-text">添加数据：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据："><span class="nav-number">0.2.</span> <span class="nav-text">删除数据：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据："><span class="nav-number">0.3.</span> <span class="nav-text">修改数据：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#06-DQL：查询表中的记录"><span class="nav-number"></span> <span class="nav-text">06.DQL：查询表中的记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法："><span class="nav-number">0.1.</span> <span class="nav-text">语法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基础查询"><span class="nav-number">0.2.</span> <span class="nav-text">基础查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件查询"><span class="nav-number">0.3.</span> <span class="nav-text">条件查询</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Willian</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">55.3k</span>
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
