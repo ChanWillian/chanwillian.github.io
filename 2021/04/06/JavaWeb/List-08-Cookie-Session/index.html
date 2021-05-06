@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-simple.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Pt Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, ChanWillian" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今日内容 会话技术 Cookie Session   JSP：入门学习  会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止   功能：在一次会话的范围内的多次请求间，共享数据 方式： 客户端会话技术：Cookie 服务器端会话技术：Session    0.1 Cookie： 概念：客户端会话技术，将数据保存到客户端  1）快">
+<meta property="og:type" content="article">
+<meta property="og:title" content="List-08_Cookie_Session">
+<meta property="og:url" content="http://yoursite.com/2021/04/06/JavaWeb/List-08-Cookie-Session/">
+<meta property="og:site_name" content="The Very">
+<meta property="og:description" content="今日内容 会话技术 Cookie Session   JSP：入门学习  会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止   功能：在一次会话的范围内的多次请求间，共享数据 方式： 客户端会话技术：Cookie 服务器端会话技术：Session    0.1 Cookie： 概念：客户端会话技术，将数据保存到客户端  1）快">
+<meta property="og:image" content="https://i.loli.net/2021/01/24/AHTQi3X5kC6z1Rj.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/24/7CdY6MeqaAiryF9.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/24/dWTumt1sPGFDrIg.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/24/KVYW5xLmQChsjR4.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/py3FJTmzZa1CLD8.png">
+<meta property="article:published_time" content="2021-04-06T08:08:22.000Z">
+<meta property="article:modified_time" content="2021-04-06T08:08:58.791Z">
+<meta property="article:author" content="Chan Willian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/24/AHTQi3X5kC6z1Rj.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/04/06/JavaWeb/List-08-Cookie-Session/"/>
+
+
+
+
+
+  <title>List-08_Cookie_Session | The Very</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="The Very" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+ 
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Very</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">personal blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-开发学习">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            开发学习
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-广泛学习">
+          <a href="/learn/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-superpowers"></i> <br />
+            
+            广泛学习
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/06/JavaWeb/List-08-Cookie-Session/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chan Willian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Very">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">List-08_Cookie_Session</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-06T16:08:22+08:00">
+                2021-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
+<li>会话技术<ul>
+<li>Cookie</li>
+<li>Session</li>
+</ul>
+</li>
+<li>JSP：入门学习</li>
+</ul>
+<h3 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h3><ol>
+<li>会话：一次会话中包含多次请求和响应。<ul>
+<li>一次会话：<strong>浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止</strong></li>
+</ul>
+</li>
+<li>功能：<strong>在一次会话的范围内的多次请求间</strong>，共享数据</li>
+<li>方式：<ol>
+<li><strong>客户端会话技术：Cookie</strong></li>
+<li><strong>服务器端会话技术：Session</strong></li>
+</ol>
+</li>
+</ol>
+<h2 id="0-1-Cookie："><a href="#0-1-Cookie：" class="headerlink" title="0.1 Cookie："></a>0.1 Cookie：</h2><ul>
+<li>概念：客户端会话技术，<strong>将数据保存到客户端</strong></li>
+</ul>
+<h4 id="1）快速入门："><a href="#1）快速入门：" class="headerlink" title="1）快速入门："></a>1）快速入门：</h4><ul>
+<li><p>使用步骤：</p>
+<ol>
+<li><strong>创建Cookie对象，绑定数据</strong><ul>
+<li>new Cookie(String name, String value) </li>
+</ul>
+</li>
+<li><strong>发送Cookie对象</strong><ul>
+<li>response.addCookie(Cookie cookie) </li>
+</ul>
+</li>
+<li><strong>获取Cookie，拿到数据</strong><ul>
+<li>Cookie[ ]  request.getCookies()  </li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>实现原理</strong></p>
+<ul>
+<li><strong>基于响应头set-cookie和请求头cookie实现</strong><ul>
+<li><img src="https://i.loli.net/2021/01/24/AHTQi3X5kC6z1Rj.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）cookie的细节"><a href="#2）cookie的细节" class="headerlink" title="2）cookie的细节"></a>2）cookie的细节</h4><blockquote>
+<h4 id="一次可不可以发送多个cookie"><a href="#一次可不可以发送多个cookie" class="headerlink" title="一次可不可以发送多个cookie?"></a>一次可不可以发送多个cookie?</h4></blockquote>
+<ul>
+<li>可以<ul>
+<li><strong>可以创建多个Cookie对象，使用response调用多次addCookie方法发送cookie即可。</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<h4 id="cookie在浏览器中保存多长时间？"><a href="#cookie在浏览器中保存多长时间？" class="headerlink" title="cookie在浏览器中保存多长时间？"></a>cookie在浏览器中保存多长时间？</h4></blockquote>
+<ol>
+<li><strong>默认情况下</strong>，当浏览器关闭后，Cookie数据被销毁</li>
+<li><strong>持久化存储</strong>：<ul>
+<li><strong>setMaxAge</strong>(int seconds)<ul>
+<li>正数：将Cookie数据写到硬盘的文件中。<strong>持久化存储</strong>。并指定cookie存活时间，时间到后，cookie文件自动失效</li>
+<li>负数：默认值</li>
+<li>零：删除cookie信息</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<h4 id="cookie能不能存中文？"><a href="#cookie能不能存中文？" class="headerlink" title="cookie能不能存中文？"></a>cookie能不能存中文？</h4></blockquote>
+<ul>
+<li>在tomcat 8 之前 cookie<strong><strong>中不能直接存储中文数据</strong></strong>。<ul>
+<li>需要将中文数据转码—一般采用URL编码(%E3)</li>
+</ul>
+</li>
+<li>在tomcat 8 之后，cookie支持中文数据。特殊字符还是不支持，<strong>建议使用URL编码存储，URL解码解析</strong></li>
+</ul>
+<blockquote>
+<h4 id="cookie共享问题"><a href="#cookie共享问题" class="headerlink" title="cookie共享问题"></a>cookie共享问题</h4></blockquote>
+<ul>
+<li>假设在一个tomcat服务器中，部署了<strong>多个web项目</strong>，那么在这些web项目中cookie<strong>能不能共享</strong>？</li>
+</ul>
+<ul>
+<li><strong>默认情况下cookie不能共享</strong><ul>
+<li>setPath(String path)：设置cookie的获取范围。默认情况下，设置当前的虚拟目录</li>
+<li>如果要共享，则可以将path设置为”/“</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<h4 id="不同的tomcat服务器间cookie共享问题？"><a href="#不同的tomcat服务器间cookie共享问题？" class="headerlink" title="不同的tomcat服务器间cookie共享问题？"></a>不同的tomcat服务器间cookie共享问题？</h4></blockquote>
+<ul>
+<li><strong>setDomain</strong>(String path)：<strong>如果设置一级域名相同</strong>，那么多个服务器之间cookie可以共享<ul>
+<li>例如，setDomain(“.baidu.com”)：那么tieba.baidu.com和news.baidu.com中cookie可以共享</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）Cookie的特点和作用"><a href="#3）Cookie的特点和作用" class="headerlink" title="3）Cookie的特点和作用"></a>3）Cookie的特点和作用</h4><ul>
+<li>特点：<ul>
+<li>cookie<strong>存储数据在客户端浏览器</strong></li>
+<li>浏览器对于单个cookie <strong>的大小有限制</strong>(4kb) 以及 <strong>对同一个域名下的总</strong>cookie<strong>数量也有限制</strong>(20个)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>作用：<ol>
+<li>cookie<strong>一般用于存出少量的不太敏感的数据</strong></li>
+<li><strong>在不登录的情况下，完成服务器对客户端的身份识别</strong></li>
+</ol>
+</li>
+</ul>
+<h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><blockquote>
+<h4 id="记住上一次访问时间"><a href="#记住上一次访问时间" class="headerlink" title="记住上一次访问时间"></a>记住上一次访问时间</h4></blockquote>
+<ul>
+<li>需求：<ol>
+<li>访问一个Servlet，<strong>如果是第一次访问</strong>，则提示：您好，欢迎您首次访问。</li>
+<li><strong>如果不是第一次访问</strong>，则提示：欢迎回来，您上次访问时间为:显示时间字符串</li>
+</ol>
+</li>
+<li><img src="https://i.loli.net/2021/01/24/7CdY6MeqaAiryF9.png" alt=""></li>
+</ul>
+<h4 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h4><ol>
+<li>可以采用Cookie来完成</li>
+<li><strong>在服务器中的Servlet判断是否有一个名为lastTime的cookie</strong><ol>
+<li>有：不是第一次访问<ol>
+<li>响应数据：欢迎回来，您上次访问时间为:2018年6月10日11:50:20</li>
+<li>写回Cookie：lastTime=2018年6月10日11:50:01</li>
+</ol>
+</li>
+<li>没有：是第一次访问<ol>
+<li>响应数据：您好，欢迎您首次访问</li>
+<li>写回Cookie：lastTime=2018年6月10日11:50:01</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="0-2-JSP入门学习"><a href="#0-2-JSP入门学习" class="headerlink" title="0.2 JSP入门学习"></a>0.2 JSP入门学习</h2><ul>
+<li><p><strong>概念：</strong></p>
+<ul>
+<li>Java Server Pages： java服务器端页面</li>
+<li>可以理解为：<strong>一个特殊的页面，其中既可以指定定义html标签，又可以定义java代码</strong></li>
+<li><strong>用于简化书写！！！</strong></li>
+</ul>
+</li>
+<li><p><strong>原理</strong></p>
+<ul>
+<li><strong>JSP本质上就是一个Servlet</strong></li>
+<li><img src="https://i.loli.net/2021/01/24/dWTumt1sPGFDrIg.png" alt="JSP原理.png"></li>
+</ul>
+</li>
+</ul>
+<h4 id="1）JSP的脚本："><a href="#1）JSP的脚本：" class="headerlink" title="1）JSP的脚本："></a>1）JSP的脚本：</h4><ul>
+<li><strong>JSP定义Java代码的方式</strong><ul>
+<li><strong>&lt;%  代码 %&gt;</strong>：定义的java代码，在service方法中。<strong>可以在此处使用正常的java代码</strong></li>
+<li><strong>&lt;%! 代码 %&gt;</strong>：定义的java代码，在jsp转换后的java类的成员位置。<strong>可以在此处成定义成员变量</strong></li>
+<li><strong>&lt;%= 代码 %&gt;</strong>：定义的java代码，会输出到页面上。<strong>可以直接书写要输入的内容</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="2）JSP的内置对象："><a href="#2）JSP的内置对象：" class="headerlink" title="2）JSP的内置对象："></a>2）JSP的内置对象：</h4><ul>
+<li>在jsp页面中<strong>不需要获取和创建，可以直接使用的对象</strong></li>
+<li>jsp一共有9个内置对象。<ul>
+<li>request</li>
+<li>response</li>
+<li>out：字符输出流对象。可以将数据输出到页面上。和response.getWriter()类似</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>response.getWriter()和out.write()的区别：</strong><ul>
+<li>在tomcat服务器真正给客户端做出响应之前，会先找response缓冲区数据，再找out缓冲区数据。</li>
+<li>response.getWriter()数据输出永远<strong>在out.write()之前</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例:"></a>案例:</h2><h4 id="改造Cookie案例"><a href="#改造Cookie案例" class="headerlink" title="改造Cookie案例"></a>改造Cookie案例</h4><h2 id="0-3-Session"><a href="#0-3-Session" class="headerlink" title="0.3 Session"></a>0.3 Session</h2><ul>
+<li>概念：服务器端会话技术，在一次会话的多次请求间共享数据，<strong>将数据保存在服务器端的对象中</strong>。<strong>HttpSession</strong></li>
+</ul>
+<h4 id="1）快速入门：-1"><a href="#1）快速入门：-1" class="headerlink" title="1）快速入门："></a>1）快速入门：</h4><ol>
+<li><strong>获取HttpSession对象：</strong><ul>
+<li>HttpSession session = <strong>request.getSession();</strong></li>
+</ul>
+</li>
+<li><strong>使用HttpSession对象：</strong><ul>
+<li>Object <strong>getAttribute</strong>(String name)  </li>
+<li>void <strong>setAttribute</strong>(String name, Object value)</li>
+<li>void <strong>removeAttribute</strong>(String name)  </li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>原理</strong><ul>
+<li><strong>Session的实现是依赖于Cookie的。</strong></li>
+<li><img src="https://i.loli.net/2021/01/24/KVYW5xLmQChsjR4.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h4 id="2）细节："><a href="#2）细节：" class="headerlink" title="2）细节："></a>2）细节：</h4><blockquote>
+<h4 id="当客户端关闭后，服务器不关闭，两次获取session是否为同一个？"><a href="#当客户端关闭后，服务器不关闭，两次获取session是否为同一个？" class="headerlink" title="当客户端关闭后，服务器不关闭，两次获取session是否为同一个？"></a>当客户端关闭后，服务器不关闭，两次获取session是否为同一个？</h4></blockquote>
+<ul>
+<li><strong>默认情况下。不是。</strong></li>
+<li>如果需要相同，则可以创建Cookie，键为JSESSIONID，设置最大存活时间，让cookie持久化保存。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Cookie c = <span class="keyword">new</span> Cookie(<span class="string">"JSESSIONID"</span>,session.getId());</span><br><span class="line"></span><br><span class="line">c.setMaxAge(<span class="number">60</span>*<span class="number">60</span>);</span><br><span class="line"></span><br><span class="line">response.addCookie(c);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="客户端不关闭，服务器关闭后，两次获取的session是同一个吗？"><a href="#客户端不关闭，服务器关闭后，两次获取的session是同一个吗？" class="headerlink" title="客户端不关闭，服务器关闭后，两次获取的session是同一个吗？"></a>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？</h4></blockquote>
+<ul>
+<li><p><strong>不是同一个，但是要确保数据不丢失</strong>。tomcat自动完成以下工作</p>
+<ul>
+<li><p>session的钝化：</p>
+<ul>
+<li>在服务器正常关闭之前，将session对象系列化到硬盘上</li>
+</ul>
+</li>
+<li><p>session的活化：</p>
+<ul>
+<li>在服务器启动后，将session文件转化为内存中的session对象即可。</li>
+<li>使用Tomcat可以实现此功能，而使用idea无法实现此功能</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<h4 id="session什么时候被销毁？"><a href="#session什么时候被销毁？" class="headerlink" title="session什么时候被销毁？"></a>session什么时候被销毁？</h4></blockquote>
+<ul>
+<li>服务器关闭<ul>
+<li>session对象调用invalidate() 。</li>
+<li>session默认失效时间 30分钟</li>
+</ul>
+</li>
+<li>选择性配置修改    <session-config>
+     <session-timeout>30</session-timeout>
+</session-config>
+
+</li>
+</ul>
+<h4 id="3）特点"><a href="#3）特点" class="headerlink" title="3）特点"></a>3）特点</h4><ul>
+<li>session<strong>用于存储一次会话的多次请求的数据</strong>，存在服务器端<ul>
+<li>session<strong>可以存储任意类型</strong>，任意大小的数据</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>session与Cookie的区别：</strong><ol>
+<li>session<strong>存储数据在服务器端</strong>，Cookie在客户端</li>
+<li>session<strong>没有数据大小限制</strong>，Cookie有</li>
+<li>session<strong>数据安全</strong>，Cookie相对于不安全</li>
+</ol>
+</li>
+</ul>
+<h2 id="案例：验证码"><a href="#案例：验证码" class="headerlink" title="案例：验证码"></a>案例：验证码</h2><h4 id="案例需求："><a href="#案例需求：" class="headerlink" title="案例需求："></a>案例需求：</h4><ol>
+<li>访问带有验证码的登录页面  login.jsp</li>
+<li>用户输入用户名，密码以及验证码。<ul>
+<li>如果用户名和密码输入有误，跳转登录页面，提示：用户名或密码错误</li>
+<li>如果验证码输入有误，跳转登录页面，提示：验证码错误</li>
+<li>如果全部输入正确，则跳转到主页success.jsp，显示：用户名,欢迎您</li>
+</ul>
+</li>
+</ol>
+<h4 id="分析：-1"><a href="#分析：-1" class="headerlink" title="分析："></a>分析：</h4><ul>
+<li><img src="https://i.loli.net/2021/01/26/py3FJTmzZa1CLD8.png" alt="登录案例.png"></li>
+</ul>
+<p>​    </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/04/06/JavaWeb/Tomcat&Servlet/List-07-Response/" rel="next" title="List-07_Response">
+                <i class="fa fa-chevron-left"></i> List-07_Response
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/04/06/JavaWeb/JavaScript/List-12_JQuery%E5%9F%BA%E7%A1%80/" rel="prev" title="List-12_JQuery基础">
+                List-12_JQuery基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80ODMxMC8yNDgwNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Chan Willian" />
+            
+              <p class="site-author-name" itemprop="name">Chan Willian</p>
+              <p class="site-description motion-element" itemprop="description">blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ChanWillian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+  
+
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#今日内容"><span class="nav-number">1.</span> <span class="nav-text">今日内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话技术"><span class="nav-number">2.</span> <span class="nav-text">会话技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1-Cookie："><span class="nav-number"></span> <span class="nav-text">0.1 Cookie：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1）快速入门："><span class="nav-number">0.1.</span> <span class="nav-text">1）快速入门：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2）cookie的细节"><span class="nav-number">0.2.</span> <span class="nav-text">2）cookie的细节</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一次可不可以发送多个cookie"><span class="nav-number">0.3.</span> <span class="nav-text">一次可不可以发送多个cookie?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie在浏览器中保存多长时间？"><span class="nav-number">0.4.</span> <span class="nav-text">cookie在浏览器中保存多长时间？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie能不能存中文？"><span class="nav-number">0.5.</span> <span class="nav-text">cookie能不能存中文？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie共享问题"><span class="nav-number">0.6.</span> <span class="nav-text">cookie共享问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不同的tomcat服务器间cookie共享问题？"><span class="nav-number">0.7.</span> <span class="nav-text">不同的tomcat服务器间cookie共享问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3）Cookie的特点和作用"><span class="nav-number">0.8.</span> <span class="nav-text">3）Cookie的特点和作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例："><span class="nav-number"></span> <span class="nav-text">案例：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#记住上一次访问时间"><span class="nav-number">0.1.</span> <span class="nav-text">记住上一次访问时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析："><span class="nav-number">0.2.</span> <span class="nav-text">分析：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-2-JSP入门学习"><span class="nav-number"></span> <span class="nav-text">0.2 JSP入门学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1）JSP的脚本："><span class="nav-number">0.1.</span> <span class="nav-text">1）JSP的脚本：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2）JSP的内置对象："><span class="nav-number">0.2.</span> <span class="nav-text">2）JSP的内置对象：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number"></span> <span class="nav-text">案例:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#改造Cookie案例"><span class="nav-number">0.1.</span> <span class="nav-text">改造Cookie案例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-3-Session"><span class="nav-number"></span> <span class="nav-text">0.3 Session</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1）快速入门：-1"><span class="nav-number">0.1.</span> <span class="nav-text">1）快速入门：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2）细节："><span class="nav-number">0.2.</span> <span class="nav-text">2）细节：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当客户端关闭后，服务器不关闭，两次获取session是否为同一个？"><span class="nav-number">0.3.</span> <span class="nav-text">当客户端关闭后，服务器不关闭，两次获取session是否为同一个？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端不关闭，服务器关闭后，两次获取的session是同一个吗？"><span class="nav-number">0.4.</span> <span class="nav-text">客户端不关闭，服务器关闭后，两次获取的session是同一个吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#session什么时候被销毁？"><span class="nav-number">0.5.</span> <span class="nav-text">session什么时候被销毁？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3）特点"><span class="nav-number">0.6.</span> <span class="nav-text">3）特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例：验证码"><span class="nav-number"></span> <span class="nav-text">案例：验证码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#案例需求："><span class="nav-number">0.1.</span> <span class="nav-text">案例需求：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析：-1"><span class="nav-number">0.2.</span> <span class="nav-text">分析：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Willian</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">57.5k</span>
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
