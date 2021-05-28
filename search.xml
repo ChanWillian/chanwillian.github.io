@@ -1,6 +1,761 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>List-15_Redis</title>
+    <url>/2021/05/13/JavaWeb/List-15-Redis/</url>
+    <content><![CDATA[<h2 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h2><ul>
+<li>redis<ul>
+<li>概念</li>
+<li>下载安装</li>
+<li>命令操作</li>
+</ul>
+</li>
+<li>数据结构</li>
+<li>持久化操作</li>
+<li>使用Java客户端操作redis</li>
+</ul>
+<h2 id="0-1-NOSQL"><a href="#0-1-NOSQL" class="headerlink" title="0.1 NOSQL"></a>0.1 NOSQL</h2><blockquote>
+<h4 id="什么是NOSQL"><a href="#什么是NOSQL" class="headerlink" title="什么是NOSQL"></a>什么是NOSQL</h4></blockquote>
+<ul>
+<li>NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。</li>
+<li>随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0</li>
+<li>纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。</li>
+<li>NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，<strong>尤其是大数据应用难题</strong>。</li>
+</ul>
+<blockquote>
+<h4 id="NOSQL和关系型数据库比较"><a href="#NOSQL和关系型数据库比较" class="headerlink" title="NOSQL和关系型数据库比较"></a>NOSQL和关系型数据库比较</h4></blockquote>
+<ul>
+<li><p><strong>优点</strong>：</p>
+<ul>
+<li>1）成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。</li>
+<li>2）<strong>查询速度</strong>：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不nosql数据库。</li>
+<li>3）<strong>存储数据的格式</strong>：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。</li>
+<li>4）扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。</li>
+</ul>
+</li>
+<li><p><strong>缺点</strong>：</p>
+<ul>
+<li>1）维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。</li>
+<li>2）不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。</li>
+<li>3）不提供关系型数据库对事务的处理。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1）非关系型数据库的优势："><a href="#1）非关系型数据库的优势：" class="headerlink" title="1）非关系型数据库的优势："></a>1）非关系型数据库的优势：</h4><ul>
+<li><p>性能NOSQL<strong>是基于键值对的</strong>，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，<strong>所以性能非常高</strong>。</p>
+</li>
+<li><p>可扩展性同样也是因为基于键值对，数据之间没有耦合性，<strong>所以非常容易水平扩展</strong>。</p>
+</li>
+</ul>
+<h4 id="2）关系型数据库的优势："><a href="#2）关系型数据库的优势：" class="headerlink" title="2）关系型数据库的优势："></a>2）关系型数据库的优势：</h4><ul>
+<li><p>复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</p>
+</li>
+<li><p>事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。</p>
+</li>
+</ul>
+<h4 id="3）总结"><a href="#3）总结" class="headerlink" title="3）总结"></a>3）总结</h4><ul>
+<li>关系型数据库与NoSQL数据库<strong>并非对立而是互补的关系</strong>，</li>
+<li><strong>即通常情况下使用关系型数据库</strong>，在适合使用NoSQL的时候使用NoSQL数据库，让NoSQL数据库对关系型数据库的不足进行弥补。</li>
+<li>一般会将数据存储在关系型数据库中，在nosql<strong>数据库中备份存储关系型数据库的数据</strong></li>
+</ul>
+<h4 id="4）主流的NOSQL产品"><a href="#4）主流的NOSQL产品" class="headerlink" title="4）主流的NOSQL产品"></a>4）主流的NOSQL产品</h4><ul>
+<li><p><strong>键值(Key-Value)存储数据库</strong></p>
+<ul>
+<li>相关产品： Tokyo Cabinet/Tyrant、Redis、Voldemort、Berkeley DB</li>
+<li>典型应用： <strong>内容缓存，主要用于处理大量数据的高访问负载。</strong></li>
+<li>数据模型： 一系列键值对<ul>
+<li>优势： <strong>快速查询</strong></li>
+<li>劣势： 存储的数据缺少结构化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>列存储数据库</strong></p>
+<ul>
+<li>相关产品：Cassandra, HBase, Riak</li>
+<li>典型应用：<strong>分布式的文件系统</strong></li>
+<li>数据模型：以列簇式存储，将同一列数据存在一起<ul>
+<li>优势：<strong>查找速度快，可扩展性强</strong>，更容易进行分布式扩展</li>
+<li>劣势：功能相对局限</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>文档型数据库</strong></p>
+<ul>
+<li>相关产品：CouchDB、MongoDB<ul>
+<li>典型应用：<strong>Web应用</strong>（与Key-Value类似，Value是结构化的）</li>
+<li>数据模型： 一系列键值对<ul>
+<li>优势：<strong>数据结构要求不严格</strong></li>
+<li>劣势： 查询性能不高，而且缺乏统一的查询语法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>图形(Graph)数据库</p>
+<ul>
+<li>相关数据库：Neo4J、InfoGrid、Infinite Graph</li>
+<li>典型应用：<strong>社交网络</strong></li>
+<li>数据模型：图结构<ul>
+<li>优势：<strong>利用图结构相关算法</strong>。</li>
+<li>劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-2-Redis"><a href="#0-2-Redis" class="headerlink" title="0.2 Redis"></a>0.2 Redis</h2><blockquote>
+<h4 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h4></blockquote>
+<ul>
+<li>Redis是用C语言开发的一个开源的高性能键值对（key-value）数据库，官方提供测试数据，50个并发执行100000个请求,读的速度是110000次/s,写的速度是81000次/s </li>
+<li>且Redis<strong>通过提供多种键值数据类型来适应不同场景下的存储需求</strong>，</li>
+<li>目前为止Redis支持的键值数据类型如下：<ul>
+<li>字符串类型 string</li>
+<li>哈希类型 hash</li>
+<li>列表类型 list</li>
+<li>集合类型 set</li>
+<li>有序集合类型 sortedset</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<h4 id="Redis的应用场景"><a href="#Redis的应用场景" class="headerlink" title="Redis的应用场景"></a>Redis的应用场景</h4></blockquote>
+<ul>
+<li>缓存（数据查询、短连接、新闻内容、商品内容等等）</li>
+<li>聊天室的在线好友列表</li>
+<li>任务队列。（秒杀、抢购、12306等等）</li>
+<li>应用排行榜</li>
+<li>网站访问统计</li>
+<li>数据过期处理（可以精确到毫秒</li>
+<li>分布式集群架构中的session分离</li>
+</ul>
+<h4 id="1）下载安装"><a href="#1）下载安装" class="headerlink" title="1）下载安装"></a>1）下载安装</h4><ul>
+<li>官网：https//redis.io</li>
+<li>中文网：https//<a href="http://www.redis.net.cn/" target="_blank" rel="noopener">www.redis.net.cn/</a></li>
+<li><strong>解压直接可以使用</strong>：<ul>
+<li>redis.windows.conf：配置文件</li>
+<li>redis-cli.exe：redis的客户端</li>
+<li>redis-server.exe：redis服务器端</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）命令操作"><a href="#2）命令操作" class="headerlink" title="2）命令操作"></a>2）命令操作</h4><ul>
+<li><p><strong>redis的数据结构：</strong></p>
+<ul>
+<li>redis存储的是：key,value格式的数据，其中<strong>key都是字符串</strong>，value有5种不同的数据结构</li>
+<li>value的数据结构：<ul>
+<li>字符串类型 string</li>
+<li>哈希类型 hash ： map格式</li>
+<li>列表类型 list ： linkedlist格式。支持重复元素</li>
+<li>集合类型 set  ： 不允许重复元素</li>
+<li>有序集合类型 sortedset：不允许重复元素，且元素有顺序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<h4 id="字符串类型-string"><a href="#字符串类型-string" class="headerlink" title="字符串类型 string"></a>字符串类型 string</h4></blockquote>
+<ul>
+<li>存储： set key value<ul>
+<li>127.0.0.1：6379&gt; set username zhangsan</li>
+<li>OK</li>
+</ul>
+</li>
+<li>获取： get key<ul>
+<li>127.0.0.1：6379&gt; get username</li>
+<li>“zhangsan”</li>
+</ul>
+</li>
+<li>删除： del key<ul>
+<li>127.0.0.1：6379&gt; del age</li>
+<li>(integer) 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<h4 id="哈希类型-hash"><a href="#哈希类型-hash" class="headerlink" title="哈希类型 hash"></a>哈希类型 hash</h4></blockquote>
+<ul>
+<li>存储： hset key field value<ul>
+<li>127.0.0.1：6379&gt; hset myhash username lisi</li>
+<li>(integer) 1</li>
+<li>127.0.0.1：6379&gt; hset myhash password 123</li>
+<li>(integer) 1</li>
+</ul>
+</li>
+<li>获取：<ul>
+<li>hget key field： 获取指定的field对应的值<ul>
+<li>127.0.0.1：6379&gt; hget myhash username</li>
+<li>“lisi”</li>
+</ul>
+</li>
+<li>hgetall key：获取所有的field和value<ul>
+<li>127.0.0.1：6379&gt; hgetall myhash</li>
+<li>1) “username”</li>
+<li>2) “lisi”</li>
+<li>3) “password”</li>
+<li>4) “123”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>删除： hdel key field<ul>
+<li>127.0.0.1：6379&gt; hdel myhash username</li>
+<li>(integer) 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<h4 id="列表类型-list：-可以添加一个元素到列表的头部（左边）或者尾部（右边）"><a href="#列表类型-list：-可以添加一个元素到列表的头部（左边）或者尾部（右边）" class="headerlink" title="列表类型 list： 可以添加一个元素到列表的头部（左边）或者尾部（右边）"></a>列表类型 list： 可以添加一个元素到列表的头部（左边）或者尾部（右边）</h4></blockquote>
+<ul>
+<li>添加：<ul>
+<li>lpush key value： 将元素加入列表</li>
+<li>rpush key value：将元素加入列表右边</li>
+<li>127.0.0.1：6379&gt; lpush myList a<br>(integer) 1<br>127.0.0.1：6379&gt; lpush myList b<br>(integer) 2<br>127.0.0.1：6379&gt; rpush myList c<br>(integer) 3</li>
+</ul>
+</li>
+<li>获取：<ul>
+<li>lrange key start end ：范围获取</li>
+<li>127.0.0.1：6379&gt; lrange myList 0 -1<br>1) “b”<br>2) “a”<br>3) “c”</li>
+</ul>
+</li>
+<li>删除：<ul>
+<li>lpop key： 删除列表最左边的元素，并将元素返回</li>
+<li>rpop key： 删除列表最右边的元素，并将元素返回</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<h4 id="集合类型-set-：-不允许重复元素"><a href="#集合类型-set-：-不允许重复元素" class="headerlink" title="集合类型 set ： 不允许重复元素"></a>集合类型 set ： 不允许重复元素</h4></blockquote>
+<ul>
+<li>存储：sadd key value<ul>
+<li>127.0.0.1：6379&gt; sadd myset a<br>(integer) 1<br>127.0.0.1：6379&gt; sadd myset a<br>(integer) 0</li>
+</ul>
+</li>
+<li>获取：smembers key：获取set集合中所有元素<ul>
+<li>127.0.0.1：6379&gt; smembers myset<br>1) “a”</li>
+</ul>
+</li>
+<li>删除：srem key value：删除set集合中的某个元素<ul>
+<li>127.0.0.1：6379&gt; srem myset a<br>(integer) 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<h4 id="有序集合类型-sortedset："><a href="#有序集合类型-sortedset：" class="headerlink" title="有序集合类型 sortedset："></a>有序集合类型 sortedset：</h4></blockquote>
+<ul>
+<li><p>不允许重复元素，且元素有顺序.</p>
+</li>
+<li><p>每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排</p>
+</li>
+<li><p>存储：zadd key score value</p>
+<ul>
+<li>127.0.0.1:6379&gt; zadd mysort 60 zhangsan<br>(integer) 1<br>127.0.0.1:6379&gt; zadd mysort 50 lisi<br>(integer) 1<br>127.0.0.1:6379&gt; zadd mysort 80 wangwu<br>(integer) 1</li>
+</ul>
+</li>
+<li><p>获取：zrange key start end [withscores]</p>
+<ul>
+<li><p>127.0.0.1:6379&gt; zrange mysort 0 -1<br>1) “lisi”<br>2) “zhangsan”<br>3) “wangwu”</p>
+<p>127.0.0.1:6379&gt; zrange mysort 0 -1 withscores<br>1) “zhangsan”<br>2) “60”<br>3) “wangwu”<br>4) “80”<br>5) “lisi”<br>6) “500”</p>
+</li>
+</ul>
+</li>
+<li><p>删除：zrem key value</p>
+<ul>
+<li>127.0.0.1:6379&gt; zrem mysort lisi<br>(integer) 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<h4 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h4></blockquote>
+<ul>
+<li>keys * ： 查询所有的键</li>
+<li>type key ： 获取键对应的value的类型</li>
+<li>del key：删除指定的key value</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-3-持久化"><a href="#0-3-持久化" class="headerlink" title="0.3 持久化"></a>0.3 持久化</h2><ul>
+<li>redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失</li>
+<li>我们可以将redis内存中的数据持久化保存到硬盘的文件</li>
+</ul>
+<h4 id="1）redis持久化机制："><a href="#1）redis持久化机制：" class="headerlink" title="1）redis持久化机制："></a>1）redis持久化机制：</h4><ul>
+<li><blockquote>
+<h4 id="RDB：默认方式"><a href="#RDB：默认方式" class="headerlink" title="RDB：默认方式"></a>RDB：默认方式</h4></blockquote>
+<ul>
+<li>不需要进行配置，默认就使用这种机制</li>
+<li>在一定的间隔时间中，检测key的变化情况，然后持久化数据</li>
+<li><strong>1、编辑redis.windwos.conf文件</strong><ul>
+<li>after 900 sec (15 min) if at least 1 key changed<br>save 900 1<br>after 300 sec (5 min) if at least 10 keys changed<br>save 300 10<br>after 60 sec if at least 10000 keys changed<br>save 60 10000</li>
+</ul>
+</li>
+<li><strong>2.重新启动redis服务器，并指定配置文件名称</strong><ul>
+<li>D：\JavaWeb2018\day23_redis\资料\redis\windows-64\redis-2.8.9&gt;redis-server.exe redis.windows.conf</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<h4 id="AOF：日志记录的方式"><a href="#AOF：日志记录的方式" class="headerlink" title="AOF：日志记录的方式"></a>AOF：日志记录的方式</h4></blockquote>
+<ul>
+<li><p>可以记录每一条命令的操作。可以每一次命令操作后，持久化数据</p>
+</li>
+<li><p>编辑redis.windwos.conf文件</p>
+<ul>
+<li><p>appendonly no（关闭aof） –&gt; appendonly yes （开启aof）</p>
+<p>appendfsync always ： 每一次操作都进行持久化<br>appendfsync everysec ： 每隔一秒进行一次持久化<br>appendfsync no     ： 不进行持久化</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+<pre><code>5. Java客户端 Jedis
+    * Jedis： 一款java操作redis数据库的工具.
+    * 使用步骤：
+        1. 下载jedis的jar包
+        2. 使用
+            //1. 获取连接
+            Jedis jedis = new Jedis(&quot;localhost&quot;,6379);
+               //2. 操作
+               jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);
+            //3. 关闭连接
+            jedis.close();</code></pre><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">		* Jedis操作各种redis中的数据结构</span><br><span class="line">​			1) 字符串类型 string</span><br><span class="line">​				set</span><br><span class="line">​				get</span><br><span class="line">​				</span><br><span class="line">​				 &#x2F;&#x2F;1. 获取连接</span><br><span class="line">​		        Jedis jedis &#x3D; new Jedis();&#x2F;&#x2F;如果使用空参构造，默认值 &quot;localhost&quot;,6379端口</span><br><span class="line">​		        &#x2F;&#x2F;2. 操作</span><br><span class="line">​		        &#x2F;&#x2F;存储</span><br><span class="line">​		        jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);</span><br><span class="line">​		        &#x2F;&#x2F;获取</span><br><span class="line">​		        String username &#x3D; jedis.get(&quot;username&quot;);</span><br><span class="line">​		        System.out.println(username);</span><br></pre></td></tr></table></figure>
+
+
+<p>​        </p>
+<pre><code>    //可以使用setex()方法存储可以指定过期时间的 key value
+    jedis.setex(&quot;activecode&quot;,20,&quot;hehe&quot;);//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对
+
+    //3. 关闭连接
+    jedis.close();
+
+2) 哈希类型 hash ： map格式  
+    hset
+    hget
+    hgetAll
+    //1. 获取连接
+    Jedis jedis = new Jedis();//如果使用空参构造，默认值 &quot;localhost&quot;,6379端口
+    //2. 操作
+    // 存储hash
+    jedis.hset(&quot;user&quot;,&quot;name&quot;,&quot;lisi&quot;);
+    jedis.hset(&quot;user&quot;,&quot;age&quot;,&quot;23&quot;);
+    jedis.hset(&quot;user&quot;,&quot;gender&quot;,&quot;female&quot;);
+
+    // 获取hash
+    String name = jedis.hget(&quot;user&quot;, &quot;name&quot;);
+    System.out.println(name);</code></pre><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">		        &#x2F;&#x2F; 获取hash的所有map中的数据</span><br><span class="line">​		        Map&lt;String, String&gt; user &#x3D; jedis.hgetAll(&quot;user&quot;);</span><br><span class="line">​		</span><br><span class="line">​		        &#x2F;&#x2F; keyset</span><br><span class="line">​		        Set&lt;String&gt; keySet &#x3D; user.keySet();</span><br><span class="line">​		        for (String key ： keySet) &#123;</span><br><span class="line">​		            &#x2F;&#x2F;获取value</span><br><span class="line">​		            String value &#x3D; user.get(key);</span><br><span class="line">​		            System.out.println(key + &quot;：&quot; + value);</span><br><span class="line">​		        &#125;</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>    //3. 关闭连接
+    jedis.close();
+
+
+3) 列表类型 list ： linkedlist格式。支持重复元素
+    lpush / rpush
+    lpop / rpop
+    lrange start end ： 范围获取
+
+     //1. 获取连接
+    Jedis jedis = new Jedis();//如果使用空参构造，默认值 &quot;localhost&quot;,6379端口
+    //2. 操作
+    // list 存储
+    jedis.lpush(&quot;mylist&quot;,&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);//从左边存
+    jedis.rpush(&quot;mylist&quot;,&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);//从右边存
+
+    // list 范围获取
+    List&lt;String&gt; mylist = jedis.lrange(&quot;mylist&quot;, 0, -1);
+    System.out.println(mylist);
+
+    // list 弹出
+    String element1 = jedis.lpop(&quot;mylist&quot;);//c
+    System.out.println(element1);
+
+    String element2 = jedis.rpop(&quot;mylist&quot;);//c
+    System.out.println(element2);
+
+    // list 范围获取
+    List&lt;String&gt; mylist2 = jedis.lrange(&quot;mylist&quot;, 0, -1);
+    System.out.println(mylist2);
+
+    //3. 关闭连接
+    jedis.close();
+
+
+4) 集合类型 set  ： 不允许重复元素
+    sadd
+    smembers：获取所有元素
+
+    //1. 获取连接
+    Jedis jedis = new Jedis();//如果使用空参构造，默认值 &quot;localhost&quot;,6379端口
+    //2. 操作</code></pre><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">		</span><br><span class="line">​		        &#x2F;&#x2F; set 存储</span><br><span class="line">​		        jedis.sadd(&quot;myset&quot;,&quot;java&quot;,&quot;php&quot;,&quot;c++&quot;);</span><br><span class="line">​		</span><br><span class="line">​		        &#x2F;&#x2F; set 获取</span><br><span class="line">​		        Set&lt;String&gt; myset &#x3D; jedis.smembers(&quot;myset&quot;);</span><br><span class="line">​		        System.out.println(myset);</span><br></pre></td></tr></table></figure>
+
+
+<p>​        </p>
+<pre><code>    //3. 关闭连接
+    jedis.close();
+5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序
+    zadd
+    zrange
+
+    //1. 获取连接
+    Jedis jedis = new Jedis();//如果使用空参构造，默认值 &quot;localhost&quot;,6379端口
+    //2. 操作
+    // sortedset 存储
+    jedis.zadd(&quot;mysortedset&quot;,3,&quot;亚瑟&quot;);
+    jedis.zadd(&quot;mysortedset&quot;,30,&quot;后裔&quot;);
+    jedis.zadd(&quot;mysortedset&quot;,55,&quot;孙悟空&quot;);
+
+    // sortedset 获取
+    Set&lt;String&gt; mysortedset = jedis.zrange(&quot;mysortedset&quot;, 0, -1);
+
+    System.out.println(mysortedset);</code></pre><p>​        </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">		        &#x2F;&#x2F;3. 关闭连接</span><br><span class="line">​		        jedis.close();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">​		</span><br><span class="line">​		* jedis连接池： JedisPool</span><br><span class="line">​			* 使用：</span><br><span class="line">​				1. 创建JedisPool连接池对象</span><br><span class="line">​				2. 调用方法 getResource()方法获取Jedis连接</span><br><span class="line">​					&#x2F;&#x2F;0.创建一个配置对象</span><br><span class="line">​			        JedisPoolConfig config &#x3D; new JedisPoolConfig();</span><br><span class="line">​			        config.setMaxTotal(50);</span><br><span class="line">​			        config.setMaxIdle(10);</span><br><span class="line">​			</span><br><span class="line">​			        &#x2F;&#x2F;1.创建Jedis连接池对象</span><br><span class="line">​			        JedisPool jedisPool &#x3D; new JedisPool(config,&quot;localhost&quot;,6379);</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>//2.获取连接
+Jedis jedis = jedisPool.getResource();
+//3. 使用
+jedis.set(&quot;hehe&quot;,&quot;heihei&quot;);</code></pre><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">			</span><br><span class="line">​			        &#x2F;&#x2F;4. 关闭 归还到连接池中</span><br><span class="line">​			        jedis.close();</span><br><span class="line">​			</span><br><span class="line">​			* 连接池工具类</span><br><span class="line">​				public class JedisPoolUtils &#123;</span><br></pre></td></tr></table></figure>
+
+
+<p>​    </p>
+<pre><code>    private static JedisPool jedisPool;
+
+    static{
+        //读取配置文件
+        InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(&quot;jedis.properties&quot;);
+        //创建Properties对象
+        Properties pro = new Properties();
+        //关联文件
+        try {
+            pro.load(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //获取数据，设置到JedisPoolConfig中
+        JedisPoolConfig config = new JedisPoolConfig();
+        config.setMaxTotal(Integer.parseInt(pro.getProperty(&quot;maxTotal&quot;)));
+        config.setMaxIdle(Integer.parseInt(pro.getProperty(&quot;maxIdle&quot;)));
+
+        //初始化JedisPool
+        jedisPool = new JedisPool(config,pro.getProperty(&quot;host&quot;),Integer.parseInt(pro.getProperty(&quot;port&quot;)));
+
+    }
+
+    /**
+     * 获取连接方法
+     */
+    public static Jedis getJedis(){
+        return jedisPool.getResource();
+    }
+}</code></pre><h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><ul>
+<li>案例需求：<ul>
+<li>提供index.html页面，页面中有一个省份 下拉列表</li>
+<li>当页面加载完成后 <strong>发送ajax请求</strong>，加载所有省份</li>
+</ul>
+</li>
+<li>注意：使用redis<strong>缓存一些不经常发生变化的数据</strong>。<ul>
+<li>数据库的数据一旦发生改变，则需要更新缓存。<ul>
+<li>数据库的表执行 增删改的相关操作，需要将redis缓存数据情况，<strong>再次存入</strong></li>
+<li>在service<strong>对应的增删改方法中</strong>，将redis数据删除。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>List-12_Ajax&amp;Json</title>
+    <url>/2021/05/13/JavaWeb/List-14_Ajax&amp;Json/</url>
+    <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
+<li>AJAX：</li>
+<li>JSON</li>
+</ul>
+<h2 id="0-1-AJAX"><a href="#0-1-AJAX" class="headerlink" title="0.1 AJAX"></a>0.1 AJAX</h2><ul>
+<li><p>概念： ASynchronous JavaScript And XML    <strong>异步的JavaScript 和 XML</strong></p>
+</li>
+<li><p><strong>异步和同步</strong>：客户端和服务器端相互通信的基础上</p>
+<ul>
+<li>客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作。</li>
+<li>客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</li>
+</ul>
+</li>
+<li><p><strong>Ajax</strong> <strong>是一种在无需重新加载整个网页的情况下</strong>，能够更新部分网页的技术。</p>
+<ul>
+<li>通过在后台与服务器进行少量数据交换，Ajax <strong>可以使网页实现异步更新</strong>。</li>
+<li>这意味着可以在不重新加载整个网页的情况下，<strong>对网页的某部分进行更新</strong>。</li>
+</ul>
+</li>
+<li><p>传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。</p>
+</li>
+</ul>
+<h4 id="1）提升用户的体验"><a href="#1）提升用户的体验" class="headerlink" title="1）提升用户的体验"></a>1）提升用户的体验</h4><ul>
+<li><blockquote>
+<h4 id="实现方式："><a href="#实现方式：" class="headerlink" title="实现方式："></a>实现方式：</h4></blockquote>
+<ul>
+<li><p>原生的JS实现方式（了解）</p>
+</li>
+<li><p>实现步骤：</p>
+<ol>
+<li>创建核心对象</li>
+<li>建立连接</li>
+<li>发送请求</li>
+<li>接受并处理来自服务器的响应结果</li>
+</ol>
+</li>
+<li><pre><code>//1.创建核心对象
+var xmlhttp;
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+}
+
+//2. 建立连接
+/*
+参数：
+1. 请求方式：GET、POST
+* get方式，请求参数在URL后边拼接。send方法为空参
+* post方式，请求参数在send方法中定义
+2. 请求的URL：
+3. 同步或异步请求：true（异步）或 false（同步）
+
+*/
+xmlhttp.open(&quot;GET&quot;,&quot;ajaxServlet?username=tom&quot;,true);
+
+//3.发送请求
+xmlhttp.send();
+
+//4.接受并处理来自服务器的响应结果
+//获取方式 ：xmlhttp.responseText
+//什么时候获取？当服务器响应成功后再获取
+
+//当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。
+xmlhttp.onreadystatechange=function()
+{
+    //判断readyState就绪状态是否为4，判断status响应状态码是否为200
+    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)
+    {
+        //获取服务器的响应结果
+        var responseText = xmlhttp.responseText;
+        alert(responseText);
+    }
+}
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 2）JQeury实现方式</span><br><span class="line"></span><br><span class="line">**1.&#96;$.ajax()&#96;**</span><br><span class="line"></span><br><span class="line">- 语法：**$.ajax(&#123;键值对&#125;);**</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;java</span><br><span class="line">   &#x2F;&#x2F;使用$.ajax()发送异步请求</span><br><span class="line">   $.ajax(&#123;</span><br><span class="line">       url：&quot;ajaxServlet1111&quot; , &#x2F;&#x2F; 请求路径</span><br><span class="line">       type：&quot;POST&quot; , &#x2F;&#x2F;请求方式</span><br><span class="line">       &#x2F;&#x2F;data： &quot;username&#x3D;jack&amp;age&#x3D;23&quot;,&#x2F;&#x2F;请求参数</span><br><span class="line">       data：&#123;&quot;username&quot;：&quot;jack&quot;,&quot;age&quot;：23&#125;,</span><br><span class="line">       success：function (data) &#123;</span><br><span class="line">           alert(data);</span><br><span class="line">       &#125;,&#x2F;&#x2F;响应成功后的回调函数</span><br><span class="line">       error：function () &#123;</span><br><span class="line">           alert(&quot;出错啦...&quot;)</span><br><span class="line">       &#125;,&#x2F;&#x2F;表示如果请求响应出现错误，会执行的回调函数</span><br><span class="line">   </span><br><span class="line">       dataType：&quot;text&quot;&#x2F;&#x2F;设置接受到的响应数据的格式</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+
+
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong><code>$.get()</code></strong>：发送get请求<ul>
+<li>语法：$.get(url, [data], [callback], [type])</li>
+<li>参数：<ul>
+<li>url：请求路径</li>
+<li>data：请求参数</li>
+<li>callback：回调函数</li>
+<li>type：响应结果的类型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>  3<strong>.<code>$.post()</code></strong>：发送post请求</p>
+<ul>
+<li>语法：$.post(url, [data], [callback], [type])</li>
+<li>参数：<ul>
+<li>url：请求路径</li>
+<li>data：请求参数</li>
+<li>callback：回调函数</li>
+<li>type：响应结果的类型</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-2-JSON"><a href="#0-2-JSON" class="headerlink" title="0.2 JSON"></a>0.2 JSON</h2><ul>
+<li><p>概念： JavaScript Object Notation        <strong>JavaScript对象表示法</strong></p>
+<ul>
+<li><pre><code class="javascript">Person p = <span class="keyword">new</span> Person();
+p.setName(<span class="string">"张三"</span>);
+p.setAge(<span class="number">23</span>);
+p.setGender(<span class="string">"男"</span>);
+
+<span class="keyword">var</span> p = {<span class="string">"name"</span>：<span class="string">"张三"</span>,<span class="string">"age"</span>：<span class="number">23</span>,<span class="string">"gender"</span>：<span class="string">"男"</span>};
+&lt;!--￼<span class="number">1</span>--&gt;
+        <span class="comment">//1.定义基本格式</span>
+​                <span class="keyword">var</span> person = {<span class="string">"name"</span>： <span class="string">"张三"</span>, age： <span class="number">23</span>, <span class="string">'gender'</span>： <span class="literal">true</span>};
+​                 <span class="keyword">var</span> ps = [{<span class="string">"name"</span>： <span class="string">"张三"</span>, <span class="string">"age"</span>： <span class="number">23</span>, <span class="string">"gender"</span>： <span class="literal">true</span>},
+​                {<span class="string">"name"</span>： <span class="string">"李四"</span>, <span class="string">"age"</span>： <span class="number">24</span>, <span class="string">"gender"</span>： <span class="literal">true</span>},
+​                {<span class="string">"name"</span>： <span class="string">"王五"</span>, <span class="string">"age"</span>： <span class="number">25</span>, <span class="string">"gender"</span>： <span class="literal">false</span>}];
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>​                    //获取person对象中所有的键和值<br>​                    //for in 循环<br>​                   /* for(var key in person){<br>​                        //这样的方式获取不行。因为相当于  person.”name”<br>​                        //alert(key + “：” + person.key);<br>​                        alert(key+”：”+person[key]);<br>​                    }*/<br>​<br>​                   //获取ps中的所有值<br>​                    for (var i = 0; i &lt; ps.length; i++) {<br>​                        var p = ps[i];<br>​                        for(var key in p){<br>​                            alert(key+”：”+p[key]);<br>​                        }<br>​                    }</p>
+<pre><code>
+
+
+#### 2）JSON数据和Java对象的相互转换
+
+* JSON解析器：
+
+  * 常见的解析器：Jsonlib，Gson，fastjson，jackson
+
+* &gt; #### JSON转为Java对象
+
+  1. 导入jackson的相关jar包
+  2. 创建Jackson核心对象 ObjectMapper
+  3. 调用ObjectMapper**的相关方法进行转换**
+  4. readValue(json字符串数据,Class)
+
+* &gt; #### Java对象转换JSON
+
+  1. 导入jackson的相关jar包
+  2. 创建Jackson核心对象 ObjectMapper
+  3. 调用ObjectMapper**的相关方法进行转换**
+     - **转换方法**：writeValue(**参数**1，obj)：
+       - 参数1：
+         - File：将obj对象转换为JSON字符串，并保存到指定的文件中
+         - Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中
+         - OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中
+         - writeValueAsString(obj)：将对象转为json字符串
+     - 注解：
+       - @JsonIgnore：排除属性。
+       - @JsonFormat：属性值得格式化
+       - @JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)
+     - 复杂java对象转换
+       - List：数组
+       - Map：对象格式一致
+
+
+
+## 案例：
+
+* 校验用户名是否存在
+
+  1. 服务器响应的数据，在客户端使用时，要想当做json数据格式使用。
+  2. 有两种解决方案：
+
+    - **$.get(type)**：**将最后一个参数**type指定为&quot;json&quot;
+    - 在服务器端设置MIME类型
+      - response.setContentType(&quot;application/json;charset=utf-8&quot;);
+
+
+</code></pre>]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Edge使用教程</title>
+    <url>/2021/05/10/Others/Edge%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="0-2-隐私，搜索和服务"><a href="#0-2-隐私，搜索和服务" class="headerlink" title="0.2 隐私，搜索和服务"></a>0.2 隐私，搜索和服务</h3><blockquote>
+<h4 id="地址栏和搜索（页面最底部）"><a href="#地址栏和搜索（页面最底部）" class="headerlink" title="地址栏和搜索（页面最底部）"></a>地址栏和搜索（页面最底部）</h4></blockquote>
+<p><strong>管理快捷搜索引擎</strong></p>
+<ul>
+<li>（页面最底部），例如百度  bd，知乎  zh</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Edge</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA快捷键</title>
+    <url>/2021/05/08/JAVA/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h2 id="0-1-Ctrl-快捷键"><a href="#0-1-Ctrl-快捷键" class="headerlink" title="0.1 Ctrl 快捷键"></a>0.1 Ctrl 快捷键</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Ctrl + F        //在当前文件进行文本查找 （必备）</span><br><span class="line">Ctrl + R        //在当前文件进行文本替换 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + Z        //撤销 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + Y        //删除光标所在行 或 删除选中的行 （必备）</span><br><span class="line">Ctrl + X        //剪切光标所在行 或 剪切选择内容</span><br><span class="line"></span><br><span class="line">Ctrl + C        //复制光标所在行 或 复制选择内容</span><br><span class="line">Ctrl + D        //复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + W        //递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围（必备）</span><br><span class="line"></span><br><span class="line">Ctrl + E        //显示最近打开的文件记录列表 （必备）</span><br><span class="line">Ctrl + N        //根据输入的 名/类名 查找类文件 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Ctrl + G        //在当前文件跳转到指定行处</span><br><span class="line"></span><br><span class="line">Ctrl + J        //插入自定义动态代码模板 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + P        //方法参数提示显示 （必备）</span><br><span class="line">Ctrl + Q        //光标所在的变量 / 类名 / 方法名等上面（也可以在提示补充的时候按），显示文档内容</span><br><span class="line"></span><br><span class="line">Ctrl + U        //前往当前光标所在的方法的父类的方法 / 接口定义 （必备）</span><br><span class="line">Ctrl + B        //进入光标所在的方法/变量的接口或是定义处，等效于 Ctrl + 左键单击 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + K        //版本控制提交项目，需要此项目有加入到版本控制才可用</span><br><span class="line">Ctrl + T        //版本控制更新项目，需要此项目有加入到版本控制才可用</span><br><span class="line"></span><br><span class="line">Ctrl + H        //显示当前类的层次结构</span><br><span class="line">Ctrl + O        //选择可重写的方法</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Ctrl + I        //选择可继承的方法</span><br><span class="line"></span><br><span class="line">Ctrl + +        //展开代码</span><br><span class="line">Ctrl + -        //折叠代码</span><br><span class="line"></span><br><span class="line">Ctrl + /        //注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + [            //移动光标到当前所在代码的花括号开始位置</span><br><span class="line">Ctrl + ]            //移动光标到当前所在代码的花括号结束位置</span><br><span class="line"></span><br><span class="line">Ctrl + F1           //在光标所在的错误代码处显示错误信息 （必备）</span><br><span class="line">Ctrl + F3           //调转到所选中的词的下一个引用位置 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + F4           //关闭当前编辑文件</span><br><span class="line">Ctrl + F8           //在 Debug 模式下，设置光标当前行为断点，如果当前已经是断点则去掉断点</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Ctrl + F9           //执行 Make Project 操作</span><br><span class="line"></span><br><span class="line">Ctrl + F11          //选中文件 / 文件夹，使用助记符设定 / 取消书签 （必备）</span><br><span class="line">Ctrl + F12          //弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选</span><br><span class="line"></span><br><span class="line">Ctrl + Tab          //编辑窗口切换，如果在切换的过程又加按上 delete，则是关闭对应选中的窗口</span><br><span class="line">Ctrl + End          //跳到文件尾</span><br><span class="line">Ctrl + Home         //跳到文件头</span><br><span class="line"></span><br><span class="line">Ctrl + Space        //基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl +逗号 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + Delete       //删除光标后面的单词或是中文句 （必备）</span><br><span class="line">Ctrl +BackSpace     //删除光标前面的单词或是中文句 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Ctrl +<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>…<span class="number">9</span>       //定位到对应数值的书签位置 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + 左键单击     //在打开的文件标题上，弹出该文件路径 （必备）</span><br><span class="line">Ctrl + 光标定位按    //Ctrl 不要松开，会显示光标所在的类信息摘要</span><br><span class="line"></span><br><span class="line">Ctrl + 左方向键     //光标跳转到当前单词 / 中文句的左侧开头位置 （必备）</span><br><span class="line">Ctrl + 右方向键     //光标跳转到当前单词 / 中文句的右侧开头位置 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + 前方向键     //等效于鼠标滚轮向前效果 （必备）</span><br><span class="line">Ctrl + 后方向键     //等效于鼠标滚轮向后效果 （必备）</span><br></pre></td></tr></table></figure>
+
+<h2 id="0-2-Alt快捷键"><a href="#0-2-Alt快捷键" class="headerlink" title="0.2 Alt快捷键"></a>0.2 Alt快捷键</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Alt + `             //显示版本控制常用操作菜单弹出层 （必备）</span><br><span class="line">Alt + Q             //弹出一个提示，显示当前类的声明 / 上下文信息</span><br><span class="line"></span><br><span class="line">Alt + F1            //显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择 （必备）</span><br><span class="line">Alt + F2            //对于前面页面，显示各类浏览器打开目标选择弹出层</span><br><span class="line"></span><br><span class="line">Alt + F3            //选中文本，逐个往下查找相同文本，并高亮显示</span><br><span class="line">Alt + F7            //查找光标所在的方法 / 变量 / 类被调用的地方</span><br><span class="line"></span><br><span class="line">Alt + F8            //在 Debug 的状态下，选中对象，弹出可输入计算表达式调试框，查看该输入内容的调试结果</span><br><span class="line">Alt + Home          //定位 / 显示到当前文件的 Navigation Bar</span><br><span class="line"></span><br><span class="line">Alt + Enter         //IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同 （必备）</span><br><span class="line">Alt + Insert        //代码自动生成，如生成对象的 <span class="built_in">set</span> / get 方法，构造函数，toString() 等 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Alt + 左方向键              切换当前已打开的窗口中的子视图，比如 Debug 窗口中有 Output、Debugger 等子视图，用此快捷键就可以在子视图中切换 （必备）</span><br><span class="line">Alt + 右方向键              按切换当前已打开的窗口中的子视图，比如 Debug 窗口中有 Output、Debugger 等子视图，用此快捷键就可以在子视图中切换 （必备）</span><br><span class="line"></span><br><span class="line">Alt + 前方向键              当前光标跳转到当前文件的前一个方法名位置 （必备）</span><br><span class="line">Alt + 后方向键              当前光标跳转到当前文件的后一个方法名位置 （必备）</span><br><span class="line"></span><br><span class="line">Alt +1,2,3…9                显示对应数值的选项卡，其中 1 是 Project 用得最多 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="0-3-Shift-快捷键"><a href="#0-3-Shift-快捷键" class="headerlink" title="0.3  Shift 快捷键"></a>0.3  Shift 快捷键</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Shift + F1              如果有外部文档可以连接外部文档</span><br><span class="line">Shift + F2              跳转到上一个高亮错误 或 警告位置</span><br><span class="line">Shift + F3              在查找模式下，查找匹配上一个</span><br><span class="line">Shift + F4              对当前打开的文件，使用新 Windows 窗口打开，旧窗口保留</span><br><span class="line">Shift + F6              对文件 &#x2F; 文件夹 重命名</span><br><span class="line">Shift + F7              在 Debug 模式下，智能步入。断点所在行上有多个方法调用，会弹出进入哪个方法</span><br><span class="line">Shift + F8              在 Debug 模式下，跳出，表现出来的效果跟 F9 一样</span><br><span class="line">Shift + F9              等效于点击工具栏的 Debug 按钮</span><br><span class="line">Shift + F10             等效于点击工具栏的 Run 按钮</span><br><span class="line">Shift + F11             弹出书签显示层 （必备）</span><br><span class="line">Shift + Tab             取消缩进 （必备）</span><br><span class="line">Shift + ESC             隐藏当前 或 最后一个激活的工具窗口</span><br><span class="line">Shift + End             选中光标到当前行尾位置</span><br><span class="line">Shift + Home            选中光标到当前行头位置</span><br><span class="line">Shift + Enter           开始新一行。光标所在行下空出一行，光标定位到新行位置 （必备）</span><br><span class="line">Shift + 左键单击            在打开的文件名上按此快捷键，可以关闭当前打开文件 （必备）</span><br><span class="line">Shift + 滚轮前后滚动      当前文件的横向滚动轴滚动 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="0-4-Ctrl-Alt-快捷键"><a href="#0-4-Ctrl-Alt-快捷键" class="headerlink" title="0.4  Ctrl + Alt 快捷键"></a>0.4  Ctrl + Alt 快捷键</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Ctrl + Alt + L              格式化代码，可以对当前文件和整个包目录使用 （必备）</span><br><span class="line">Ctrl + Alt + O              优化导入的类，可以对当前文件和整个包目录使用 （必备）</span><br><span class="line">Ctrl + Alt + I              光标所在行 或 选中部分进行自动代码缩进，有点类似格式化</span><br><span class="line">Ctrl + Alt + T              对选中的代码弹出环绕选项弹出层 （必备）</span><br><span class="line">Ctrl + Alt + J              弹出模板选择窗口，将选定的代码加入动态模板中</span><br><span class="line">Ctrl + Alt + H              调用层次</span><br><span class="line">Ctrl + Alt + B              在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口</span><br><span class="line">Ctrl + Alt + V              快速引进变量</span><br><span class="line">Ctrl + Alt + Y              同步、刷新</span><br><span class="line">Ctrl + Alt + S              打开 IntelliJ IDEA 系统设置 （必备）</span><br><span class="line">Ctrl + Alt + F7             显示使用的地方。寻找被该类或是变量被调用的地方，用弹出框的方式找出来</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Ctrl + Alt + F11                切换全屏模式</span><br><span class="line">Ctrl + Alt + Enter              光标所在行上空出一行，光标定位到新行 （必备）</span><br><span class="line">Ctrl + Alt + Home               弹出跟当前文件有关联的文件弹出层</span><br><span class="line">Ctrl + Alt + Space              类名自动完成</span><br><span class="line">Ctrl + Alt + 左方向键           退回到上一个操作的地方 （必备）</span><br><span class="line">Ctrl + Alt + 右方向键           前进到上一个操作的地方 （必备）</span><br><span class="line">Ctrl + Alt + 前方向键           在查找模式下，跳到上个查找的文件</span><br><span class="line">Ctrl + Alt + 后方向键           在查找模式下，跳到下个查找的文件</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="0-5-Ctrl-Shift-快捷键"><a href="#0-5-Ctrl-Shift-快捷键" class="headerlink" title="0.5  Ctrl + Shift 快捷键"></a>0.5  Ctrl + Shift 快捷键</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Ctrl + Shift + F 根据输入内容查找整个项目 或 指定目录内文件 （必备）</span><br><span class="line">Ctrl + Shift + R 根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件 （必备）</span><br><span class="line">Ctrl + Shift + J 自动将下一行合并到当前行末尾 （必备）</span><br><span class="line">Ctrl + Shift + Z 取消撤销 （必备）</span><br><span class="line">Ctrl + Shift + W 递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围 （必备）</span><br><span class="line">Ctrl + Shift + N 通过文件名定位 &#x2F; 打开文件 &#x2F; 目录，打开目录需要在输入的内容后面多加一个正斜杠 （必备）</span><br><span class="line">Ctrl + Shift + U 对选中的代码进行大 &#x2F; 小写轮流转换 （必备）</span><br><span class="line">Ctrl + Shift + T 对当前类生成单元测试类，如果已经存在的单元测试类则可以进行选择 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Ctrl + Shift + C 复制当前文件磁盘路径到剪贴板 （必备）Ctrl + Shift + V 弹出缓存的最近拷贝的内容管理器弹出层Ctrl + Shift + E 显示最近修改的文件列表的弹出层Ctrl + Shift + H 显示方法层次结构Ctrl + Shift + B 跳转到类型声明处 （必备）Ctrl + Shift + I 快速查看光标所在的方法 或 类的定义Ctrl + Shift + A 查找动作 &#x2F; 设置Ctrl + Shift + &#x2F; 代码块注释 （必备）Ctrl + Shift + [ 选中从光标所在位置到它的顶部中括号位置 （必备）Ctrl + Shift + ] 选中从光标所在位置到它的底部中括号位置 （必备）Ctrl + Shift + + 展开所有代码 （必备）Ctrl + Shift + - 折叠所有代码 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Ctrl + Shift + F7 高亮显示所有该选中文本，按 Esc 高亮消失 （必备）Ctrl + Shift + F8 在 Debug 模式下，指定断点进入条件Ctrl + Shift + F9 编译选中的文件 &#x2F; 包 &#x2F; ModuleCtrl + Shift + F12 编辑器最大化 （必备）Ctrl + Shift + Space 智能代码提示Ctrl + Shift + Enter 自动结束代码，行末自动添加分号 （必备）Ctrl + Shift +Backspace 退回到上次修改的地方 （必备）Ctrl + Shift +1,2,3…9 快速添加指定数值的书签 （必备）Ctrl + Shift + 左键单击 把光标放在某个类变量上，按此快捷键可以直接定位到该类中 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Ctrl + Shift + 左方向键 在代码文件上，光标跳转到当前单词 &#x2F; 中文句的左侧开头位置，同时选中该单词 &#x2F; 中文句（必备）Ctrl + Shift + 右方向键 在代码文件上，光标跳转到当前单词 &#x2F; 中文句的右侧开头位置，同时选中该单词 &#x2F; 中文句（必备）Ctrl + Shift + 前方向键 光标放在方法名上，将方法移动到上一个方法前面，调整方法排序 （必备）Ctrl + Shift + 后方向键 光标放在方法名上，将方法移动到下一个方法前面，调整方法排序 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="0-6-Alt-Shift-快捷键"><a href="#0-6-Alt-Shift-快捷键" class="headerlink" title="0.6  Alt + Shift 快捷键"></a>0.6  Alt + Shift 快捷键</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Alt + <span class="built_in">Shift</span> + N 选择 / 添加 task （必备）Alt + <span class="built_in">Shift</span> + F 显示添加到收藏夹弹出层 / 添加到收藏夹Alt + <span class="built_in">Shift</span> + C 查看最近操作项目的变化情况列表Alt + <span class="built_in">Shift</span> + I 查看项目当前文件Alt + <span class="built_in">Shift</span> + F7在 Debug 模式下，下一步，进入当前方法体内，如果方法体还有方法，则会进入该内嵌的方法中，依此循环进入Alt + <span class="built_in">Shift</span> + F9 弹出 Debug 的可选择菜单Alt + <span class="built_in">Shift</span> + F10 弹出 Run 的可选择菜单Alt + <span class="built_in">Shift</span> + 左键双击 选择被双击的单词 / 中文句，按住不放，可以同时选择其他单词 / 中文句 （必备）Alt + <span class="built_in">Shift</span> + 前方向键 移动光标所在行向上移动 （必备）Alt + <span class="built_in">Shift</span> + 后方向键 移动光标所在行向下移动 （必备）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="0-7-Ctrl-Shift-Alt-快捷键"><a href="#0-7-Ctrl-Shift-Alt-快捷键" class="headerlink" title="0.7  Ctrl + Shift + Alt 快捷键"></a>0.7  Ctrl + Shift + Alt 快捷键</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Ctrl + <span class="built_in">Shift</span> + Alt + V     无格式黏贴 （必备）Ctrl + <span class="built_in">Shift</span> + Alt + N     前往指定的变量 / 方法Ctrl + <span class="built_in">Shift</span> + Alt + S     打开当前项目设置 （必备）Ctrl + <span class="built_in">Shift</span> + Alt + C     复制参考信息</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="0-8-其他快捷键"><a href="#0-8-其他快捷键" class="headerlink" title="0.8 其他快捷键"></a>0.8 其他快捷键</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">F2 跳转到下一个高亮错误 或 警告位置 （必备）</span><br><span class="line">F3 在查找模式下，定位到下一个匹配处</span><br><span class="line">F4 编辑源 （必备）</span><br><span class="line"></span><br><span class="line">F7 在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</span><br><span class="line">F8 在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</span><br><span class="line"></span><br><span class="line">F9 在 Debug 模式下，恢复程序运行，但是如果该断点下面代码还有断点则停在下一个断点上</span><br><span class="line"></span><br><span class="line">F11 添加书签 （必备）</span><br><span class="line">F12 回到前一个工具窗口 （必备）</span><br><span class="line"></span><br><span class="line">Tab缩进 （必备）</span><br><span class="line">ESC 从工具窗口进入代码文件窗口 （必备）</span><br><span class="line"></span><br><span class="line">连按两次<span class="built_in">Shift</span> 弹出 Search Everywhere 弹出层</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JAVA_IDEA</category>
+      </categories>
+  </entry>
+  <entry>
     <title>手机热点无法使用</title>
     <url>/2021/05/06/Others/%E6%89%8B%E6%9C%BA%E7%83%AD%E7%82%B9%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h3><ul>
@@ -85,6 +840,9 @@
 <li><strong>Alt + 7</strong> </li>
 </ul>
 <p><img src="https://i.loli.net/2021/04/07/XPjSFtrYTOU1a2z.png" alt="img"></p>
+<h4 id="1-1-9-更改文件编码格式"><a href="#1-1-9-更改文件编码格式" class="headerlink" title="1.1.9    更改文件编码格式"></a>1.1.9    更改文件编码格式</h4><ul>
+<li><img src="https://i.loli.net/2021/05/12/UotWKEFbNZgs5BI.png" alt="image-20210512215904101"></li>
+</ul>
 <h2 id="1-2-Tomcat"><a href="#1-2-Tomcat" class="headerlink" title="1.2 Tomcat"></a>1.2 Tomcat</h2><h4 id="1-2-1-Tomcat-项目的属性设置"><a href="#1-2-1-Tomcat-项目的属性设置" class="headerlink" title="1.2.1  Tomcat 项目的属性设置"></a>1.2.1  Tomcat 项目的属性设置</h4><p><img src="https://i.loli.net/2021/04/07/mVd9ZIkhaTcLDqU.png" alt="img"></p>
 <p><img src="https://i.loli.net/2021/04/07/mVd9ZIkhaTcLDqU.png" alt="img"></p>
 <h4 id="1-2-2-打开不同的Tomcat项目"><a href="#1-2-2-打开不同的Tomcat项目" class="headerlink" title="1.2.2  打开不同的Tomcat项目"></a>1.2.2  打开不同的Tomcat项目</h4><ol>
@@ -105,7 +863,13 @@
 <p><img src="https://i.loli.net/2021/04/07/mVd9ZIkhaTcLDqU.png" alt="img"></p>
 <h4 id="1-2-6-更改Servlet模板"><a href="#1-2-6-更改Servlet模板" class="headerlink" title="1.2.6  更改Servlet模板"></a>1.2.6  更改Servlet模板</h4><img src="https://i.loli.net/2021/04/07/Eid5ZVFszmJN8tG.png" alt="img" style="zoom:80%;" />
 
-<h4 id="1-2-6-JSP工作文件夹"><a href="#1-2-6-JSP工作文件夹" class="headerlink" title="1.2.6   JSP工作文件夹"></a><strong>1.2.6</strong>   <strong>JSP工作文件夹</strong></h4><h4 id="1-2-7-更改Filter模板"><a href="#1-2-7-更改Filter模板" class="headerlink" title="1.2.7  更改Filter模板"></a>1.2.7  更改Filter模板</h4><h2 id="1-3-使用技巧"><a href="#1-3-使用技巧" class="headerlink" title="1.3 使用技巧"></a>1.3 使用技巧</h2><h4 id="1-3-1-添加代办TODO"><a href="#1-3-1-添加代办TODO" class="headerlink" title="1.3.1  添加代办TODO"></a>1.3.1  添加代办TODO</h4><ul>
+<h4 id="1-2-6-JSP工作文件夹"><a href="#1-2-6-JSP工作文件夹" class="headerlink" title="1.2.6   JSP工作文件夹"></a><strong>1.2.6</strong>   <strong>JSP工作文件夹</strong></h4><ul>
+<li><code>D:\apache-tomcat-8.5.31\webapps\examples</code></li>
+</ul>
+<h4 id="1-2-7-更改Filter模板"><a href="#1-2-7-更改Filter模板" class="headerlink" title="1.2.7  更改Filter模板"></a>1.2.7  更改Filter模板</h4><ul>
+<li>和更改Servlet模板大致相同</li>
+</ul>
+<h2 id="1-3-使用技巧"><a href="#1-3-使用技巧" class="headerlink" title="1.3 使用技巧"></a>1.3 使用技巧</h2><h4 id="1-3-1-添加代办TODO"><a href="#1-3-1-添加代办TODO" class="headerlink" title="1.3.1  添加代办TODO"></a>1.3.1  添加代办TODO</h4><ul>
 <li><strong>在java代码中添加TODO，直接写注释即可。</strong></li>
 </ul>
 <p><img src="https://i.loli.net/2021/04/07/Ydrn9fb3GpNAk6S.png" alt="img"></p>
@@ -131,7 +895,7 @@
 <li>案例</li>
 <li>插件</li>
 </ul>
-<h2 id="0-1-JQuery-高级"><a href="#0-1-JQuery-高级" class="headerlink" title="0.1 JQuery 高级"></a>0.1 JQuery 高级</h2><h4 id="1）动画"><a href="#1）动画" class="headerlink" title="1）动画"></a>1）动画</h4><ul>
+<h2 id="0-1-JQuery-高级"><a href="#0-1-JQuery-高级" class="headerlink" title="0.1    JQuery 高级"></a>0.1    JQuery 高级</h2><h4 id="1）动画"><a href="#1）动画" class="headerlink" title="1）动画"></a>1）动画</h4><ul>
 <li><p>三种方式显示和隐藏元素</p>
 <blockquote>
 <ol>
@@ -397,7 +1161,7 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
 <li>DOM操作</li>
 <li>案例</li>
 </ul>
-<h2 id="0-1-JQuery-基础："><a href="#0-1-JQuery-基础：" class="headerlink" title="0.1 JQuery 基础："></a>0.1 JQuery 基础：</h2><p><strong>概念： 一个JavaScript框架。简化JS开发</strong></p>
+<h2 id="0-1-JQuery-基础："><a href="#0-1-JQuery-基础：" class="headerlink" title="0.1    JQuery 基础："></a>0.1    JQuery 基础：</h2><p><strong>概念： 一个JavaScript框架。简化JS开发</strong></p>
 <ul>
 <li>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。</li>
 <li>jQuery设计的宗旨    是“write Less，Do More”，<strong>即倡导写更少的代码，做更多的事情。</strong></li>
@@ -423,7 +1187,7 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
 <li><p><strong>使用</strong></p>
 <ul>
 <li><p>示例</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> div1 = $(<span class="string">"#div1"</span>);</span><br><span class="line"></span><br><span class="line">alert(div1.html());</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> div1 = $(<span class="string">"#div1"</span>);</span><br><span class="line"></span><br><span class="line">alert(div1.html( ));</span><br></pre></td></tr></table></figure>
 
 
 
@@ -448,14 +1212,17 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
 </ul>
 </li>
 </ul>
-<h2 id="0-2-基本操作学习："><a href="#0-2-基本操作学习：" class="headerlink" title="0.2 基本操作学习："></a>0.2 基本操作学习：</h2><ul>
+<h2 id="0-2-基本操作学习："><a href="#0-2-基本操作学习：" class="headerlink" title="0.2    基本操作学习："></a>0.2    基本操作学习：</h2><ul>
 <li><p>事件绑定</p>
 <ul>
 <li><pre><code class="javascript"><span class="comment">//1.获取b1按钮</span>
-   $(<span class="string">"#b1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+   $(<span class="string">"#b1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"> </span>)</span>{
        alert(<span class="string">"abc"</span>);
    });
 &lt;!--￼<span class="number">1</span>--&gt;
+
+
+
 
 
 </code></pre>
@@ -463,7 +1230,7 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
 </ul>
 </li>
 </ul>
-<h2 id="0-3-选择器"><a href="#0-3-选择器" class="headerlink" title="0.3 选择器"></a>0.3 选择器</h2><ul>
+<h2 id="0-3-选择器"><a href="#0-3-选择器" class="headerlink" title="0.3    选择器"></a>0.3    选择器</h2><ul>
 <li><strong>筛选具有相似特征的元素</strong>(标签)</li>
 </ul>
 <h4 id="1）选择器分类"><a href="#1）选择器分类" class="headerlink" title="1）选择器分类"></a>1）选择器分类</h4><blockquote>
@@ -574,81 +1341,83 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
 </ul>
 </li>
 </ol>
-<h2 id="0-4-DOM操作"><a href="#0-4-DOM操作" class="headerlink" title="0.4 DOM操作"></a>0.4 DOM操作</h2><h4 id="1）内容操作"><a href="#1）内容操作" class="headerlink" title="1）内容操作"></a>1）内容操作</h4><ol>
-<li>html()： 获取/设置元素的标签体内容   <a><font>内容</font></a>  –&gt; <font>内容</font></li>
-<li>text()： 获取/设置元素的标签体纯文本内容   <a><font>内容</font></a> –&gt; 内容</li>
-<li>val()： 获取/设置元素的value属性值</li>
+<h2 id="0-4-DOM操作"><a href="#0-4-DOM操作" class="headerlink" title="0.4    DOM操作"></a>0.4    DOM操作</h2><h4 id="1）内容操作"><a href="#1）内容操作" class="headerlink" title="1）内容操作"></a>1）内容操作</h4><ol>
+<li>html( )： 获取/设置元素的标签体内容   <a><font>内容</font></a>  –&gt; <font>内容</font></li>
+<li>text( )： 获取/设置元素的标签体纯文本内容   <a><font>内容</font></a> –&gt; 内容</li>
+<li>val( )： 获取/设置元素的value属性值</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取myinput 的value值</span></span><br><span class="line"><span class="keyword">var</span> value = $(<span class="string">"#myInput"</span>).val();</span><br><span class="line">alert(value);</span><br><span class="line">            $(<span class="string">"#myInput"</span>).val(<span class="string">"李四"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取mydiv的标签体内容</span></span><br><span class="line"><span class="keyword">var</span> html = $(<span class="string">"#myDiv"</span>).html();</span><br><span class="line">alert(html);</span><br><span class="line">            $(<span class="string">"#myDiv"</span>).html(<span class="string">"&lt;p&gt;aaaa&lt;/p&gt;"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 获取mydiv文本内容</span></span><br><span class="line">            <span class="keyword">var</span> text = $(<span class="string">"#myDiv"</span>).text();</span><br><span class="line">            alert(text);</span><br><span class="line">            $(<span class="string">"#myDiv"</span>).text(<span class="string">"bbb"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取myinput 的value值</span></span><br><span class="line"><span class="keyword">var</span> value = $(<span class="string">"#myInput"</span>).val( );</span><br><span class="line">alert(value);</span><br><span class="line">            $(<span class="string">"#myInput"</span>).val(<span class="string">"李四"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取mydiv的标签体内容</span></span><br><span class="line"><span class="keyword">var</span> html = $(<span class="string">"#myDiv"</span>).html( );</span><br><span class="line">alert(html);</span><br><span class="line">            $(<span class="string">"#myDiv"</span>).html(<span class="string">"&lt;p&gt;aaaa&lt;/p&gt;"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 获取mydiv文本内容</span></span><br><span class="line">            <span class="keyword">var</span> text = $(<span class="string">"#myDiv"</span>).text( );</span><br><span class="line">            alert(text);</span><br><span class="line">            $(<span class="string">"#myDiv"</span>).text(<span class="string">"bbb"</span>);</span><br></pre></td></tr></table></figure>
 
 
 
 <h4 id="2）属性操作"><a href="#2）属性操作" class="headerlink" title="2）属性操作"></a>2）属性操作</h4><ul>
-<li><strong>通用属性操作</strong><ol>
-<li><strong>attr</strong>()： 获取/设置元素的属性</li>
-<li>removeAttr()：删除属性</li>
-<li><strong>prop</strong>()：获取/设置元素的属性</li>
-<li>removeProp()：删除属性</li>
-<li>attr和prop<strong>区别</strong>？</li>
+<li><p><strong>通用属性操作</strong></p>
+<ol>
+<li><strong>attr</strong>( )： 获取/设置元素的属性</li>
+<li>removeAttr( )：删除属性</li>
+<li><strong>prop</strong>( )：获取/设置元素的属性</li>
+<li>removeProp( )：删除属性</li>
+<li>attr和prop<strong>区别</strong>？<ol start="6">
 <li>如果操作的是元素的<strong>固有属性，则建议使用prop</strong></li>
 <li>如果操作的是元素<strong>自定义的属性，则建议使用attr</strong></li>
 </ol>
 </li>
-<li><strong>对class属性操作</strong><ul>
-<li><strong>addClass</strong>()：添加class属性值</li>
-</ul>
-<ol start="2">
-<li>removeClass()：删除class属性值</li>
-<li><strong>toggleClass</strong>()：切换class属性<ul>
+</ol>
+</li>
+<li><p><strong>对class属性操作</strong></p>
+<ol>
+<li><strong>addClass</strong>( )：添加class属性值</li>
+<li>removeClass( )：删除class属性值</li>
+<li><strong>toggleClass</strong>( )：切换class属性<ul>
 <li>toggleClass(“one”)： <ul>
 <li>判断如果元素对象上存在class=”one”，则将属性值one删除掉。  如果元素对象上不存在    class=”one”，则添加</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>css</strong>()：</li>
+<li><strong>css</strong>( )：</li>
 </ol>
 </li>
 </ul>
 <h4 id="3）CRUD操作："><a href="#3）CRUD操作：" class="headerlink" title="3）CRUD操作："></a>3）CRUD操作：</h4><ul>
-<li><strong>append</strong>()：父元素将子元素追加到末尾<ul>
+<li><strong>append</strong>( )：父元素将子元素追加到末尾<ul>
 <li>对象1.append(对象2)： 将对象2添加到对象1元素内部，并且在末尾</li>
 </ul>
 </li>
-<li><strong>prepend</strong>()：父元素将子元素追加到开头<ul>
+<li><strong>prepend</strong>( )：父元素将子元素追加到开头<ul>
 <li>对象1.prepend(对象2)：将对象2添加到对象1元素内部，并且在开头</li>
 </ul>
 </li>
-<li>appendTo()：<ul>
+<li>appendTo( )：<ul>
 <li>对象1.appendTo(对象2)：将对象1添加到对象2内部，并且在末尾</li>
 </ul>
 </li>
-<li>prependTo()：<ul>
+<li>prependTo( )：<ul>
 <li>对象1.prependTo(对象2)：将对象1添加到对象2内部，并且在开头</li>
 </ul>
 </li>
-<li>after()：添加元素到元素后边<ul>
+<li>after( )：添加元素到元素后边<ul>
 <li>对象1.after(对象2)： 将对象2添加到对象1后边。对象1和对象2是兄弟关系</li>
 </ul>
 </li>
-<li>before()：添加元素到元素前边<ul>
+<li>before( )：添加元素到元素前边<ul>
 <li>对象1.before(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系</li>
 </ul>
 </li>
-<li>insertAfter()<ul>
+<li>insertAfter( )<ul>
 <li>对象1.insertAfter(对象2)：将对象2添加到对象1后边。对象1和对象2是兄弟关系</li>
 </ul>
 </li>
-<li>insertBefore()<ul>
+<li>insertBefore( )<ul>
 <li>对象1.insertBefore(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系</li>
 </ul>
 </li>
-<li><strong>remove</strong>()：移除元素<ul>
-<li>对象.remove()：将对象删除掉</li>
+<li><strong>remove</strong>( )：移除元素<ul>
+<li>对象.remove( )：将对象删除掉</li>
 </ul>
 </li>
-<li><strong>empty</strong>()：清空元素的所有后代元素。<ul>
-<li>对象.empty()：将对象的后代元素全部清空，但是保留当前对象以及其属性节点</li>
+<li><strong>empty</strong>( )：清空元素的所有后代元素。<ul>
+<li>对象.empty( )：将对象的后代元素全部清空，但是保留当前对象以及其属性节点</li>
 </ul>
 </li>
 </ul>
@@ -656,7 +1425,7 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
 
 
 
-<h4 id="下拉菜单，左右移动"><a href="#下拉菜单，左右移动" class="headerlink" title="下拉菜单，左右移动"></a>下拉菜单，左右移动</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//toRight</span></span><br><span class="line">    $(<span class="string">"#toRight"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//获取右边的下拉列表对象，append(左边下拉列表选中的option)</span></span><br><span class="line">        $(<span class="string">"#rightName"</span>).append($(<span class="string">"#leftName &gt; option:selected"</span>));</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//toLeft</span></span><br><span class="line">    $(<span class="string">"#toLeft"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//appendTo   获取右边选中的option，将其移动到左边下拉列表中</span></span><br><span class="line">        $(<span class="string">"#rightName &gt; option:selected"</span>).appendTo($(<span class="string">"#leftName"</span>));</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="下拉菜单，左右移动"><a href="#下拉菜单，左右移动" class="headerlink" title="下拉菜单，左右移动"></a>下拉菜单，左右移动</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"> </span>) </span>&#123;</span><br><span class="line">    <span class="comment">//toRight</span></span><br><span class="line">    $(<span class="string">"#toRight"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"> </span>) </span>&#123;</span><br><span class="line">        <span class="comment">//获取右边的下拉列表对象，append(左边下拉列表选中的option)</span></span><br><span class="line">        $(<span class="string">"#rightName"</span>).append($(<span class="string">"#leftName &gt; option:selected"</span>));</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//toLeft</span></span><br><span class="line">    $(<span class="string">"#toLeft"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"> </span>) </span>&#123;</span><br><span class="line">        <span class="comment">//appendTo   获取右边选中的option，将其移动到左边下拉列表中</span></span><br><span class="line">        $(<span class="string">"#rightName &gt; option:selected"</span>).appendTo($(<span class="string">"#leftName"</span>));</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -1119,7 +1888,7 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
 </li>
 <li><p><strong>注意：乱码问题：</strong></p>
 <ol>
-<li><p>PrintWriter pw = response.getWriter();    获取的流的默认编码是ISO-8859-1</p>
+<li><p><strong>PrintWriter pw = response.getWriter();</strong>    获取的流的默认编码是ISO-8859-1</p>
 </li>
 <li><p>设置该流的默认编码</p>
 </li>
@@ -1881,11 +2650,11 @@ localhost/hello
 <li><img src="https://i.loli.net/2021/04/07/uKYabAjZHEoWTIi.png" alt="4.代理"></li>
 </ul>
 </li>
-<li>实现方式：<pre><code>1. 静态代理：有一个类文件描述代理模式
+<li>实现方式：<pre><code>    1. 静态代理：有一个类文件描述代理模式
 2. 动态代理：在内存中形成代理类</code></pre></li>
 <li><strong>实现步骤</strong>：<ol>
 <li>代理对象和真实对象实现相同的接口</li>
-<li>代理对象 = Proxy.newProxyInstance();</li>
+<li>代理对象 = <strong>Proxy.newProxyInstance( );</strong></li>
 <li>使用代理对象调用方法。</li>
 <li>增强方法</li>
 </ol>
@@ -1893,7 +2662,7 @@ localhost/hello
 <li><strong>增强方式</strong>：<ul>
 <li>增强参数列表</li>
 <li>增强返回值类型</li>
-<li>增强方法体执行逻辑    </li>
+<li>增强方法体执行逻辑</li>
 </ul>
 </li>
 </ol>
@@ -1919,8 +2688,8 @@ localhost/hello
 <ul>
 <li><p>方法：</p>
 <ul>
-<li>void <strong>contextDestroyed</strong>(ServletContextEvent sce) ：ServletContext对象被销毁之前会调用该方法</li>
-<li>void <strong>contextInitialized</strong>(ServletContextEvent sce) ：ServletContext对象创建后会调用该方法</li>
+<li>void <strong>contextDestroyed</strong>(ServletContextEvent sce) ：ServletContext<strong>对象被销毁之前会调用该方法</strong></li>
+<li>void <strong>contextInitialized</strong>(ServletContextEvent sce) ：ServletContext<strong>对象创建后会调用该方法</strong></li>
 </ul>
 </li>
 <li><p><strong>步骤</strong>：</p>
@@ -1929,14 +2698,14 @@ localhost/hello
 </li>
 <li><p>复写方法</p>
 </li>
-<li><p>配置</p>
+<li><p><strong>配置</strong></p>
 <ol>
 <li><p>web.xml</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">	&lt;listener-class&gt;cn.itcast.web.listener.ContextLoaderListener&lt;&#x2F;listener-class&gt;   &lt;&#x2F;listener&gt;	</span><br><span class="line"></span><br><span class="line">* 指定初始化参数&lt;context-param&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>注解：</p>
 <ul>
-<li>@WebListener</li>
+<li>@<strong>WebListener</strong></li>
 </ul>
 </li>
 </ol>
@@ -3389,6 +4158,16 @@ for
 <ul>
 <li>显示64位右键菜单</li>
 </ul>
+<h2 id="右键"><a href="#右键" class="headerlink" title="右键"></a>右键</h2><ul>
+<li>选中文件，然后右键</li>
+</ul>
+<h4 id="特殊重命名"><a href="#特殊重命名" class="headerlink" title="特殊重命名"></a>特殊重命名</h4><ul>
+<li>选择 <strong>搜索与替换</strong><ul>
+<li>例如 test 快捷方式.ink </li>
+<li>输入 “快捷方式 ”，查看预览即可 </li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <tags>
         <tag>XYplorer</tag>
@@ -4191,6 +4970,13 @@ for
 <h3 id="15-如何获得标签的id值"><a href="#15-如何获得标签的id值" class="headerlink" title="15.如何获得标签的id值"></a>15.如何获得标签的id值</h3><p>获得某个标签的ID值之后，则可以遍历所有相似标签，但是对这个标签设置特定的方法。</p>
 <h3 id="17-如何在一行div中，排版所有标签内容"><a href="#17-如何在一行div中，排版所有标签内容" class="headerlink" title="17.如何在一行div中，排版所有标签内容"></a>17.如何在一行div中，排版所有标签内容</h3><p>先把所有的内容简单的建加入到该div中，附加简单的css样式。</p>
 <p>然后再一点点调试，他们的分布和布局。</p>
+<h3 id="18-破解网页限制"><a href="#18-破解网页限制" class="headerlink" title="18.破解网页限制"></a>18.破解网页限制</h3><ul>
+<li><p>查找（获取）网页对应元素，例如视频元素，对应的ID值</p>
+<ul>
+<li>使用F12，逐步查找定位 网页对应元素即可。</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Web</category>
@@ -4199,7 +4985,7 @@ for
   <entry>
     <title>Web开发-新知识汇总</title>
     <url>/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91-%E6%96%B0%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<h2 id="标签属性"><a href="#标签属性" class="headerlink" title="标签属性"></a>标签属性</h2><h3 id="tarnslate"><a href="#tarnslate" class="headerlink" title="tarnslate"></a>tarnslate</h3><h4 id="cnavas"><a href="#cnavas" class="headerlink" title="cnavas"></a>cnavas</h4><p>在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）：</p>
+    <content><![CDATA[<h2 id="0-1-标签属性"><a href="#0-1-标签属性" class="headerlink" title="0.1 标签属性"></a>0.1 标签属性</h2><h3 id="tarnslate"><a href="#tarnslate" class="headerlink" title="tarnslate"></a>tarnslate</h3><h4 id="cnavas"><a href="#cnavas" class="headerlink" title="cnavas"></a>cnavas</h4><p>在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var c&#x3D;document.getElementById(&quot;myCanvas&quot;);</span><br><span class="line">var ctx&#x3D;c.getContext(&quot;2d&quot;);</span><br><span class="line">ctx.fillRect(10,10,100,50);</span><br><span class="line">ctx.translate(70,70);</span><br><span class="line">ctx.fillRect(10,10,100,50);</span><br></pre></td></tr></table></figure>
 
 
@@ -4232,7 +5018,7 @@ for
 
 
 
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="float：Flex"><a href="#float：Flex" class="headerlink" title="float：Flex"></a>float：Flex</h3><p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<h2 id="0-2-CSS"><a href="#0-2-CSS" class="headerlink" title="0.2 CSS"></a>0.2 CSS</h2><h3 id="float：Flex"><a href="#float：Flex" class="headerlink" title="float：Flex"></a>float：Flex</h3><p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
 <p>任何一个容器都可以指定为Flex布局。</p>
 <p><strong>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</strong></p>
 <h3 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h3><p>一行有多高</p>
@@ -4287,13 +5073,17 @@ for
 
 
 
-<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><h4 id="定义和用法-8"><a href="#定义和用法-8" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>join() 方法用于把数组中的所有元素放入一个字符串。</p>
-<h3 id="DOM-querySelector-方法"><a href="#DOM-querySelector-方法" class="headerlink" title="DOM querySelector() 方法"></a>DOM querySelector() 方法</h3><p><strong>获取文档中 id=”demo” 或者 class = “demo”的元素：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#demo"</span>);</span><br><span class="line"></span><br><span class="line">documnet.querySelector(<span class="string">".demo"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="0-3-DOM"><a href="#0-3-DOM" class="headerlink" title="0.3 DOM"></a>0.3 DOM</h2><h4 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval()"></a>setInterval()</h4><ul>
+<li><p><strong>setInterval</strong>() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。</p>
+</li>
+<li><pre><code class="js">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="built_in">document</span>.getElementById(<span class="string">"videoPlayerID_html5_api"</span>).play()},<span class="number">10</span>)
+&lt;!--￼<span class="number">7</span>--&gt;
 
 
-
-<h3 id="DOM-InsertBefore"><a href="#DOM-InsertBefore" class="headerlink" title="DOM InsertBefore()"></a>DOM InsertBefore()</h3><p>首先请创建一个 LI 节点，<br>然后创建一个文本节点，<br>然后向这个 LI 节点追加文本节点。<br>最后在列表中的首个子节点之前插入此 LI 节点。</p>
+</code></pre>
+</li>
+</ul>
+<h4 id="DOM-InsertBefore"><a href="#DOM-InsertBefore" class="headerlink" title="DOM InsertBefore()"></a>DOM InsertBefore()</h4><p>首先请创建一个 LI 节点，<br>然后创建一个文本节点，<br>然后向这个 LI 节点追加文本节点。<br>最后在列表中的首个子节点之前插入此 LI 节点。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> newItem=<span class="built_in">document</span>.createElement(<span class="string">"LI"</span>)</span><br><span class="line">    <span class="keyword">var</span> textnode=<span class="built_in">document</span>.createTextNode(<span class="string">"Water"</span>)</span><br><span class="line">    newItem.appendChild(textnode)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> list=<span class="built_in">document</span>.getElementById(<span class="string">"myList"</span>)</span><br><span class="line">    list.insertBefore(newItem,list.childNodes[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -4306,7 +5096,7 @@ for
 
 
 
-<h3 id="cloneNode"><a href="#cloneNode" class="headerlink" title="cloneNode()"></a>cloneNode()</h3><h4 id="定义和用法-9"><a href="#定义和用法-9" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>cloneNode() 方法可创建指定的节点的精确拷贝。</p>
+<h3 id="cloneNode"><a href="#cloneNode" class="headerlink" title="cloneNode()"></a>cloneNode()</h3><h4 id="定义和用法-8"><a href="#定义和用法-8" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>cloneNode() 方法可创建指定的节点的精确拷贝。</p>
 <p>cloneNode() 方法 拷贝所有属性和值。</p>
 <p><strong>该方法将复制并返回调用它的节点的副本</strong>。<strong>如果传递给它的参数是 true</strong>，它还将递归复制当前节点的所有子孙节点。否则，它只复制当前节点。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function myFunction()&#123;</span><br><span class="line">	var itm&#x3D;document.getElementById(&quot;myList2&quot;).lastChild;</span><br><span class="line">	var cln&#x3D;itm.cloneNode(true);</span><br><span class="line">	document.getElementById(&quot;myList1&quot;).appendChild(cln);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -4465,16 +5255,23 @@ for
 <li><p>右键此项目——》属性——》c\c++——》预处理器——》预处理器定义——》加上</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">_CRT_SECURE_NO_WARNINGS</span><br></pre></td></tr></table></figure>
 
+
+
 </li>
 </ul>
 </li>
+</ul>
+<h3 id="EOF如何输入"><a href="#EOF如何输入" class="headerlink" title="EOF如何输入"></a>EOF如何输入</h3><ul>
+<li>先换行，在输入 Ctrl + Z ，最后再 换行</li>
+<li>如果没有效果，重复上述过程即可。</li>
+<li></li>
 </ul>
 ]]></content>
   </entry>
   <entry>
     <title>C/VS快捷键</title>
     <url>/2021/02/23/C/VS%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[<h2 id="02-VS常用快捷键"><a href="#02-VS常用快捷键" class="headerlink" title="02.VS常用快捷键"></a>02.VS常用快捷键</h2><table>
+    <content><![CDATA[<h2 id="0-1-常用快捷键"><a href="#0-1-常用快捷键" class="headerlink" title="0.1 常用快捷键"></a>0.1 常用快捷键</h2><table>
 <thead>
 <tr>
 <th align="left"><strong>快捷键</strong></th>
@@ -4506,20 +5303,20 @@ for
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">Ctrl + K，Ctrl + C</td>
-<td align="left">注释代码</td>
+<td align="left">Ctrl + M + O</td>
+<td align="left">折叠所有方法</td>
 </tr>
 <tr>
-<td align="left">Ctrl + K，Ctrl + U</td>
-<td align="left">取消注释代码</td>
+<td align="left">Ctrl + M + L</td>
+<td align="left">展开所有方法</td>
 </tr>
 <tr>
-<td align="left">F9</td>
-<td align="left">设置断点</td>
+<td align="left">Ctrl + M + M</td>
+<td align="left">展开或者折叠当前方法</td>
 </tr>
 <tr>
-<td align="left">F5</td>
-<td align="left">调试运行</td>
+<td align="left">Ctrl + Shift + B</td>
+<td align="left">编译，不运行</td>
 </tr>
 <tr>
 <td align="left">Ctrl + F5</td>
@@ -4530,8 +5327,20 @@ for
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">Ctrl + Shift + B</td>
-<td align="left">编译，不运行</td>
+<td align="left">Ctrl + K，Ctrl + U</td>
+<td align="left">取消注释代码</td>
+</tr>
+<tr>
+<td align="left">Ctrl + K，Ctrl + C</td>
+<td align="left">注释代码</td>
+</tr>
+<tr>
+<td align="left">F5</td>
+<td align="left">调试运行</td>
+</tr>
+<tr>
+<td align="left">F9</td>
+<td align="left">设置断点</td>
 </tr>
 <tr>
 <td align="left">F10</td>
@@ -4737,7 +5546,7 @@ for
   <entry>
     <title>Excel-List-Two</title>
     <url>/2020/03/09/Office/List-02_Word/</url>
-    <content><![CDATA[<h3 id="EXCEL"><a href="#EXCEL" class="headerlink" title="EXCEL"></a>EXCEL</h3><h2 id="1-小操作s"><a href="#1-小操作s" class="headerlink" title="1.小操作s"></a>1.小操作s</h2><h4 id="按某个规则进行自动填充"><a href="#按某个规则进行自动填充" class="headerlink" title="按某个规则进行自动填充"></a>按某个规则进行自动填充</h4><ul>
+    <content><![CDATA[<h3 id="EXCEL"><a href="#EXCEL" class="headerlink" title="EXCEL"></a>EXCEL</h3><h2 id="1-小操作"><a href="#1-小操作" class="headerlink" title="1.小操作"></a>1.小操作</h2><h4 id="按某个规则进行自动填充"><a href="#按某个规则进行自动填充" class="headerlink" title="按某个规则进行自动填充"></a>按某个规则进行自动填充</h4><ul>
 <li>选中有规则的数据，向某个方向移动 光标即可</li>
 <li>自动填充后，点击<strong>右下角的 小方块</strong>，<strong>更改填充规则</strong></li>
 </ul>
@@ -5828,7 +6637,7 @@ for
 <td align="left">03</td>
 <td align="left">userdel -r 用户名</td>
 <td align="left">删除用户</td>
-<td align="left">-r 选项会自动删除用户家目录</td>
+<td align="left">-r 选项会自动删除用户加目录</td>
 </tr>
 <tr>
 <td align="left">04</td>
@@ -6404,10 +7213,13 @@ gcc -o test.cgi test.c
   </entry>
   <entry>
     <title>Word-List-One</title>
-    <url>/2020/02/13/Office/List-01_Word/</url>
+    <url>/2020/02/13/Office/Word/</url>
     <content><![CDATA[<p><img src="http://ww1.sinaimg.cn/large/0065EZzEly1gbuobix1hej30e706s3zn.jpg" alt=""></p>
 <p><img src="http://ww1.sinaimg.cn/large/0065EZzEly1gbuocck5ioj30l30as0vi.jpg" alt=""></p>
-<h3 id="文字处理"><a href="#文字处理" class="headerlink" title="文字处理"></a>文字处理</h3><h2 id="0-1字体和段落"><a href="#0-1字体和段落" class="headerlink" title="0.1字体和段落"></a>0.1字体和段落</h2><h4 id="1-选择文本"><a href="#1-选择文本" class="headerlink" title="1.选择文本"></a>1.选择文本</h4><ul>
+<h2 id="0-1-插件使用"><a href="#0-1-插件使用" class="headerlink" title="0.1 插件使用"></a>0.1 插件使用</h2><ul>
+<li>使用插件，迅速完成批量的操作，提高你的办公效率</li>
+</ul>
+<h2 id="0-2-文字处理"><a href="#0-2-文字处理" class="headerlink" title="0.2 文字处理"></a>0.2 文字处理</h2><h4 id="1-选择文本"><a href="#1-选择文本" class="headerlink" title="1.选择文本"></a>1.选择文本</h4><ul>
 <li><p>先是讲鼠标移到最左边</p>
 <p><strong>单击</strong>        选择一行</p>
 <p><strong>双击</strong>        选择一段</p>
@@ -6425,9 +7237,15 @@ gcc -o test.cgi test.c
 </ul>
 <h2 id="开始——》"><a href="#开始——》" class="headerlink" title="开始——》"></a>开始——》</h2><h4 id="1-编辑"><a href="#1-编辑" class="headerlink" title="1.编辑"></a>1.编辑</h4><ul>
 <li>选择：选择相似文本</li>
-<li>查找</li>
+<li>查找：<ul>
+<li>可以使用通配符<code>*</code>进行查找<ul>
+<li>例如，计算机17<em>4\</em></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>替换：<ul>
-<li>关键：是否使用通配符</li>
+<li>关键：<strong>是否使用通配符</strong></li>
 <li>段落标记：Enter</li>
 <li>手动换行符：Shift  +   Enter  </li>
 <li>可以使用<strong>替换</strong>进行查找：查找时，复制需要的文本到替换栏中</li>
@@ -6436,9 +7254,7 @@ gcc -o test.cgi test.c
 </li>
 </ul>
 <h4 id="2-剪贴板"><a href="#2-剪贴板" class="headerlink" title="2.剪贴板"></a>2.剪贴板</h4><ul>
-<li><p>格式刷：选好 你要的格式，然后双击 格式刷</p>
-</li>
-<li></li>
+<li>格式刷：选好 你要的格式，然后双击 格式刷</li>
 </ul>
 <h4 id="3-字体"><a href="#3-字体" class="headerlink" title="3.字体"></a>3.字体</h4><ul>
 <li>清除格式    </li>
@@ -6638,9 +7454,15 @@ gcc -o test.cgi test.c
 <h2 id="邮件——》"><a href="#邮件——》" class="headerlink" title="邮件——》"></a>邮件——》</h2><h4 id="1-开始邮件合并"><a href="#1-开始邮件合并" class="headerlink" title="1.开始邮件合并"></a>1.开始邮件合并</h4><ul>
 <li>选择收件人：<strong>使用现有列表</strong>，然后<strong>插入合并域</strong>，最后完成和合并，<strong>编辑单个文档</strong>。</li>
 </ul>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h4 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h4><ul>
+<li>类似于编程语言，<strong>可以自动化批量处理文件</strong><ul>
+<li>例如，批量修改图片大小</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <tags>
-        <tag>Word</tag>
+        <tag>Office</tag>
       </tags>
   </entry>
   <entry>

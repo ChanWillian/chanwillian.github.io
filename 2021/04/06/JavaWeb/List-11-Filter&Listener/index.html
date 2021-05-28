@@ -14,13 +14,6 @@
 
 
 
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-center-simple.min.css?v=1.0.2" rel="stylesheet">
-
 
 
 
@@ -135,7 +128,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/04/07/AaySZqpg81veobR.png">
 <meta property="og:image" content="https://i.loli.net/2021/04/07/uKYabAjZHEoWTIi.png">
 <meta property="article:published_time" content="2021-04-06T01:34:44.000Z">
-<meta property="article:modified_time" content="2021-04-16T12:46:18.160Z">
+<meta property="article:modified_time" content="2021-05-13T00:03:29.651Z">
 <meta property="article:author" content="Chan Willian">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/04/07/G5ZSBs8TFJazA7C.png">
@@ -184,7 +177,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="The Very" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="The Very" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -616,11 +609,11 @@
 <li><img src="https://i.loli.net/2021/04/07/uKYabAjZHEoWTIi.png" alt="4.代理"></li>
 </ul>
 </li>
-<li>实现方式：<pre><code>1. 静态代理：有一个类文件描述代理模式
+<li>实现方式：<pre><code>    1. 静态代理：有一个类文件描述代理模式
 2. 动态代理：在内存中形成代理类</code></pre></li>
 <li><strong>实现步骤</strong>：<ol>
 <li>代理对象和真实对象实现相同的接口</li>
-<li>代理对象 = Proxy.newProxyInstance();</li>
+<li>代理对象 = <strong>Proxy.newProxyInstance( );</strong></li>
 <li>使用代理对象调用方法。</li>
 <li>增强方法</li>
 </ol>
@@ -628,7 +621,7 @@
 <li><strong>增强方式</strong>：<ul>
 <li>增强参数列表</li>
 <li>增强返回值类型</li>
-<li>增强方法体执行逻辑    </li>
+<li>增强方法体执行逻辑</li>
 </ul>
 </li>
 </ol>
@@ -654,8 +647,8 @@
 <ul>
 <li><p>方法：</p>
 <ul>
-<li>void <strong>contextDestroyed</strong>(ServletContextEvent sce) ：ServletContext对象被销毁之前会调用该方法</li>
-<li>void <strong>contextInitialized</strong>(ServletContextEvent sce) ：ServletContext对象创建后会调用该方法</li>
+<li>void <strong>contextDestroyed</strong>(ServletContextEvent sce) ：ServletContext<strong>对象被销毁之前会调用该方法</strong></li>
+<li>void <strong>contextInitialized</strong>(ServletContextEvent sce) ：ServletContext<strong>对象创建后会调用该方法</strong></li>
 </ul>
 </li>
 <li><p><strong>步骤</strong>：</p>
@@ -664,14 +657,14 @@
 </li>
 <li><p>复写方法</p>
 </li>
-<li><p>配置</p>
+<li><p><strong>配置</strong></p>
 <ol>
 <li><p>web.xml</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">	&lt;listener-class&gt;cn.itcast.web.listener.ContextLoaderListener&lt;&#x2F;listener-class&gt;   &lt;&#x2F;listener&gt;	</span><br><span class="line"></span><br><span class="line">* 指定初始化参数&lt;context-param&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>注解：</p>
 <ul>
-<li>@WebListener</li>
+<li>@<strong>WebListener</strong></li>
 </ul>
 </li>
 </ol>
@@ -801,7 +794,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -812,7 +805,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -822,8 +815,8 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/">
-                  <span class="site-state-item-count">10</span>
+                <a href="/learn/">
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -903,7 +896,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.5k</span>
+    <span title="Site words total count">65.7k</span>
   
 </div>
 
@@ -983,12 +976,7 @@
   
 
 
-  
 
-
-
-  
-  
 
 
 
@@ -1026,21 +1014,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
@@ -1462,11 +1435,9 @@
 
 
   
-   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-   <script type="text/javascript" src="/js/src/fireworks.js"></script>
-  
 
+  
+    <script type="text/javascript" src="/js/src/love.js"></script>
   
 
 

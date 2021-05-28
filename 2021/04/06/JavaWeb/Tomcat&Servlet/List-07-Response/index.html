@@ -14,13 +14,6 @@
 
 
 
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-center-simple.min.css?v=1.0.2" rel="stylesheet">
-
 
 
 
@@ -132,7 +125,7 @@
 <meta property="og:description" content="今日内容 HTTP协议：响应消息 Response对象 ServletContext对象  0.1 HTTP协议 响应消息：服务器端发送给客户端的数据  数据格式： 响应行  组成：协议&#x2F;版本 响应状态码 状态码描述  响应状态码：服务器告诉客户端浏览器本次请求和响应的一个状态。状态码都是3位数字   分类： 1xx：服务器就收客户端消息，但没有接受完成，等待一段时间后，发送1xx多状态码 2xx">
 <meta property="og:image" content="http://yoursite.com/2021/04/06/JavaWeb/Tomcat&Servlet/List-07-Response/https%EF%BC%9A%5Ci.loli.net%5C2021%5C04%5C06%5CwJZtMcDiVCN54ug.png">
 <meta property="article:published_time" content="2021-04-06T07:34:54.000Z">
-<meta property="article:modified_time" content="2021-04-06T07:37:29.103Z">
+<meta property="article:modified_time" content="2021-05-13T12:20:37.065Z">
 <meta property="article:author" content="Chan Willian">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2021/04/06/JavaWeb/Tomcat&Servlet/List-07-Response/https%EF%BC%9A%5Ci.loli.net%5C2021%5C04%5C06%5CwJZtMcDiVCN54ug.png">
@@ -181,7 +174,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="The Very" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="The Very" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -629,7 +622,7 @@
 </li>
 <li><p><strong>注意：乱码问题：</strong></p>
 <ol>
-<li><p>PrintWriter pw = response.getWriter();    获取的流的默认编码是ISO-8859-1</p>
+<li><p><strong>PrintWriter pw = response.getWriter();</strong>    获取的流的默认编码是ISO-8859-1</p>
 </li>
 <li><p>设置该流的默认编码</p>
 </li>
@@ -855,7 +848,7 @@ response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -866,7 +859,7 @@ response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -876,8 +869,8 @@ response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/">
-                  <span class="site-state-item-count">10</span>
+                <a href="/learn/">
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -957,7 +950,7 @@ response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.5k</span>
+    <span title="Site words total count">65.7k</span>
   
 </div>
 
@@ -1037,12 +1030,7 @@ response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
   
 
 
-  
 
-
-
-  
-  
 
 
 
@@ -1080,21 +1068,6 @@ response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
@@ -1516,11 +1489,9 @@ response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
 
 
   
-   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-   <script type="text/javascript" src="/js/src/fireworks.js"></script>
-  
 
+  
+    <script type="text/javascript" src="/js/src/love.js"></script>
   
 
 
