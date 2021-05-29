@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>demo2</title>
+    <url>/myblog/2021/05/29/demo2/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>demo1</title>
-    <url>/2021/05/29/demo1/</url>
+    <url>/myblog/2021/05/29/demo1/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>List-15_Redis</title>
-    <url>/2021/05/13/JavaWeb/List-15-Redis/</url>
+    <url>/myblog/2021/05/13/JavaWeb/List-15-Redis/</url>
     <content><![CDATA[<h2 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h2><ul>
 <li>redis<ul>
 <li>概念</li>
@@ -490,7 +495,7 @@ jedis.set(&quot;hehe&quot;,&quot;heihei&quot;);</code></pre><figure class="highl
   </entry>
   <entry>
     <title>List-12_Ajax&amp;Json</title>
-    <url>/2021/05/13/JavaWeb/List-14_Ajax&amp;Json/</url>
+    <url>/myblog/2021/05/13/JavaWeb/List-14_Ajax&amp;Json/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li>AJAX：</li>
 <li>JSON</li>
@@ -676,7 +681,7 @@ p.setGender(<span class="string">"男"</span>);
   </entry>
   <entry>
     <title>Edge使用教程</title>
-    <url>/2021/05/10/Others/Edge%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <url>/myblog/2021/05/10/Others/Edge%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h3 id="0-2-隐私，搜索和服务"><a href="#0-2-隐私，搜索和服务" class="headerlink" title="0.2 隐私，搜索和服务"></a>0.2 隐私，搜索和服务</h3><blockquote>
 <h4 id="地址栏和搜索（页面最底部）"><a href="#地址栏和搜索（页面最底部）" class="headerlink" title="地址栏和搜索（页面最底部）"></a>地址栏和搜索（页面最底部）</h4></blockquote>
 <p><strong>管理快捷搜索引擎</strong></p>
@@ -690,7 +695,7 @@ p.setGender(<span class="string">"男"</span>);
   </entry>
   <entry>
     <title>IDEA快捷键</title>
-    <url>/2021/05/08/JAVA/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <url>/myblog/2021/05/08/JAVA/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<h2 id="0-1-Ctrl-快捷键"><a href="#0-1-Ctrl-快捷键" class="headerlink" title="0.1 Ctrl 快捷键"></a>0.1 Ctrl 快捷键</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Ctrl + F        //在当前文件进行文本查找 （必备）</span><br><span class="line">Ctrl + R        //在当前文件进行文本替换 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + Z        //撤销 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + Y        //删除光标所在行 或 删除选中的行 （必备）</span><br><span class="line">Ctrl + X        //剪切光标所在行 或 剪切选择内容</span><br><span class="line"></span><br><span class="line">Ctrl + C        //复制光标所在行 或 复制选择内容</span><br><span class="line">Ctrl + D        //复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面 （必备）</span><br><span class="line"></span><br><span class="line">Ctrl + W        //递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围（必备）</span><br><span class="line"></span><br><span class="line">Ctrl + E        //显示最近打开的文件记录列表 （必备）</span><br><span class="line">Ctrl + N        //根据输入的 名/类名 查找类文件 （必备）</span><br></pre></td></tr></table></figure>
 
 
@@ -762,7 +767,7 @@ p.setGender(<span class="string">"男"</span>);
   </entry>
   <entry>
     <title>手机热点无法使用</title>
-    <url>/2021/05/06/Others/%E6%89%8B%E6%9C%BA%E7%83%AD%E7%82%B9%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
+    <url>/myblog/2021/05/06/Others/%E6%89%8B%E6%9C%BA%E7%83%AD%E7%82%B9%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h3><ul>
 <li><strong>热点的AP频段</strong> 可能选择的不合适        <strong>更换AP频段，热点能够正常使用</strong></li>
 </ul>
@@ -776,7 +781,7 @@ p.setGender(<span class="string">"男"</span>);
   </entry>
   <entry>
     <title>ABBYY使用教程</title>
-    <url>/2021/04/24/Others/ABBYY%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <url>/myblog/2021/04/24/Others/ABBYY%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h3 id="识别图片生成文字"><a href="#识别图片生成文字" class="headerlink" title="识别图片生成文字"></a>识别图片生成文字</h3><ul>
 <li>使用<strong>FineReaderOCR</strong>  即可。</li>
 </ul>
@@ -787,7 +792,7 @@ p.setGender(<span class="string">"男"</span>);
   </entry>
   <entry>
     <title>IDEA使用教程</title>
-    <url>/2021/04/07/JavaWeb/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <url>/myblog/2021/04/07/JavaWeb/IDEA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h4 id="1-1-1-项目结构"><a href="#1-1-1-项目结构" class="headerlink" title="1.1.1  项目结构"></a>1.1.1  项目结构</h4><p><img src="https://i.loli.net/2021/04/07/U2zNqhSXBx6H3ys.png" alt="img"></p>
 <h4 id="1-1-2-IDEA常用快捷键"><a href="#1-1-2-IDEA常用快捷键" class="headerlink" title="1.1.2  IDEA常用快捷键"></a>1.1.2  IDEA常用快捷键</h4><table>
 <thead>
@@ -889,7 +894,7 @@ p.setGender(<span class="string">"男"</span>);
   </entry>
   <entry>
     <title>List-13_JQuery高级</title>
-    <url>/2021/04/06/JavaWeb/JavaScript/List-13_JQuery%E9%AB%98%E7%BA%A7/</url>
+    <url>/myblog/2021/04/06/JavaWeb/JavaScript/List-13_JQuery%E9%AB%98%E7%BA%A7/</url>
     <content><![CDATA[<h3 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h3><ul>
 <li>JQuery 高级<ul>
 <li>动画</li>
@@ -1154,7 +1159,7 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
   </entry>
   <entry>
     <title>List-12_JQuery基础</title>
-    <url>/2021/04/06/JavaWeb/JavaScript/List-12_JQuery%E5%9F%BA%E7%A1%80/</url>
+    <url>/myblog/2021/04/06/JavaWeb/JavaScript/List-12_JQuery%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li>JQuery 基础：<ul>
 <li>概念</li>
@@ -1439,7 +1444,7 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
   </entry>
   <entry>
     <title>List-08_Cookie_Session</title>
-    <url>/2021/04/06/JavaWeb/List-08-Cookie-Session/</url>
+    <url>/myblog/2021/04/06/JavaWeb/List-08-Cookie-Session/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li>会话技术<ul>
 <li>Cookie</li>
@@ -1716,7 +1721,7 @@ $(<span class="string">"#stopID"</span>).prop(<span class="string">"disabled"</s
   </entry>
   <entry>
     <title>List-07_Response</title>
-    <url>/2021/04/06/JavaWeb/Tomcat&amp;Servlet/List-07-Response/</url>
+    <url>/myblog/2021/04/06/JavaWeb/Tomcat&amp;Servlet/List-07-Response/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li>HTTP协议：响应消息</li>
 <li>Response对象</li>
@@ -2004,7 +2009,7 @@ response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);
   </entry>
   <entry>
     <title>List-06_Servlet&amp;HTTP&amp;Request</title>
-    <url>/2021/04/06/JavaWeb/Tomcat&amp;Servlet/List-06-Servlet&amp;HTTP&amp;Request/</url>
+    <url>/myblog/2021/04/06/JavaWeb/Tomcat&amp;Servlet/List-06-Servlet&amp;HTTP&amp;Request/</url>
     <content><![CDATA[<h3 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h3><ul>
 <li>Servlet</li>
 <li>HTTP协议</li>
@@ -2119,7 +2124,7 @@ org.apache.catalina.connector.RequestFacade 类(tomcat)
   </entry>
   <entry>
     <title>List-05_Tomcat&amp;Servlet</title>
-    <url>/2021/04/06/JavaWeb/Tomcat&amp;Servlet/List-05-Tomcat&amp;Servlet/</url>
+    <url>/myblog/2021/04/06/JavaWeb/Tomcat&amp;Servlet/List-05-Tomcat&amp;Servlet/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li>web相关概念回顾</li>
 <li>web服务器软件：<strong>Tomcat</strong></li>
@@ -2396,7 +2401,7 @@ localhost/hello
   </entry>
   <entry>
     <title>List-10综合案例</title>
-    <url>/2021/04/06/JavaWeb/List-10%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B/</url>
+    <url>/myblog/2021/04/06/JavaWeb/List-10%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li><p>简单功能</p>
 <ul>
@@ -2494,7 +2499,7 @@ localhost/hello
   </entry>
   <entry>
     <title>List-11_Filter&amp;Listener</title>
-    <url>/2021/04/06/JavaWeb/List-11-Filter&amp;Listener/</url>
+    <url>/myblog/2021/04/06/JavaWeb/List-11-Filter&amp;Listener/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li>Filter：过滤器</li>
 <li>Listener：监听器</li>
@@ -2725,7 +2730,7 @@ localhost/hello
   </entry>
   <entry>
     <title>List-09_EL&amp;JSTL笔记</title>
-    <url>/2021/04/05/JavaWeb/JSP/List-09_EL&amp;JSTL%E7%AC%94%E8%AE%B0/</url>
+    <url>/myblog/2021/04/05/JavaWeb/JSP/List-09_EL&amp;JSTL%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li><p><strong>JSP入门</strong></p>
 <ul>
@@ -3035,7 +3040,7 @@ localhost/hello
   </entry>
   <entry>
     <title>List-04_xml笔记</title>
-    <url>/2021/04/05/JavaWeb/List-04-xml%E7%AC%94%E8%AE%B0/</url>
+    <url>/myblog/2021/04/05/JavaWeb/List-04-xml%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li><strong>XML</strong><ul>
 <li>概念</li>
@@ -3280,7 +3285,7 @@ localhost/hello
   </entry>
   <entry>
     <title>List-03_BootStrap基础</title>
-    <url>/2021/04/05/JavaWeb/JavaScript/List-03-BootStrap%E5%9F%BA%E7%A1%80/</url>
+    <url>/myblog/2021/04/05/JavaWeb/JavaScript/List-03-BootStrap%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li>Bootstrap概况</li>
 <li>Boostrap入门</li>
@@ -3395,7 +3400,7 @@ localhost/hello
   </entry>
   <entry>
     <title>List-02_JavaScript高级</title>
-    <url>/2021/04/04/JavaWeb/JavaScript/List-02-JavaScript%E9%AB%98%E7%BA%A7/</url>
+    <url>/myblog/2021/04/04/JavaWeb/JavaScript/List-02-JavaScript%E9%AB%98%E7%BA%A7/</url>
     <content><![CDATA[<h3 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h3><ul>
 <li><p>DOM对象</p>
 </li>
@@ -3752,7 +3757,7 @@ localhost/hello
   </entry>
   <entry>
     <title>List-01_JavaScript基础</title>
-    <url>/2021/04/04/JavaWeb/JavaScript/List-01-JavaScript%E5%9F%BA%E7%A1%80/</url>
+    <url>/myblog/2021/04/04/JavaWeb/JavaScript/List-01-JavaScript%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li>JavaScript概况</li>
 <li>JS数据类型</li>
@@ -4123,7 +4128,7 @@ for
   </entry>
   <entry>
     <title>Others/乒乓球学习</title>
-    <url>/2021/04/04/Others/%E4%B9%92%E4%B9%93%E7%90%83%E5%AD%A6%E4%B9%A0/</url>
+    <url>/myblog/2021/04/04/Others/%E4%B9%92%E4%B9%93%E7%90%83%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h2 id="1-准备"><a href="#1-准备" class="headerlink" title="1.准备"></a>1.准备</h2><blockquote>
 <h4 id="打法选择"><a href="#打法选择" class="headerlink" title="打法选择"></a>打法选择</h4></blockquote>
 <p>主要分为进攻性打法和防守型打法</p>
@@ -4158,7 +4163,7 @@ for
   </entry>
   <entry>
     <title>XYplorer使用教程</title>
-    <url>/2021/03/26/Others/XYplorer%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <url>/myblog/2021/03/26/Others/XYplorer%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="7-设置"><a href="#7-设置" class="headerlink" title="7.设置"></a>7.设置</h2><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="外壳集成"><a href="#外壳集成" class="headerlink" title="外壳集成"></a>外壳集成</h4><p><strong>64-windows</strong></p>
 <ul>
 <li>显示64位右键菜单</li>
@@ -4180,7 +4185,7 @@ for
   </entry>
   <entry>
     <title>List-03多表查询&amp;事务&amp;DCL</title>
-    <url>/2021/03/26/MySQL/List-03%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2&amp;%E4%BA%8B%E5%8A%A1&amp;DCL/</url>
+    <url>/myblog/2021/03/26/MySQL/List-03%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2&amp;%E4%BA%8B%E5%8A%A1&amp;DCL/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ol>
 <li><p>多表查询</p>
 </li>
@@ -4388,7 +4393,7 @@ for
   </entry>
   <entry>
     <title>List-02_DQL&amp;约束</title>
-    <url>/2021/03/26/MySQL/List-02_DQL&amp;%E7%BA%A6%E6%9D%9F/</url>
+    <url>/myblog/2021/03/26/MySQL/List-02_DQL&amp;%E7%BA%A6%E6%9D%9F/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ul>
 <li><p>DQL:查询语句</p>
 <ul>
@@ -4642,7 +4647,7 @@ for
   </entry>
   <entry>
     <title>List-01_DDL&amp;DML&amp;DQL</title>
-    <url>/2021/03/26/MySQL/List-01_DDL&amp;DML&amp;DQL/</url>
+    <url>/myblog/2021/03/26/MySQL/List-01_DDL&amp;DML&amp;DQL/</url>
     <content><![CDATA[<h3 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h3><ol>
 <li>数据库的基本概念</li>
 </ol>
@@ -4878,7 +4883,7 @@ for
   </entry>
   <entry>
     <title>SSMS使用教程</title>
-    <url>/2021/03/26/MySQL/SSMS%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <url>/myblog/2021/03/26/MySQL/SSMS%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h3 id="数据库存放位置"><a href="#数据库存放位置" class="headerlink" title="数据库存放位置"></a>数据库存放位置</h3><h3 id="如何显示行号"><a href="#如何显示行号" class="headerlink" title="如何显示行号"></a>如何显示行号</h3>]]></content>
       <tags>
         <tag>SQLServer</tag>
@@ -4886,7 +4891,7 @@ for
   </entry>
   <entry>
     <title>如何获取电子书</title>
-    <url>/2021/03/21/Others/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%94%B5%E5%AD%90%E4%B9%A6/</url>
+    <url>/myblog/2021/03/21/Others/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%94%B5%E5%AD%90%E4%B9%A6/</url>
     <content><![CDATA[<h2 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h2><h4 id="计算机专业工具书"><a href="#计算机专业工具书" class="headerlink" title="计算机专业工具书"></a>计算机专业工具书</h4><ul>
 <li>使用  <strong>虫部落：电子书搜索</strong>  失效</li>
 <li>使用 <strong>GitHub</strong></li>
@@ -4908,7 +4913,7 @@ for
   </entry>
   <entry>
     <title>hexo——-疑难问题</title>
-    <url>/2021/03/21/Others/hexo-%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/</url>
+    <url>/myblog/2021/03/21/Others/hexo-%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h3 id="无法显示-对应页面内的文章"><a href="#无法显示-对应页面内的文章" class="headerlink" title="无法显示 对应页面内的文章"></a>无法显示 对应页面内的文章</h3><ul>
 <li>hexo 不能自己创建新的文件类型，只能二选一</li>
 </ul>
@@ -4926,7 +4931,7 @@ for
   </entry>
   <entry>
     <title>Web开发问题汇总</title>
-    <url>/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
+    <url>/myblog/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
     <content><![CDATA[<h3 id="1-网页元素无法顶格"><a href="#1-网页元素无法顶格" class="headerlink" title="1.网页元素无法顶格"></a>1.网页元素无法顶格</h3><p>将body边框设置为0</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="xml">  body&#123; margin:0;&#125;  <span class="comment">&lt;!--body顶格，body最顶部不留空白--&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -4989,7 +4994,7 @@ for
   </entry>
   <entry>
     <title>Web开发-新知识汇总</title>
-    <url>/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91-%E6%96%B0%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</url>
+    <url>/myblog/2021/03/21/HTML/Web%E5%BC%80%E5%8F%91-%E6%96%B0%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</url>
     <content><![CDATA[<h2 id="0-1-标签属性"><a href="#0-1-标签属性" class="headerlink" title="0.1 标签属性"></a>0.1 标签属性</h2><h3 id="tarnslate"><a href="#tarnslate" class="headerlink" title="tarnslate"></a>tarnslate</h3><h4 id="cnavas"><a href="#cnavas" class="headerlink" title="cnavas"></a>cnavas</h4><p>在位置 (10,10) 处绘制一个矩形，将新的 (0,0) 位置设置为 (70,70)。再次绘制新的矩形（请注意现在矩形从位置 (80,80) 开始绘制）：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var c&#x3D;document.getElementById(&quot;myCanvas&quot;);</span><br><span class="line">var ctx&#x3D;c.getContext(&quot;2d&quot;);</span><br><span class="line">ctx.fillRect(10,10,100,50);</span><br><span class="line">ctx.translate(70,70);</span><br><span class="line">ctx.fillRect(10,10,100,50);</span><br></pre></td></tr></table></figure>
 
@@ -5125,7 +5130,7 @@ for
   </entry>
   <entry>
     <title>Github_无法访问</title>
-    <url>/2021/03/21/Github/Githubub-%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AE/</url>
+    <url>/myblog/2021/03/21/Github/Githubub-%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AE/</url>
     <content><![CDATA[<h2 id="1-安装插件，加速访问"><a href="#1-安装插件，加速访问" class="headerlink" title="1.安装插件，加速访问"></a>1.安装插件，加速访问</h2><p><a href="https://www.extfans.com/web-development/pbggmlghklngacbdkdjcebaaglkcokhp/" target="_blank" rel="noopener">Github 加速器</a></p>
 ]]></content>
       <categories>
@@ -5134,14 +5139,14 @@ for
   </entry>
   <entry>
     <title>Linux快捷键</title>
-    <url>/2021/03/20/Linux/Linux%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <url>/myblog/2021/03/20/Linux/Linux%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Ctrl + Alt + T		打开终端</span><br><span class="line">ctrl + <span class="built_in">shift</span> + = 	放大终端窗口的字体显示</span><br><span class="line">ctrl + - 			缩小终端窗口的字体显示</span><br></pre></td></tr></table></figure>
 
 ]]></content>
   </entry>
   <entry>
     <title>PDF_教程</title>
-    <url>/2021/03/20/Others/PDF-%E6%95%99%E7%A8%8B/</url>
+    <url>/myblog/2021/03/20/Others/PDF-%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h3 id="1-批量删除页眉"><a href="#1-批量删除页眉" class="headerlink" title="1.批量删除页眉"></a>1.批量删除页眉</h3><p><img src="https://i.loli.net/2021/03/12/iDhgO2tfka3LRHx.png" alt="image-20210312200004597"></p>
 ]]></content>
       <categories>
@@ -5150,7 +5155,7 @@ for
   </entry>
   <entry>
     <title>SublimeText使用教程</title>
-    <url>/2021/03/02/Others/SublimeText%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+    <url>/myblog/2021/03/02/Others/SublimeText%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><p><strong>1.ctrl+shift+p</strong><br><strong>2.输入install</strong><br><strong>3.选第一个东西</strong><br><strong>4.输入名称</strong><br><strong>5.点击安装，等待安装成功</strong></p>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><strong>ctrl + ~</strong><br><strong>ctrl+shift+p</strong></p>
 <p><strong>ctrl + n         创建新窗口</strong><br><strong>ctrl + tab     切换窗口</strong><br><strong>ctrl + j          与上一行合并</strong><br><strong>ctrl + d         选中单词，多次使用可以选中相同单词</strong></p>
@@ -5239,7 +5244,7 @@ for
   </entry>
   <entry>
     <title>List-01C++基础</title>
-    <url>/2021/02/27/C++/List-01C++%E5%9F%BA%E7%A1%80/</url>
+    <url>/myblog/2021/02/27/C++/List-01C++%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>C++</category>
@@ -5247,7 +5252,7 @@ for
   </entry>
   <entry>
     <title>C/VS疑难解决</title>
-    <url>/2021/02/23/C/VS%E7%96%91%E9%9A%BE%E8%A7%A3%E5%86%B3/</url>
+    <url>/myblog/2021/02/23/C/VS%E7%96%91%E9%9A%BE%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<h3 id="解决VS的4996错误"><a href="#解决VS的4996错误" class="headerlink" title="解决VS的4996错误"></a>解决VS的4996错误</h3><ul>
 <li><p>代码开头加上</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#define _CRT_SECURE_NO_WARNINGS</span><br></pre></td></tr></table></figure>
@@ -5275,7 +5280,7 @@ for
   </entry>
   <entry>
     <title>C/VS快捷键</title>
-    <url>/2021/02/23/C/VS%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <url>/myblog/2021/02/23/C/VS%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<h2 id="0-1-常用快捷键"><a href="#0-1-常用快捷键" class="headerlink" title="0.1 常用快捷键"></a>0.1 常用快捷键</h2><table>
 <thead>
 <tr>
@@ -5416,7 +5421,7 @@ for
   </entry>
   <entry>
     <title>List-01_GitHub基本使用</title>
-    <url>/2021/01/14/Github/GitHub%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <url>/myblog/2021/01/14/Github/GitHub%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>另外，这些项目 Guide 是根据下面三个标准选出：</p>
 <ol>
 <li>项目是否还在继续维护更新，维护更新的频率如何。</li>
@@ -5430,7 +5435,7 @@ for
   </entry>
   <entry>
     <title>MySQL基本使用</title>
-    <url>/2020/08/15/MySQL/MySQL%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <url>/myblog/2020/08/15/MySQL/MySQL%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="0-1-MySQL异常处理"><a href="#0-1-MySQL异常处理" class="headerlink" title="0.1 MySQL异常处理"></a>0.1 MySQL异常处理</h2><h3 id="请键入-NET-HELPMSG-2185"><a href="#请键入-NET-HELPMSG-2185" class="headerlink" title="请键入 NET HELPMSG 2185"></a>请键入 NET HELPMSG 2185</h3><h4 id="异常原因"><a href="#异常原因" class="headerlink" title="异常原因"></a>异常原因</h4><p>电脑系统中，并没有注册mysql服务。</p>
 <p><strong>进入</strong></p>
 <p>D:\MySQL\mysql-8.0.20-winx64\bin</p>
@@ -5454,7 +5459,7 @@ for
   </entry>
   <entry>
     <title>C-List-3</title>
-    <url>/2020/03/28/C/List-03_C%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</url>
+    <url>/myblog/2020/03/28/C/List-03_C%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h2 id="01-字符串处理函数"><a href="#01-字符串处理函数" class="headerlink" title="01.字符串处理函数"></a>01.字符串处理函数</h2><h4 id="gets-和-puts-函数"><a href="#gets-和-puts-函数" class="headerlink" title="gets() 和  puts()函数"></a>gets() 和  puts()函数</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"请输入str: "</span>);</span><br><span class="line">gets(str);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"str = %s\n"</span>, str);</span><br><span class="line"><span class="built_in">puts</span>(str);		<span class="comment">//在输出完成后自动输出一个'\n'。</span></span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -5550,7 +5555,7 @@ for
   </entry>
   <entry>
     <title>Excel-List-Two</title>
-    <url>/2020/03/09/Office/List-02_Word/</url>
+    <url>/myblog/2020/03/09/Office/List-02_Word/</url>
     <content><![CDATA[<h3 id="EXCEL"><a href="#EXCEL" class="headerlink" title="EXCEL"></a>EXCEL</h3><h2 id="1-小操作"><a href="#1-小操作" class="headerlink" title="1.小操作"></a>1.小操作</h2><h4 id="按某个规则进行自动填充"><a href="#按某个规则进行自动填充" class="headerlink" title="按某个规则进行自动填充"></a>按某个规则进行自动填充</h4><ul>
 <li>选中有规则的数据，向某个方向移动 光标即可</li>
 <li>自动填充后，点击<strong>右下角的 小方块</strong>，<strong>更改填充规则</strong></li>
@@ -5628,7 +5633,7 @@ for
   </entry>
   <entry>
     <title>C-List-Two</title>
-    <url>/2020/02/27/C/List-02_C%E5%9F%BA%E7%A1%80/</url>
+    <url>/myblog/2020/02/27/C/List-02_C%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="常用运算符分类"><a href="#常用运算符分类" class="headerlink" title="常用运算符分类"></a>常用运算符分类</h3><table>
 <thead>
 <tr>
@@ -5817,7 +5822,7 @@ for
   </entry>
   <entry>
     <title>C-List-One</title>
-    <url>/2020/02/16/C/List-01_C%E5%9F%BA%E7%A1%80/</url>
+    <url>/myblog/2020/02/16/C/List-01_C%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="01-C语言"><a href="#01-C语言" class="headerlink" title="01.C语言"></a>01.C语言</h2><p>system<strong>函数的使用</strong></p>
 <p>功能：在已经运行的程序中执行另外一个外部程序</p>
 <p><strong>printf函数</strong></p>
@@ -6484,7 +6489,7 @@ for
   </entry>
   <entry>
     <title>List-02_Linux基本使用（2）</title>
-    <url>/2020/02/15/Linux/List-02_Linux%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%882%EF%BC%89/</url>
+    <url>/myblog/2020/02/15/Linux/List-02_Linux%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%882%EF%BC%89/</url>
     <content><![CDATA[<h2 id="01-用户权限相关命令"><a href="#01-用户权限相关命令" class="headerlink" title="01.用户权限相关命令"></a>01.用户权限相关命令</h2><h3 id="1-1组管理"><a href="#1-1组管理" class="headerlink" title="1.1组管理"></a>1.1组管理</h3><blockquote>
 <p>提示：<strong>创建组</strong> / <strong>删除组</strong> 的终端命令都需要通过 <code>sudo</code> 执行</p>
 </blockquote>
@@ -7218,7 +7223,7 @@ gcc -o test.cgi test.c
   </entry>
   <entry>
     <title>Word</title>
-    <url>/2020/02/13/Office/Word/</url>
+    <url>/myblog/2020/02/13/Office/Word/</url>
     <content><![CDATA[<p><img src="http://ww1.sinaimg.cn/large/0065EZzEly1gbuobix1hej30e706s3zn.jpg" alt=""></p>
 <p><img src="http://ww1.sinaimg.cn/large/0065EZzEly1gbuocck5ioj30l30as0vi.jpg" alt=""></p>
 <h2 id="0-1-插件使用"><a href="#0-1-插件使用" class="headerlink" title="0.1 插件使用"></a>0.1 插件使用</h2><ul>
@@ -7472,7 +7477,7 @@ gcc -o test.cgi test.c
   </entry>
   <entry>
     <title>网易云音乐mp3外链方法</title>
-    <url>/2020/02/05/Others/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90mp3%E5%A4%96%E9%93%BE%E6%96%B9%E6%B3%95/</url>
+    <url>/myblog/2020/02/05/Others/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90mp3%E5%A4%96%E9%93%BE%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p><strong>1.第一步打开网易云音乐，随便找到一首歌，播放，复制网址的ID</strong></p>
 <p>例如：李荣浩的麻雀，网址是：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;1407551413.mp3</span><br></pre></td></tr></table></figure>
@@ -7495,7 +7500,7 @@ gcc -o test.cgi test.c
   </entry>
   <entry>
     <title>List-01_选择器，CSS外观</title>
-    <url>/2020/01/31/CSS/List-01_%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%8CCSS%E5%A4%96%E8%A7%82/</url>
+    <url>/myblog/2020/01/31/CSS/List-01_%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%8CCSS%E5%A4%96%E8%A7%82/</url>
     <content><![CDATA[<h3 id="CSS样式规格"><a href="#CSS样式规格" class="headerlink" title="CSS样式规格"></a>CSS样式规格</h3><p><strong>概念</strong>： Cascading Style Sheets 层叠样式表</p>
 <ul>
 <li>层叠：多个样式可以作用在同一个html的元素上，同时生效</li>
@@ -7710,7 +7715,7 @@ gcc -o test.cgi test.c
   </entry>
   <entry>
     <title>List-01_Linux基本使用</title>
-    <url>/2020/01/29/Linux/List-01_Linux%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <url>/myblog/2020/01/29/Linux/List-01_Linux%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="01-linux下的文件"><a href="#01-linux下的文件" class="headerlink" title="01.linux下的文件"></a>01.linux下的文件</h2><h3 id="路径区别"><a href="#路径区别" class="headerlink" title="路径区别"></a>路径区别</h3><ol>
 <li><p>Linux系统只有一个盘符</p>
 </li>
@@ -8549,7 +8554,7 @@ nslookup www.baidu.com
   </entry>
   <entry>
     <title>List-2标签(2)</title>
-    <url>/2020/01/29/HTML/List-2%E6%A0%87%E7%AD%BE(2)/</url>
+    <url>/myblog/2020/01/29/HTML/List-2%E6%A0%87%E7%AD%BE(2)/</url>
     <content><![CDATA[<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><ol>
 <li>资源和网页文件在同一文件夹中</li>
 </ol>
@@ -9008,7 +9013,7 @@ nslookup www.baidu.com
   </entry>
   <entry>
     <title>Hexo基本使用</title>
-    <url>/2020/01/26/Others/Hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <url>/myblog/2020/01/26/Others/Hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="01-hexo-next主题-基本使用"><a href="#01-hexo-next主题-基本使用" class="headerlink" title="01.hexo(next主题)基本使用"></a>01.hexo(next主题)基本使用</h2><h4 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 文章名称</span><br></pre></td></tr></table></figure>
 
 <h4 id="新文章名称"><a href="#新文章名称" class="headerlink" title="新文章名称"></a>新文章名称</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: best student			&#x2F;&#x2F;名称中有空格 ，错误</span><br><span class="line">title: best-student 		&#x2F;&#x2F;正确</span><br></pre></td></tr></table></figure>
@@ -9024,7 +9029,7 @@ nslookup www.baidu.com
   </entry>
   <entry>
     <title>Others/Study</title>
-    <url>/2020/01/23/Others/Study/</url>
+    <url>/myblog/2020/01/23/Others/Study/</url>
     <content><![CDATA[<h3 id="学习内容"><a href="#学习内容" class="headerlink" title="学习内容"></a>学习内容</h3><ul>
 <li>什么是学习</li>
 <li>如何学习</li>
@@ -9080,7 +9085,7 @@ nslookup www.baidu.com
   </entry>
   <entry>
     <title>List-1标签</title>
-    <url>/2020/01/21/HTML/List-1%E6%A0%87%E7%AD%BE/</url>
+    <url>/myblog/2020/01/21/HTML/List-1%E6%A0%87%E7%AD%BE/</url>
     <content><![CDATA[<h2 id="什么是HTML"><a href="#什么是HTML" class="headerlink" title="什么是HTML?"></a>什么是HTML?</h2><p>HTML 是用来<strong>描述网页</strong>的一种语言。</p>
 <ul>
 <li>HTML 使用<strong>标记标签</strong>来<strong>描述</strong>网页</li>
@@ -9246,7 +9251,7 @@ nslookup www.baidu.com
   </entry>
   <entry>
     <title>hexo+GitHub搭建自己的博客</title>
-    <url>/2020/01/19/Others/hexo-GitHub%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <url>/myblog/2020/01/19/Others/hexo-GitHub%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h3 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h3><p>Hexo 是一个快速、简洁且高效的博客框架。</p>
 <h2 id="1-1-安装-hexo"><a href="#1-1-安装-hexo" class="headerlink" title="1.1    安装  hexo"></a>1.1    安装  hexo</h2><h4 id="安装前提（安装环境的搭建）"><a href="#安装前提（安装环境的搭建）" class="headerlink" title="安装前提（安装环境的搭建）"></a>安装前提（安装环境的搭建）</h4><p>先下载安装上<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>,</p>
 <p>再下载安装上<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>, </p>
@@ -9388,7 +9393,7 @@ nslookup www.baidu.com
 <h4 id="3，-layout-swig"><a href="#3，-layout-swig" class="headerlink" title="3，_layout.swig"></a>3，_layout.swig</h4><p>打开<code>themes\next\layout\_layout.swig</code>文件，将</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;&#x2F;dist&#x2F;APlayer.min.css&quot;&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;aplayer&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;dist&#x2F;APlayer.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;dist&#x2F;music.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>添加到     &lt;body itemscope …&gt;   后面就行，即再 <body><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body> 里面</p>
+<p>添加到     &lt;body itemscope …&gt;   后面就行，即再 <body><script src="/myblog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body> 里面</p>
 <p>然后，  重新生成，访问页面</p>
 <h2 id="1-8-添加公益404-页面"><a href="#1-8-添加公益404-页面" class="headerlink" title="1.8    添加公益404 页面"></a>1.8    添加公益404 页面</h2><p>打开网站文件夹，右键打开 git bash</p>
 <p>输入</p>
